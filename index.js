@@ -58,7 +58,7 @@ bot.on("message", async message => {
 
     //Code God-----------------------------------------------------------
         if(message.content == "god"){
-            message.channel.sendMessage("<@!405466274584330240> is a god in coding!") 
+            message.channel.sendMessage("<@146323250706644993> is a god in coding!") 
         }
 
     //-----------------------------------------------------------

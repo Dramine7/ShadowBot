@@ -103,8 +103,6 @@ bot.on("message", function(message) {
     //Various Variables-----------------------------------------------------------
     var lucky = ["You are beautiful", "Everyone loves you", "Have a nice day", "You are indubidably intelligent", "What a splendid personality you have", "Have a bad... I mean good day", "Fuggu", "Not every phrase is positive dumbass", "You thought you were being lucky? Wrong", "Luck is non-existent, it's about skill"]; //for lucky phrase if statement
     var args = message.content.substring(prefix.length).split(" ");
-    let date = Date.now()
-    
     //-----------------------------------------------------------
 
 
@@ -146,7 +144,7 @@ bot.on("message", function(message) {
         var embed = {
             "description": "__**ShadowBot comes to the rescue**__",
             "color": 0x00ffff, //cyan, always add 0x to it
-            "timestamp": embed.setTimestamp(date),
+            "timestamp": "2018-01-31T14:06:52.703Z",
             "thumbnail": {
               "url": "https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dtrQbTvGCnR2jvnceBQ2xdZTP81oZ_1680x8400"
             },

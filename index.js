@@ -30,10 +30,20 @@ bot.on("ready", () => { //sets bot activity
 //Damn Events---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on("message", async message => {
 
- 
     //const args = message.content.slice(prefix.length).trim().split(/ +/g);
     //const command = args.shift().toLowerCase();
+    //Reaction Replies
+    
+    const fuckup = ["fuck", "dammit", "damnit", "damn", "shit"];
+    if(fuckup.some(word => message.content.startsWith(word))) {
+        message.react("💩")
+    } 
 
+    const success = ["finally", "yeet", "woop", "i did it", "nice"];
+    if(success.some(word => message.content.startsWith(word))) {
+        message.react("👌")
+    }     
+    
     //SIMPLE MESSAGE REPLIES-----------------------------------------------------------
         const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck", "asshole", "you asshole", "kys", "kill yourself"]; //string of possible texts
         if( swearWords.some(word => message.content.startsWith(word)) ) {

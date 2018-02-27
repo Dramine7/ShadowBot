@@ -45,7 +45,7 @@ bot.on("message", async message => {
     }     
     
     //SIMPLE MESSAGE REPLIES-----------------------------------------------------------
-        const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck", "asshole", "you asshole", "kys", "kill yourself"]; //string of possible texts
+        const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck", "asshole", "you asshole", "kys", "kill yourself", "cunt"]; //string of possible texts
         if( swearWords.some(word => message.content.startsWith(word)) ) {
             message.reply("Your pathetic intellect cannot withstand the intelligence of any digital matter or even other organic matter <:hahaha:416290689463353345> "); //reply tags the person who wrote the message
             //message.channel.sendMessage('He wants to fight us? Pathetic') //sends message to channel rather than tag

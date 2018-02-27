@@ -137,7 +137,7 @@ bot.on("message", function(message) {
             
             const embed = new Discord.RichEmbed()
             .setDescription("__**ShadowBot comes to serve peasants - Possible Commands:**__")
-            .setThumbnail("http://i0.kym-cdn.com/entries/icons/original/000/004/815/lologuy.jpg")
+            .setThumbnail("http://i0.kym-cdn.com/photos/images/original/000/166/464/tumblr_lozdsb0bKx1qbnd1c.gif")
             .setColor(0x00ffff)
             .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
             .addField("`.roll`", `*Execute this to roll a dice.*`)

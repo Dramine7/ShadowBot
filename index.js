@@ -1,6 +1,8 @@
 //1 Edit 18.02.2018 - Dramine7
 //2 Edit 19.02.2018 - Dramine7
 //3 Edit 22.02.2018 - Dramine7
+//4 Edit 26.02.2018 - Dramine7
+//5 Edit 27.02.2018 - Dramine7
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const YTDL= require('ytdl-core'); //vewy simpol youtube download library fock yeah
@@ -33,7 +35,7 @@ bot.on("message", async message => {
     //const command = args.shift().toLowerCase();
 
     //SIMPLE MESSAGE REPLIES-----------------------------------------------------------
-        const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck"]; //string of possible texts
+        const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck", "asshole", "you asshole", "kys", "kill yourself"]; //string of possible texts
         if( swearWords.some(word => message.content.startsWith(word)) ) {
             message.reply("Your pathetic intellect cannot withstand the intelligence of any digital matter or even other organic matter <:hahaha:416290689463353345> "); //reply tags the person who wrote the message
             //message.channel.sendMessage('He wants to fight us? Pathetic') //sends message to channel rather than tag
@@ -134,7 +136,7 @@ bot.on("message", function(message) {
         case "help" :
             
             const embed = new Discord.RichEmbed()
-            .setDescription("__**Slavebot comes to serve peasants - Possible Commands:**__")
+            .setDescription("__**ShadowBot comes to serve peasants - Possible Commands:**__")
             .setThumbnail("http://i0.kym-cdn.com/entries/icons/original/000/004/815/lologuy.jpg")
             .setColor(0x00ffff)
             .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)

@@ -128,52 +128,46 @@ bot.on("message", function(message) {
         case "lucky" :
         message.reply(lucky[Math.floor(Math.random() * lucky.length)]);
         break;
+        //-----------------------------------------------------------
 
+        //Help to see all possible commands-----------------------------------------------------------
         case "help" :
-/*// Doesnt work for some fucking reason
-        function getRandomColor() { //gets random colour for embed
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-            colour += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-        var colour = color;
-*/
-        var embed = {
-            "description": "__**ShadowBot comes to the rescue**__",
-            "color": 0x00ffff, //cyan, always add 0x to it
-            "timestamp": "2018-01-31T14:06:52.703Z",
-            "thumbnail": {
-              "url": "https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dtrQbTvGCnR2jvnceBQ2xdZTP81oZ_1680x8400"
-            },
-            "fields": [
-              {
-                "name": "`.lucky`",
-                "value": "Write this and get a random lucky phrase thrown back at you."
-              },
-              {
-                "name": "`.creator`",
-                "value": "Do this to find out who the creator of the bot is."
-              },
-              {
-                "name": "`.play`",
-                "value": "This command added with a YouTube Link makes me join your Voice Channel and play the music of your likings."
-              },
-              {
-                "name": "`.skip`",
-                "value": "Skip onto the next song. STILL NOT WORKING"
-              },
-              {
-                "name": "`.stop`",
-                "value": "Stops the song queue and disconnects me from the voice channel."
-              }
-            ]
-          };
-          message.channel.send({ embed });
+            
+            const embed = new Discord.RichEmbed()
+            .setDescription("__**Slavebot comes to serve peasants - Possible Commands:**__")
+            .setThumbnail("http://i0.kym-cdn.com/entries/icons/original/000/004/815/lologuy.jpg")
+            .setColor(0x00ffff)
+            .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
+            .addField("`.roll`", `*Execute this to roll a dice.*`)
+            .addField("`.id`", `*Get your ID.*`)
+            .addField("`.id @ExampleTag`", `*Get someone else's ID.*`)
+            .addField("`.creator`",`*Who is my creator? Find out.*`)
+            .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings.*`)
+            .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
+            .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
+            .setTimestamp()
+             message.channel.send({embed});
 
         break;
+        
+        //GET ID-----------------------------------------------------------
+        case "id": //if user is mentioned: ID. if no user is mentioned: Author's ID
+        let user = message.mentions.users.first();
+        
+        if(user){
+        message.reply(`Default display of an ID is <@ExampleID>. The ID of <@${user.id}> is:`)
+            message.channel.sendMessage(`${user.id}`)
+        }else{
+
+        message.reply(`Default display of an ID is: <@ExampleID>. Your ID is:`)
+            message.channel.sendMessage(`${message.author.id}`)
+        }
+
+
+        break;
+        //-----------------------------------------------------------
+
+
 
 
         //Focking Music Bot_NOT FINISHED YET SKIP DOESNT WORK FFS----------------------------------------------------------

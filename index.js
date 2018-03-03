@@ -175,7 +175,7 @@ bot.on('message', message => {
 
             if (isNaN(args1[0]) || parseInt(args1[0]) < 2 || parseInt(args1[0]) > 50) { //if there is no number, the number is smaller than 2 or the number is bigger than 50 it gives the following message
           
-                message.channel.send('__**Would thy be honoured to please grant me an arabic numeral inbetween 2 and 50 to cleanse said amount of messages from thy sins**__ \n **Usage for Dummies:** ' + prefix + ' *cleanse <amount>*'); 
+                message.channel.send('__**Would thy be honoured to please grant me an arabic numeral inbetween 2 and 50 to cleanse said amount of messages from thy sins**__ \n \n **Usage for Dummies:** ' + prefix + '*cleanse <amount>*'); 
    
                 return;
             }
@@ -206,7 +206,7 @@ bot.on('message', message => {
           .setThumbnail("https://i.imgur.com/SbFkbKa.png")
           .setTitle("__**Shadowbot comes to serve peasants**__")
           .setColor(0x00ffff)
-          .addField("`----------------------------------------`","Commands")
+          .addField("`------------------------------------------------`","")
           .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Roles.*`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)

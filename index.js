@@ -208,13 +208,14 @@ bot.on('message', message => {
           .setColor(0x00ffff)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)
-          .addField("`.id",`"*Find out your ID*"`)
-          .addField("`.id <name>",`"*Tag someone to find out their ID*"`)
+          .addField("`.id`",`"*Find out your ID*"`)
+          .addField("`.id <name>`",`"*Tag someone to find out their ID*"`)
           .addField("`.roll`",`*Roll a dice :)*`)
           .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings.*`)
           .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
-          .addField("For now the words [lol, ] get replaced with images")
+          .addBlankField()
+          .addField("`Word Replacements`", "*For now the words [lol, ] get replaced with images*")
           .setTimestamp()
            message.channel.send({embed});
     }

@@ -175,7 +175,7 @@ bot.on('message', message => {
 
             if (isNaN(args1[0]) || parseInt(args1[0]) < 2 || parseInt(args1[0]) > 50) { //if there is no number, the number is smaller than 2 or the number is bigger than 50 it gives the following message
           
-                message.channel.send('__**Would thy be honoured to please grant me an arabic numeral inbetween 2 and 50 to cleanse said amount of messages from thy sins**__ \n Usage for Dummies: ' + prefix + ' *cleanse <amount>*'); 
+                message.channel.send('__**Would thy be honoured to please grant me an arabic numeral inbetween 2 and 50 to cleanse said amount of messages from thy sins**__ \n **Usage for Dummies:** ' + prefix + ' *cleanse <amount>*'); 
    
                 return;
             }
@@ -204,13 +204,14 @@ bot.on('message', message => {
           //let member = message.mentions.members.first();
           var embed = new Discord.RichEmbed()
           .setThumbnail("https://i.imgur.com/SbFkbKa.png")
-          .setDescription("__**Shadowbot comes to serve peasants**__")
+          .setTitle("__**Shadowbot comes to serve peasants**__")
           .setColor(0x00ffff)
-          .addBlankField()
+          .addField("----------------------------------------","")
+          .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Roles.*`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)
-          .addField("`.id`",`*Find out your ID*`)
-          .addField("`.id <name>`",`*Tag someone to find out their ID*`)
+          .addField("`.id`",`*Get your ID*`)
+          .addField("`.id <name>`",`*Tag someone to get their ID*`)
           .addField("`.roll`",`*Roll a dice :)*`)
           .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings.*`)
           .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)

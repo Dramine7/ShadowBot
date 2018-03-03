@@ -93,14 +93,83 @@ bot.on("message", async message => {
         }
     //-----------------------------------------------------------
     
-    //replaces message lol with linked image-----------------------------------------------------------
-    if(msg.startsWith("lol")){
-    message.channel.bulkDelete(1);
-    var embed = new Discord.RichEmbed()
-    .setImage("https://media.giphy.com/media/oIR6xeOffCEBa/giphy.gif")
-    message.reply("said:");
-    message.channel.sendMessage({embed});
-    }
+        //replaces message lol with linked image-----------------------------------------------------------
+        const embedPics = ["submap", "behemoth", "leviathan", "fenrir"]; //string of possible texts
+
+        const embedsmolPics = [ //array for shorter pic interchangeables
+        {
+            name: 'lel',
+            url: 'https://media.giphy.com/media/oIR6xeOffCEBa/giphy.gif'
+           },
+        {
+            name: 'butwhy',
+            url: 'http://www.reactiongifs.com/r/but-why.gif'
+        },
+        {
+            name: 'gay',
+            url: 'https://thumbs.gfycat.com/DecisiveCautiousEeve-size_restricted.gif'
+        },
+        {
+            name: 'rage',
+            url: 'https://thumbs.gfycat.com/AfraidGlitteringCrab-size_restricted.gif'
+        },
+        {
+            name: 'holy',
+            url: 'http://www.reactiongifs.com/r/lolof1.gif'
+        },
+        {
+            name: 'boner',
+            url: 'https://media.tenor.com/images/1928993d6734078eff35b62b423a03ea/tenor.gif'
+        },
+        {
+            name: 'why',
+            url: ' http://www.callcentermemes.com/wp-content/uploads/2013/04/whyyy1.png'
+        }
+        ]
+        
+        var embed = new Discord.RichEmbed();
+            for(var e = 0; e < embedsmolPics.length; e++) { //fixes size to array length and loops it for the array
+            if(msg.startsWith(embedsmolPics[e].name)) { //if a message starts with any of the listed names in array
+                message.channel.bulkDelete(1);
+                embed.setImage(embedsmolPics[e].url); //set the immage to the mentioned url under the mentioned name
+                message.reply("said:"); //always replies with
+                message.channel.sendMessage({embed});
+                return;
+            }
+        }
+        //have a different reply than said
+        if(msg.startsWith(embedPics[0])){
+            message.channel.bulkDelete(1);
+            var embed = new Discord.RichEmbed()
+            .setImage("https://i.redd.it/upw0gq0e7xc01.jpg")
+            message.reply("Subnautica's Map: ");
+            message.channel.sendMessage({embed});
+        }
+
+        if(msg.startsWith(embedPics[3])){
+            message.channel.bulkDelete(1);
+            var embed = new Discord.RichEmbed()
+            .setImage("https://f4.bcbits.com/img/a3364840726_10.jpg")
+            message.reply("Fenrir, a monstrous wolf in the Norse Mythology...");
+            message.channel.sendMessage({embed});
+        }
+
+        if(msg.startsWith(embedPics[1])){
+            message.channel.bulkDelete(1);
+            var embed = new Discord.RichEmbed()
+            .setImage("https://img00.deviantart.net/a011/i/2014/022/2/0/behemoth_by_der_reiko-d73ajev.jpg")
+            message.reply("The Behemoth, an enormously sized creature of mythical power...");
+            message.channel.sendMessage({embed});
+        }
+
+        if(msg.startsWith(embedPics[2])){
+            message.channel.bulkDelete(1);
+            var embed = new Discord.RichEmbed()
+            .setImage("http://www.reuun.com/data/out/76/403102015-leviathan-wallpapers.png")
+            message.reply("The Leviathan, a monstrous sea monster first mentioned in the Hebrew Bible...");
+            message.channel.sendMessage({embed});
+        }
+    
     //-----------------------------------------------------------
    
 });
@@ -218,7 +287,7 @@ bot.on('message', message => {
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
-          .addField("`Word Replacements`", "*For now the words [lol, ] get replaced with images*")
+          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, lol, rage, holy, boner, submap, behemoth, leviathan, fenrir] get replaced with images*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

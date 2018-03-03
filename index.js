@@ -206,6 +206,7 @@ bot.on('message', message => {
           .setThumbnail("https://i.imgur.com/SbFkbKa.png")
           .setDescription("__**Shadowbot comes to serve peasants**__")
           .setColor(0x00ffff)
+          .addBlankField()
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)
           .addField("`.id`",`"*Find out your ID*"`)
@@ -216,6 +217,7 @@ bot.on('message', message => {
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Word Replacements`", "*For now the words [lol, ] get replaced with images*")
+          .addBlankField()
           .setTimestamp()
            message.channel.send({embed});
     }

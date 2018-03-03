@@ -206,7 +206,7 @@ bot.on('message', message => {
           .setThumbnail("https://i.imgur.com/SbFkbKa.png")
           .setTitle("__**Shadowbot comes to serve peasants**__")
           .setColor(0x00ffff)
-          .addField("----------------------------------------","")
+          .addField("`----------------------------------------`","Commands")
           .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Roles.*`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)

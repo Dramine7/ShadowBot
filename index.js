@@ -168,7 +168,7 @@ bot.on('message', message => {
         
         message.delete();
            
-        if(!message.member.roles.some(r=>["Behemoth", "Admin"].includes(r.name)) ) {  //checks if users name includes the roles listed
+        if(!message.member.roles.some(r=>["Behemoth", "Admin", "Fenrir"].includes(r.name)) ) {  //checks if users name includes the roles listed
                 message.reply('You need the **Behemoth** or **Admin** Role to cleanse all our souls'); // you gotta have the role biatch.
                 return; 
             }

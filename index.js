@@ -3,6 +3,9 @@
 //3 Edit 22.02.2018 - Dramine7
 //4 Edit 26.02.2018 - Dramine7
 //5 Edit 27.02.2018 - Dramine7
+//6 Edit 01.03.2018 - Dramine7
+//7 Edit 02.03.2018 - Dramine7
+//8 Edit 03.03.2018 - Dramine7
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const YTDL= require('ytdl-core'); //vewy simpol youtube download library fock yeah
@@ -141,11 +144,11 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP']
+    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR']
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase()))  && message.content.startsWith(prefix)){
-    message.reply("XDXDXDXDXDDXD WRITE A CORRECT COMMAND NUB");
+    message.reply("Apparently you are too incompetent to write a correct command. Type .help to see all the commands.");
     return;
     }
 
@@ -200,10 +203,9 @@ bot.on('message', message => {
           //let user = message.mentions.users.first();
           //let member = message.mentions.members.first();
           var embed = new Discord.RichEmbed()
-          .setThumbnail("https://i.ytimg.com/vi/xvXXgkknO7c/maxresdefault.jpg")
+          .setThumbnail("https://i.imgur.com/SbFkbKa.png")
           .setDescription("__**Shadowbot comes to serve peasants**__")
           .setColor(0x00ffff)
-          .addField("The following words get replace with an image", `**lol, **`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)
           .addField("`.id",`"*Find out your ID*"`)
@@ -212,6 +214,7 @@ bot.on('message', message => {
           .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings.*`)
           .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
+          .addField("For now the words [lol, ] get replaced with images")
           .setTimestamp()
            message.channel.send({embed});
     }

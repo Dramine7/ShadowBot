@@ -124,7 +124,15 @@ bot.on("message", async message => {
         {
             name: 'why',
             url: ' http://www.callcentermemes.com/wp-content/uploads/2013/04/whyyy1.png'
-        }
+        },
+        {
+            name: 'party',
+            url: 'https://media1.tenor.com/images/5acee3a94c6b920b1153d766499dd95a/tenor.gif?itemid=4995231'
+        },
+        {
+            name: 'sadlife',
+            url: 'https://cdn.discordapp.com/emojis/396521772758990851.gif?v=1'
+        }     
         ]
         
         var embed = new Discord.RichEmbed();
@@ -273,7 +281,7 @@ bot.on('message', message => {
           //let member = message.mentions.members.first();
           var embed = new Discord.RichEmbed()
           .setThumbnail("https://i.imgur.com/SbFkbKa.png")
-          .setTitle("`Shadowbot comes to serve peasants`")
+          .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")
           .setColor(0x00ffff)
           .addBlankField()
           .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Roles.*`)
@@ -287,7 +295,7 @@ bot.on('message', message => {
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
-          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, lol, rage, holy, boner, submap, behemoth, leviathan, fenrir] get replaced with images*")
+          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boner, submap, behemoth, leviathan, fenrir] get replaced with images*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

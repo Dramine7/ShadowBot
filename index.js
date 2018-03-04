@@ -290,7 +290,7 @@ bot.on('message', message => {
           .addField("`.id`",`*Get your ID*`)
           .addField("`.id <name>`",`*Tag someone to get their ID*`)
           .addField("`.roll`",`*Roll a dice :)*`)
-          .addField("`.roll <number>`, `*Outputs a random numbere between 1 and the Input. Parameters: 2-50*`
+          .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-50*`)
           .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings.*`)
           .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
@@ -362,6 +362,7 @@ bot.on('message', message => {
             }
         }
         roll(); //allows the roll to be ready
+    }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
 

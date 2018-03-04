@@ -100,7 +100,7 @@ bot.on("message", async message => {
 
         const embedsmolPics = [ //array for shorter pic interchangeables
         {
-            name: 'lel',
+            name: 'lol',
             url: 'https://media.giphy.com/media/oIR6xeOffCEBa/giphy.gif'
            },
         {
@@ -142,9 +142,15 @@ bot.on("message", async message => {
         {
             name: 'sneeze',
             url: 'https://media.giphy.com/media/FCI3p2reflQRi/giphy.gif'
+        },
+        {
+            name: 'moan',
+            url: 'https://cdn.discordapp.com/attachments/419211190624059393/419948726207905803/EnviousCarefreeDutchshepherddog-size_restricted.gif'
+        },
+        {
+            name: 'gross',
+            url: 'https://cdn.discordapp.com/attachments/419211190624059393/419948874132619275/tumblr_naohxcOnXo1r7eta3o1_500.gif'
         }
-            
-            
         ]
         
         var embed = new Discord.RichEmbed();

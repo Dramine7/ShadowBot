@@ -132,7 +132,11 @@ bot.on("message", async message => {
         {
             name: 'party',
             url: 'https://cdn.discordapp.com/emojis/396521772758990851.gif?v=1'
-        }     
+        },
+        {
+            name: 'boi',
+            url: 'https://cdn.discordapp.com/attachments/389504039559233540/416239433931816960/51fbf50c85ab3f-a-nw-p.gif'
+        }       
         ]
         
         var embed = new Discord.RichEmbed();
@@ -295,7 +299,7 @@ bot.on('message', message => {
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
-          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boner, submap, behemoth, leviathan, fenrir] get replaced with images*")
+          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, submap, behemoth, leviathan, fenrir] get replaced with images*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

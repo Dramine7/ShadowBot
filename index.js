@@ -126,11 +126,11 @@ bot.on("message", async message => {
             url: ' http://www.callcentermemes.com/wp-content/uploads/2013/04/whyyy1.png'
         },
         {
-            name: 'party',
+            name: 'sadlife',
             url: 'https://media1.tenor.com/images/5acee3a94c6b920b1153d766499dd95a/tenor.gif?itemid=4995231'
         },
         {
-            name: 'sadlife',
+            name: 'party',
             url: 'https://cdn.discordapp.com/emojis/396521772758990851.gif?v=1'
         }     
         ]

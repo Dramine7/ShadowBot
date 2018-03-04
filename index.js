@@ -261,11 +261,7 @@ bot.on('message', message => {
                 return;
             }
 
-            
-            const fetched = await message.channel.fetchMessages({limit: args1[0]});  //awaits input from user
-            console.log(fetched.size + ' messages found, deleting...'); //log output, optional
-
-            message.channel.bulkDelete(fetched)
+            message.channel.bulkDelete(args1[0])
                 .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
 
             bot.channels.get('419204128527482880').send('**Successfully cleansed ' + args1 + ' messages**') //uses input from user to give out how many message have been cleansed
@@ -353,7 +349,7 @@ bot.on('message', message => {
 
             if (parseInt(args1[0]) < 2 || parseInt(args1[0]) > 50){ //if number is below 2 and over 50 do dis, PARSING ANALYIZES OBJECT, THIS MEANS SOME OBJECTS NEED TO BE PARSED IN ORDER TO BE COMPILED = CONVERTED/UNDERSTOOD
                 //a string of args get parsed and returned as a integer = needed here
-                message.reply("Please give a number between 2 and 50")
+                message.reply("Your number is not included in the parameters. Please input a number between 2 to 50")
                 return;
             }
 

@@ -6,9 +6,11 @@
 //6 Edit 01.03.2018 - Dramine7
 //7 Edit 02.03.2018 - Dramine7
 //8 Edit 03.03.2018 - Dramine7
+//9 Edit 04.03.2018 - Dramine7
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const YTDL= require('ytdl-core'); //vewy simpol youtube download library fock yeah
+const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
 var embed = new Discord.RichEmbed(); //for embeds
 
@@ -225,7 +227,7 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR']
+    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER']
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase()))  && message.content.startsWith(prefix)){
@@ -287,6 +289,7 @@ bot.on('message', message => {
           .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Roles.*`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)
+          .addField("`.weather <location>`",`*Get the weather of a specific location.*`)
           .addField("`.id`",`*Get your ID*`)
           .addField("`.id <name>`",`*Tag someone to get their ID*`)
           .addField("`.roll`",`*Roll a dice :)*`)
@@ -365,6 +368,48 @@ bot.on('message', message => {
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
+    //WEATHER-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    if (msg.startsWith(prefix + 'WEATHER')) { 
+
+        weather.find({search: args1.join(" "), degreeType: 'C'}, function(err, result) {
+            if (err) message.channel.send(err);
+
+            if(!args1[0] || result.length === 0){ //makes sure that if there is no input or the input is non existant give this output
+        
+                message.reply('**I think this location might not be on planet Earth. Probably in your Fantasy? Please give an existing location!**') 
+                return; 
+            }
+
+            var current = result[0].current;  //define variable for current
+            var location = result[0].location; //etc...
+
+            const embed = new Discord.RichEmbed()
+                .setTitle(`🤖 **Weather for ${current.observationpoint}**`) //sets title so it refers to called location
+                .setFooter(`Weather, Requested by ${message.author.username}`, `${message.author.avatarURL}`) //author username + avatar
+                .setColor(0x00ffff) 
+
+                //From here on should be self-explanatory
+                .addField('\u200b','**Location Info**') 
+                .addField('🗓 Date', `${current.date}, ${current.shortday}`, true) 
+                .addField('🕐 Timezone',`UTC ${location.timezone}`, true)
+                .addField('🌍 Latitude/Longitude',`Lat ${location.lat}° / Long ${location.long}°`, true)
+
+
+                .addField('\u200b','**Weather Conditions**') //\u always calls upon a special character, 200b is a blank one, making a space not as big as blankfield
+                .addField('Sky Condition', `${current.skytext}`, true)
+                .addField('🌡 Temperature',`${current.temperature} °C`, true)
+                .addField('💩 Feels Like', `${current.feelslike} °C`, true)
+                .addField('🌊 Humidity', `${current.humidity} %`, true)
+                .addField('🌬 Winds',`${current.winddisplay}`, true)
+                .addField('🚤 Windspeed', `${current.windspeed}`, true)
+            
+                .addBlankField()
+
+                message.channel.send({embed});
+        });
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

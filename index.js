@@ -294,6 +294,7 @@ bot.on('message', message => {
           .addField("`.id`",`*Get your ID*`)
           .addField("`.id <name>`",`*Tag someone to get their ID*`)
           .addField("`.roll`",`*Roll a dice :)*`)
+          .addField("`.roll <number>`, `*Outputs a random numbere between 1 and the Input. Parameters: 2-50*`
           .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings.*`)
           .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
@@ -339,9 +340,32 @@ bot.on('message', message => {
     //ROLLS A DAMN DICE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     if (msg.startsWith(prefix + 'ROLL')){
         //if command roll is called in, it creates a number between 1 and 6 as if throwing a dice
-        const random = Math.floor(Math.random()*6) + 1 ;
-        exports.run = message.channel.send(`Your dice fell of the table, but your random number is: ${random}`);    
-    }
+        async function roll() { //await only works in async
+        
+            message.delete();
+               
+            if (isNaN(args1[0])) { //if there is no number make a normal dice roll
+                let random = Math.floor(Math.random()*6) + 1 ;
+                message.channel.send(`Your dice fell of the table, but your random number is: ${random}`);
+                return;
+            
+            }
+
+            if (parseInt(args1[0]) < 2 || parseInt(args1[0]) > 50){ //if number is below 2 and over 50 do dis, PARSING ANALYIZES OBJECT, THIS MEANS SOME OBJECTS NEED TO BE PARSED IN ORDER TO BE COMPILED = CONVERTED/UNDERSTOOD
+                //a string of args get parsed and returned as a integer = needed here
+                message.reply("Please give a number between 2 and 50")
+                return;
+            }
+
+            if (!isNaN(args1[0])){ //if there is a number take that number and give random number between 1 and said number 
+            
+            let random = Math.floor(Math.random()*args1) + 1 ;
+            message.channel.send(`Your random number between 1 and ` + args1 + ` is: ${random}`);
+            return;
+
+            }
+        }
+        roll(); //allows the roll to be ready
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
 

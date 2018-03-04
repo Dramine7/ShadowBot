@@ -138,7 +138,13 @@ bot.on("message", async message => {
         {
             name: 'boi',
             url: 'https://cdn.discordapp.com/attachments/389504039559233540/416239433931816960/51fbf50c85ab3f-a-nw-p.gif'
-        }       
+        },
+        {
+            name: 'sneeze',
+            url: 'https://media.giphy.com/media/FCI3p2reflQRi/giphy.gif'
+        }
+            
+            
         ]
         
         var embed = new Discord.RichEmbed();

@@ -233,7 +233,7 @@ bot.on('message', message => {
 
     if (msg.startsWith(prefix + 'CLEANSE')) { 
 
-        async function purge() { //await only works in async
+        async function cleanse() { //await only works in async
         
         message.delete();
            
@@ -258,7 +258,7 @@ bot.on('message', message => {
 
             bot.channels.get('419204128527482880').send('**Successfully cleansed ' + args1 + ' messages**') //uses input from user to give out how many message have been cleansed
         }
-        purge(); //allows the purge command to be always ready
+        cleanse(); //allows the cleanse command to be always ready
 
         
 

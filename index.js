@@ -408,7 +408,7 @@ bot.on('message', message => {
 
 
                 .addField('\u200b','**Weather Conditions**') //\u always calls upon a special character, 200b is a blank one, making a space not as big as blankfield
-                .addField('Sky Condition', `${current.skytext}`, true)
+                .addField('☀ Sky Condition', `${current.skytext}`, true)
                 .addField('🌡 Temperature',`${current.temperature} °C`, true)
                 .addField('💩 Feels Like', `${current.feelslike} °C`, true)
                 .addField('🌊 Humidity', `${current.humidity} %`, true)

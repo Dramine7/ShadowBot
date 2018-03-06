@@ -311,7 +311,7 @@ bot.on('message', message => {
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
-          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, submap, behemoth, leviathan, fenrir] get replaced with images*")
+          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, moan, gross submap, behemoth, leviathan, fenrir] get replaced with images*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

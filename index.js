@@ -84,6 +84,13 @@ bot.on("message", async message => {
             message.channel.sendMessage("The popular Moustache Man, also known as the splendid <@!271352165958680576> :)") //@<ID> mentions the user (tags). 
         }
     //-----------------------------------------------------------
+    
+    
+    //Fap-----------------------------------------------------------
+        if(msg.startsWith("colin")){
+            message.channel.sendMessage("Fapmaster 7, also known as professional jerker aka <@!222093918043373578> ") //@<ID> mentions the user (tags). 
+        }
+    //-----------------------------------------------------------
 
     //Code God-----------------------------------------------------------
         if(msg.startsWith("god")){

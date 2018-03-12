@@ -88,7 +88,7 @@ bot.on("message", async message => {
     
     //Fap-----------------------------------------------------------
         if(msg.startsWith("colin")){
-            message.channel.sendMessage("Fapmaster 7, also known as professional jerker aka <@!222093918043373578> ") //@<ID> mentions the user (tags). 
+            message.channel.sendMessage("Fapmaster 7, also known as professional jerker aka <@!222093918043373578> 😏") //@<ID> mentions the user (tags). 
         }
     //-----------------------------------------------------------
 

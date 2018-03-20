@@ -140,7 +140,7 @@ bot.on("message", async message => {
         },
         {
             name: 'sadlife',
-            url: 'https://media1.tenor.com/images/5acee3a94c6b920b1153d766499dd95a/tenor.gif?itemid=4995231'
+            url: 'https://thumbs.gfycat.com/HappyAmazingDonkey-size_restricted.gif'
         },
         {
             name: 'party',

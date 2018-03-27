@@ -274,7 +274,7 @@ bot.on('message', message => {
         
         async function cleanse() { //await only works in async
            
-        if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Leviathan"].includes(r.name)) ) {  //checks if users name includes the roles listed
+        if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Singularity (Allies)", "Leviathan"].includes(r.name)) ) {  //checks if users name includes the roles listed
                 message.reply('You need the **Behemoth** or **Admin** Role to cleanse all our souls'); // you gotta have the role biatch.
                 return; 
             }

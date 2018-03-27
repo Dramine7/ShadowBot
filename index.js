@@ -7,6 +7,10 @@
 //7 Edit 02.03.2018 - Dramine7
 //8 Edit 03.03.2018 - Dramine7
 //9 Edit 04.03.2018 - Dramine7
+//I missed some edits, fml...
+//12 (I think?) Edit 27.03.2018 - Dramine7
+
+//SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const YTDL= require('ytdl-core'); //vewy simpol youtube download library fock yeah
@@ -32,7 +36,7 @@ bot.on("ready", () => { //sets bot activity
 });
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to '422882168029577226' first to see all Rules and Features the feel free to proceed to '414816627021053954' to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
+    member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to <#422882168029577226> first to see all Rules and Features the feel free to proceed to <#414816627021053954> to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
   });
 
 //wut-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,7 +110,7 @@ bot.on("message", async message => {
         }
     //-----------------------------------------------------------
     
-        //replaces message lol with linked image-----------------------------------------------------------
+    //replaces message lol with linked image... or other terms that is-----------------------------------------------------------
         const embedPics = ["submap", "behemoth", "leviathan", "fenrir"]; //string of possible texts
 
         const embedsmolPics = [ //array for shorter pic interchangeables
@@ -250,7 +254,7 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER']
+    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase()))  && message.content.startsWith(prefix)){
@@ -296,8 +300,13 @@ bot.on('message', message => {
         
 
     }
+    //yeah well... pretty much self explanatory-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      if (msg.startsWith(prefix + 'SOURCECODE')){
+        message.reply('**Go to this link to see my brain... You are gross and perverted now :)**' + '\n https://github.com/Dramine7/ShadowBot/edit/master/index.js');
+     });
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Help Embed for commands
     if (msg.startsWith(prefix + 'HELP')){

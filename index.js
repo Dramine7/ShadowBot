@@ -32,7 +32,7 @@ bot.on("ready", () => { //sets bot activity
 });
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to #proclamation first to see all Rules and Features the feel free to proceed to #general to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
+    member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to '422882168029577226' first to see all Rules and Features the feel free to proceed to '414816627021053954' to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
   });
 
 //wut-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

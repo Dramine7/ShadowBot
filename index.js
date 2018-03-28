@@ -36,7 +36,7 @@ bot.on("ready", () => { //sets bot activity
 });
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to <#422882168029577226> first to see all Rules and Features the feel free to proceed to <#414816627021053954> to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
+    member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to <#422882168029577226> first to see all Rules and Features then feel free to proceed to <#414816627021053954> to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
   });
 
 //wut-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -279,7 +279,7 @@ bot.on('message', message => {
         async function cleanse() { //await only works in async
            
         if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Singularity (Allies)", "Leviathan"].includes(r.name)) ) {  //checks if users name includes the roles listed
-                message.reply('You need the **Behemoth** or **Admin** Role to cleanse all our souls'); // you gotta have the role biatch.
+                message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role to cleanse all our souls' past"); // you gotta have the role biatch.
                 return; 
             }
 
@@ -364,7 +364,7 @@ bot.on('message', message => {
     
     //LUCKY PHRASE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     if (msg.startsWith(prefix + 'LUCKY')){
-        const lucky = ["You are beautiful", "Everyone loves you", "Have a nice day", "You are indubidably intelligent", "What a splendid personality you have", "Have a bad... I mean good day", "Fuggu", "Not every phrase is positive dumbass", "You thought you were being lucky? Wrong", "Luck is non-existent, it's about skill"]; //for lucky phrase if statement
+        const lucky = ["You are beautiful", "Everyone loves you", "Have a nice day", "You are indubitably intelligent", "What a splendid personality you have", "Have a bad... I mean good day", "Fuggu", "Not every phrase is positive dumbass", "You thought you were being lucky? Wrong", "Luck is non-existent, it's about skill"]; //for lucky phrase if statement
         message.reply(lucky[Math.floor(Math.random() * lucky.length)]);
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -448,7 +448,12 @@ bot.on('message', message => {
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //MUSICBOT-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    if (msg.startsWith(prefix + 'PLAY')){
+    if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
+         message.reply("You need the **Behemoth** to access these commands."); // you gotta have the role biatch.
+                return; 
+ 
+    }else{
+        if (msg.startsWith(prefix + 'PLAY')){
         message.delete();
 
         bot.channels.get('419211190624059393').send("As you please fucker, here is the song you requested: " + args[1]) //sends message to channel rather than tag
@@ -497,7 +502,8 @@ bot.on('message', message => {
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+ }
+    
 });
 
 

@@ -9,6 +9,7 @@
 //9 Edit 04.03.2018 - Dramine7
 //I missed some edits, fml...
 //12 (I think?) Edit 27.03.2018 - Dramine7
+//13 Edit 28.03.2017 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -165,7 +166,12 @@ bot.on("message", async message => {
         {
             name: 'gross',
             url: 'https://cdn.discordapp.com/attachments/419211190624059393/419948874132619275/tumblr_naohxcOnXo1r7eta3o1_500.gif'
+        },
+        {
+            name: 'overload',
+            url: '  https://media.giphy.com/media/IQ47VvDzlzx9S/giphy.gif'
         }
+          
         ]
         
         var embed = new Discord.RichEmbed();
@@ -332,7 +338,7 @@ bot.on('message', message => {
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
-          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, moan, gross submap, behemoth, leviathan, fenrir] get replaced with images*")
+          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, moan, gross, overload, submap, behemoth, leviathan, fenrir] get replaced with images*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

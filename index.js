@@ -447,14 +447,14 @@ bot.on('message', message => {
 
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //MUSICBOT-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
+    //MUSICBOT------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     if (msg.startsWith(prefix + 'PLAY')){
+        if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
          message.reply("You need the **Behemoth** to access these commands."); // you gotta have the role biatch.
                 return; 
- 
-    }else{
-        if (msg.startsWith(prefix + 'PLAY')){
-        message.delete();
+        }
+         
+         message.delete();
 
         bot.channels.get('419211190624059393').send("As you please fucker, here is the song you requested: " + args[1]) //sends message to channel rather than tag
 
@@ -481,8 +481,12 @@ bot.on('message', message => {
         });
 
     }
-    /*STILL BROKE AF AND DOESN'T WORK FOR SOME REASON
         if (msg.startsWith(prefix + 'SKIP')){
+            if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
+            message.reply("You need the **Behemoth** to access these commands."); // you gotta have the role biatch.
+            return;
+            }
+            
             var server = servers[message.guild.id];
 
             
@@ -491,9 +495,12 @@ bot.on('message', message => {
                 server.queue.push(args[1]); //adds song to queue
             }
         }
-    */
     if (msg.startsWith(prefix + 'STOP')){
-
+    if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
+         message.reply("You need the **Behemoth** to access these commands."); // you gotta have the role biatch.
+                return; 
+ 
+    }
         message.delete();
         var server = servers[message.guild.id];
         
@@ -502,7 +509,6 @@ bot.on('message', message => {
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- }
     
 });
 

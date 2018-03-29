@@ -340,7 +340,7 @@ bot.on('message', message => {
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
-          .addField("`Word Replacements`", "*For now the following words can by replaced with Pictures/Gifs:  \n `lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, moan, gross, overload, submap, behemoth, leviathan, fenrir` \n Place requested word inbetween 2 slashes: /testword/*")
+          .addField("`Word Replacements`", "*For now the following words can by replaced with Pictures/Gifs:  \n ```lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, moan, gross, overload, submap, behemoth, leviathan, fenrir``` \n Place requested word inbetween 2 slashes: /testword/*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

@@ -173,10 +173,10 @@ bot.on("message", async message => {
         }
           
         ]
-        
-        var embed = new Discord.RichEmbed();
+          var embed = new Discord.RichEmbed();
             for(var e = 0; e < embedsmolPics.length; e++) { //fixes size to array length and loops it for the array
-            if(msg.startsWith(embedsmolPics[e].name)) { //if a message starts with any of the listed names in array
+            if(msg.startsWith("/" + embedsmolPics[e].name + "/") && msg.length == embedsmolPics[e].name.length + 2) { //if a message starts with any of the listed names in array
+                //addition to top line, only works with // to not make it annoying, also if text is longer than this it will not work -> if text wants to be written 
                 message.channel.bulkDelete(1);
                 embed.setImage(embedsmolPics[e].url); //set the immage to the mentioned url under the mentioned name
                 message.reply("said:"); //always replies with
@@ -185,7 +185,7 @@ bot.on("message", async message => {
             }
         }
         //have a different reply than said
-        if(msg.startsWith(embedPics[0])){
+        if(msg.startsWith("/" + embedPics[0] + "/") && msg.length == embedPics[0].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://i.redd.it/upw0gq0e7xc01.jpg")
@@ -193,7 +193,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith(embedPics[3])){
+        if(msg.startsWith("/" + embedPics[3] + "/") && msg.length == embedPics[3].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://f4.bcbits.com/img/a3364840726_10.jpg")
@@ -201,7 +201,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith(embedPics[1])){
+        if(msg.startsWith("/" + embedPics[1] + "/") && msg.length == embedPics[1].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://img00.deviantart.net/a011/i/2014/022/2/0/behemoth_by_der_reiko-d73ajev.jpg")
@@ -209,13 +209,14 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith(embedPics[2])){
+        if(msg.startsWith("/" + embedPics[2] + "/") && msg.length == embedPics[2].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("http://www.reuun.com/data/out/76/403102015-leviathan-wallpapers.png")
             message.reply("The Leviathan, a monstrous sea monster first mentioned in the Hebrew Bible...");
             message.channel.sendMessage({embed});
         }
+    
     
     //-----------------------------------------------------------
    
@@ -324,21 +325,21 @@ bot.on('message', message => {
           .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")
           .setColor(0x00ffff)
           .addBlankField()
-          .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Roles.*`)
+          .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Specified Roles. (without the <>)*`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)
-          .addField("`.weather <location>`",`*Get the weather of a specific location.*`)
+          .addField("`.weather <location>`",`*Get the weather of a specific location. (without the <>)*`)
           .addField("`.id`",`*Get your ID*`)
-          .addField("`.id <name>`",`*Tag someone to get their ID*`)
+          .addField("`.id <name>`",`*Tag someone to get their ID (without the <>)*`)
           .addField("`.roll`",`*Roll a dice :)*`)
-          .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000*`)
+          .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
           .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings.*`)
           .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel.*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
-          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, moan, gross, overload, submap, behemoth, leviathan, fenrir] get replaced with images*")
+          .addField("`Word Replacements`", "*For now the words [lol, butwhy, why, gay, sadlife, party, rage, holy, boi, boner, moan, gross, overload, submap, behemoth, leviathan, fenrir] get replaced with images if written inbetween two slashes like so: /testword/*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

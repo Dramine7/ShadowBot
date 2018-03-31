@@ -299,8 +299,8 @@ bot.on('message', message => {
         
         async function cleanse() { //await only works in async
            
-        if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Singularity (Allies)", "Leviathan"].includes(r.name)) ) {  //checks if users name includes the roles listed
-                message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role to cleanse all our souls' past"); // you gotta have the role biatch.
+        if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Singularity (Allies)", "Leviathan", "Them very gay"].includes(r.name)) ) {  //checks if users name includes the roles listed
+                message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role for the **Oblivious Realm Server** or the **Them very gay** Role for the **Rainbow Six | Siege Server**  to cleanse all our souls' past"); // you gotta have the role biatch.
                 return; 
             }
 

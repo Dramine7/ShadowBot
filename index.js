@@ -17,12 +17,11 @@
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
-const YTDL= require('ytdl-core'); //vewy simpol youtube download library fock yeah
 const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
 var embed = new Discord.RichEmbed(); //for embeds
 
-const prefix = '.';
+const prefix = '_';
 
 var servers = {}; //each server own queue
 
@@ -234,24 +233,6 @@ bot.on("message", async message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Play Function for the Focking Music Bot--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-function play(connection, message) {
-    var server = servers[message.guild.id];
-
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly" })); //takes queue 0 takes first link found because idgaf
-    //audioonly filter to save bandwith
-
-    server.queue.shift(); //removes link from queue, obviously once has stopped playing because hierarchy
-
-    server.dispatcher.on ("end", function() { //function to execute when song finished
-        if(server.queue[0]) play(connection, messsage); //if other song in queue play it
-        else connection.disconnect(); //if not disconnect from voice channel
-    });
-}
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 bot.on('message', message => {
     
@@ -264,7 +245,7 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['CLEANSE', 'ID', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase()))  && message.content.startsWith(prefix)){
@@ -346,9 +327,6 @@ bot.on('message', message => {
           .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
           .addField("`.action`",`*Action command to fulfill actions. Currently available actions: *  \u200b ````slap - hug - kiss`` \u200b *How to execute an action: .action exampleaction @exampleuser`)
-          .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings. WORK IN PROGRESS*`)
-          .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
-          .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel. WORK IN PROGRESS*`)
           .addBlankField()
           .addField("`Commands in Progress`", "*The commands [.play] [.skip] [.stop] do not work yet, due to hosting the Bot externally*")
           .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*  \u200b ```lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - gross - overload - submap - behemoth - leviathan - fenrir``` \u200b *Place requested word inbetween 2 slashes: /testword/*")
@@ -542,71 +520,7 @@ bot.on('message', message => {
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //MUSICBOT------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     if (msg.startsWith(prefix + 'PLAY')){
-        if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
-         message.reply("You need the **Behemoth** to access these commands."); // you gotta have the role biatch.
-                return; 
-        }
-         
-         message.delete();
-
-        bot.channels.get('419211190624059393').send("As you please fucker, here is the song you requested: " + args[1]) //sends message to channel rather than tag
-
-        if(!args[1]) { //! for not args 1
-            message.channel.sendMessage("Please provide a link dammit, I can't do everything on my own");
-            return;
-        }
-
-        if (!message.member.voiceChannel) { //if message sent from someone not in voicechannel return this message
-            message.channel.sendMessage("You must be in a voice channel to play music, how else do you want to listen to music you pleb");
-            return;
-        }
-        if(!servers[message.guild.id]) servers[message.guild.id] = {
-            queue: []
-        };
-
-        var server = servers[message.guild.id];
-
-        server.queue.push(args[1]); //adds song to queue
-
-        if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-            //if not already connected to voice channel, connect to voicechannel
-            play(connection, message);
-        });
-
-    }
-        if (msg.startsWith(prefix + 'SKIP')){
-            if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
-            message.reply("You need the **Behemoth** to access these commands."); // you gotta have the role biatch.
-            return;
-            }
-            
-            var server = servers[message.guild.id];
-
-            
-            if(server.dispatcher) {
-                server.dispatcher.end() //if song in queue, end that song, will work together with server.dispatcher end function
-                server.queue.push(args[1]); //adds song to queue
-            }
-        }
-    if (msg.startsWith(prefix + 'STOP')){
-    if(!message.member.roles.some(r=>["Behemoth"].includes(r.name)) ) {
-         message.reply("You need the **Behemoth** to access these commands."); // you gotta have the role biatch.
-                return; 
- 
-    }
-        message.delete();
-        var server = servers[message.guild.id];
-        
-        if(message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-        bot.channels.get('419211190624059393').send("I'm outta here fuckers")
-    }
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
 });
+
 bot.login(process.env.BOT_TOKEN);
 //acts as a reference on which bot to use, also acts as a LOGIN, if anyone gets this they can login as bot: DONT SHARE 

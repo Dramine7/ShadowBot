@@ -129,7 +129,7 @@ bot.on("message", async message => {
     //-----------------------------------------------------------
     
     //replaces message lol with linked image... or other terms that is-----------------------------------------------------------
-        const embedPics = ["submap", "behemoth", "leviathan", "fenrir", ]; //string of possible texts
+        const embedPics = ["submap", "behemoth", "leviathan", "fenrir", "praise"]; //string of possible texts
 
         const embedsmolPics = [ //array for shorter pic interchangeables
         {

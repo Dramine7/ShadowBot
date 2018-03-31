@@ -456,7 +456,7 @@ bot.on('message', message => {
             if (s == 0) {message.reply(`***So, because you damn MOFO didn't mention anyone, I am the one slapping you now for that: <@${bot.user.id}> slapped <@${message.author.id}> !***`); embed.setImage(action[0].url2); message.channel.sendMessage({embed});}
             else if (s == 1) {message.channel.send(`***What? Who do you want to hug? Pls decide!***`); }
             else if (s == 2) {message.channel.send(`***Huh? Who do you want to kiss? Everyone or what?***`); }
-            else if (s == 2) {message.channel.send(`***Okay now please... Whomst does thy toucheth want to patteth?***`); }
+            else if (s == 3) {message.channel.send(`***Okay now please... Whomst does thy toucheth want to patteth?***`); }
             else { return;  }   
           } 
      

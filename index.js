@@ -349,7 +349,7 @@ bot.on('message', message => {
           .addField("`.roll`",`*Roll a dice :)*`)
           .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
-          .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss```\u200b*How to execute an action: .action exampleaction @exampleuser*")
+          .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat```\u200b*How to execute an action: .action exampleaction @exampleuser*")
           .addBlankField()
           .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - gross - overload - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
           .addBlankField()
@@ -403,6 +403,11 @@ bot.on('message', message => {
                 {
                     name: "kiss",
                     url1: 'https://m.popkey.co/f53862/aWAjx.gif'
+                },
+                {
+                    name: "pat",
+                    url1: 'http://gifimage.net/wp-content/uploads/2017/07/head-pat-gif-1.gif',
+                    url2: 'https://media0.giphy.com/media/mn1cym1jiJOUg/giphy.gif'
                 }
             ]
         
@@ -425,8 +430,9 @@ bot.on('message', message => {
                     message.channel.bulkDelete(1);
                       if (s == 0) { message.channel.send("***Why would you wantingly slap yourself? Don't do that... Pls...***");   }
                       else if (s == 1) { message.channel.send(`***You can't just hug yourself. You are not that lonely :) I will hug you instead: <@${bot.user.id}> hugged <@${message.author.id}>***`); embed.setImage(action[1].url2); message.channel.sendMessage({embed});  }
-                      else if (s == 2) { message.channel.send(`***How would you even kiss yourself? Are you arrogant enough to want to kiss yourself?`) }
-                      else { return;  } 
+                      else if (s == 2) { message.channel.send(`***How would you even kiss yourself? Are you arrogant enough to want to kiss yourself?***`); }
+                      else if (s == 3) { message.channel.send(`***Yes... This is definitely how this works...***`); embed.setImage(action[3].url2); message.channel.sendMessage({embed}); }
+                else { return;  } 
                 } 
              
                  else {
@@ -436,6 +442,7 @@ bot.on('message', message => {
                       if (s == 0) {message.channel.send(`***<@${message.author.id}> just slapped <@${iduser.id}>. Harder than imagined!***`); }
                       else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); }
                       else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); }
+                      else if (s == 3) {message.channel.send(`***<@${message.author.id}> just patted <@${iduser.id}>. So Soft :O ***`); }
                       else { return;  }
                     message.channel.sendMessage({embed});
                    
@@ -448,7 +455,8 @@ bot.on('message', message => {
             message.channel.bulkDelete(1); 
             if (s == 0) {message.reply(`***So, because you damn MOFO didn't mention anyone, I am the one slapping you now for that: <@${bot.user.id}> slapped <@${message.author.id}> !***`); embed.setImage(action[0].url2); message.channel.sendMessage({embed});}
             else if (s == 1) {message.channel.send(`***What? Who do you want to hug? Pls decide!***`); }
-            else if (s == 2) {message.channel.send(`***What? Who do you want to kiss? Everyone or what?***`); }
+            else if (s == 2) {message.channel.send(`***Huh? Who do you want to kiss? Everyone or what?***`); }
+            else if (s == 2) {message.channel.send(`***Okay now please... Whomst does thy toucheth want to patteth?***`); }
             else { return;  }   
           } 
      

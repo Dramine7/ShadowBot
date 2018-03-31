@@ -1,7 +1,6 @@
 {
   "name": "shadowbot",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +10,9 @@
   "dependencies": {
     "discord.js": "^11.3.0",
     "discord.js-commando": "^0.9.0",
+    "nodemon": "^1.15.1",
     "weather-js": "^2.0.0"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }

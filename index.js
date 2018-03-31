@@ -201,6 +201,10 @@ bot.on("message", async message => {
         {
             name: 'overload',
             url: '  https://media.giphy.com/media/IQ47VvDzlzx9S/giphy.gif'
+        },
+        {
+            name: 'nohomo', 
+            url: 'https://i1.wp.com/dearstraightpeople.com/wp-content/uploads/2015/08/no-homo.gif?fit=500%2C500&ssl=1'
         }
           
         ]
@@ -351,7 +355,7 @@ bot.on('message', message => {
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
           .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat```\u200b*How to execute an action: .action exampleaction @exampleuser*")
           .addBlankField()
-          .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - gross - overload - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
+          .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - gross - overload - nohomo - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

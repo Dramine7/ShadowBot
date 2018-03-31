@@ -60,9 +60,26 @@ bot.on("message", async message => {
         message.react("💩")
     } 
 
-    const success = ["finally", "yeet", "woop", "i did it", "nice"];
+    const success = ["finally", "woop", "i did it", "nice"];
     if(success.some(word => msg.startsWith(word))) {
         message.react("👌")
+    }     
+    
+     //overkill
+    if(msg.startsWith("yeet")) {
+    message.react("👌")
+    message.react("🤣" )
+    message.react("💩")
+    message.react("😂")
+    message.react("👍")
+    message.react("🖕")
+    message.react("🤘")
+    message.react("417458881443397642")
+    message.react("427128626874417152")
+    message.react("415255874458877954")
+    message.react("422755303205896193")
+    message.react("422174690673426442")
+    message.react("427275785435480066")
     }     
     
     //SIMPLE MESSAGE REPLIES-----------------------------------------------------------

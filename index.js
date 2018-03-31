@@ -35,7 +35,7 @@ bot.on("ready", function(){ //if the mofo bot is ready it tells me like my littl
 });
 
 bot.on("ready", () => { //sets bot activity
-    var status = ["with Cortana", "with Life", "Software", "with Humans"]
+    var status = ["with Cortana", "with Life", "Software", "with Humans", "in the Shadows"]
     bot.user.setActivity(status[Math.floor(Math.random() * status.length)]);
 });
 

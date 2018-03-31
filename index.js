@@ -13,6 +13,7 @@
 //14 Edit 29.03.2017 - Dramine7
 //15 Edit 30.03.2017 - Dramine7
 //16 Edit 31.03.2017 - Dramine7
+//17 Edit 01.04.2017 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -136,11 +137,13 @@ bot.on("message", async message => {
         
         if(msg.startsWith("/" + embedPics[4] + "/")){
             message.channel.bulkDelete(1);
+            var randompic = praise[Math.floor(Math.random()*praise.length)];
             var embed = new Discord.RichEmbed()
-            .setImage(Math.floor(Math.random()*praise.length))
+            .setImage(randompic)
             message.reply(`**just praised the sun ☀**`);
             message.channel.sendMessage({embed});
        }
+
 
         const embedsmolPics = [ //array for shorter pic interchangeables
         {

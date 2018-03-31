@@ -238,7 +238,7 @@ bot.on("message", async message => {
                 message.channel.bulkDelete(1);
                 var embed = new Discord.RichEmbed()
                 .setImage(" https://cdn.discordapp.com/attachments/418449226440245250/429755633961795586/xZ2sEbd.gif")
-                message.reply(`**<@${message.author.id}> just praised the sun ☀**`);
+                message.reply(`**just praised the sun ☀**`);
                 message.channel.sendMessage({embed});
            }
     

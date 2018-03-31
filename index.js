@@ -204,7 +204,7 @@ bot.on("message", async message => {
         },
         {
             name: 'nohomo', 
-            url: 'https://i1.wp.com/dearstraightpeople.com/wp-content/uploads/2015/08/no-homo.gif?fit=500%2C500&ssl=1'
+            url: 'https://i1.wp.com/dearstraightpeople.com/wp-content/uploads/2015/08/no-homo.gif'
         }
           
         ]

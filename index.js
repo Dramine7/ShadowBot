@@ -11,6 +11,8 @@
 //12 (I think?) Edit 27.03.2018 - Dramine7
 //13 Edit 28.03.2017 - Dramine7
 //14 Edit 29.03.2017 - Dramine7
+//15 Edit 30.03.2017 - Dramine7
+//16 Edit 31.03.2017 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -245,7 +247,7 @@ bot.on('message', message => {
     let commands = ['CLEANSE', 'ID', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
 
-    if((!commands.includes(args[0].toUpperCase()))  && message.content.startsWith(prefix)){
+    if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
     message.reply("Apparently you are too incompetent to write a correct command. Type .help to see all the commands.");
     return;
     }
@@ -315,9 +317,9 @@ bot.on('message', message => {
           .addField("`.roll`",`*Roll a dice :)*`)
           .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
-          .addField("`.action`",`*Action command to fulfill actions. Currently available actions: *  \u200b ````slap - hug - kiss`` \u200b *How to execute an action: .action exampleaction @exampleuser`)
+          .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss```\u200b*How to execute an action: .action exampleaction @exampleuser*")
           .addBlankField()
-          .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*  \u200b ```lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - gross - overload - submap - behemoth - leviathan - fenrir``` \u200b *Place requested word inbetween 2 slashes: /testword/*")
+          .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - gross - overload - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});
@@ -507,6 +509,9 @@ bot.on('message', message => {
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 });
+
+
+
 
 bot.login(process.env.BOT_TOKEN);
 //acts as a reference on which bot to use, also acts as a LOGIN, if anyone gets this they can login as bot: DONT SHARE 

@@ -11,6 +11,8 @@
 //12 (I think?) Edit 27.03.2018 - Dramine7
 //13 Edit 28.03.2017 - Dramine7
 //14 Edit 29.03.2017 - Dramine7
+//15 Edit 30.03.2017 - Dramine7
+//16 Edit 31.03.2017 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -170,13 +172,13 @@ bot.on("message", async message => {
         },
         {
             name: 'overload',
-            url: '  https://media.giphy.com/media/IQ47VvDzlzx9S/giphy.gif'
+            url: 'https://media.giphy.com/media/IQ47VvDzlzx9S/giphy.gif'
         }
           
         ]
           var embed = new Discord.RichEmbed();
             for(var e = 0; e < embedsmolPics.length; e++) { //fixes size to array length and loops it for the array
-            if(msg.startsWith("/" + embedsmolPics[e].name + "/") && msg.length == embedsmolPics[e].name.length + 2) { //if a message starts with any of the listed names in array
+            if(msg.startsWith("<" + embedsmolPics[e].name + ">") && msg.length == embedsmolPics[e].name.length + 2) { //if a message starts with any of the listed names in array
                 //addition to top line, only works with // to not make it annoying, also if text is longer than this it will not work -> if text wants to be written 
                 message.channel.bulkDelete(1);
                 embed.setImage(embedsmolPics[e].url); //set the immage to the mentioned url under the mentioned name
@@ -186,7 +188,7 @@ bot.on("message", async message => {
             }
         }
         //have a different reply than said
-        if(msg.startsWith("/" + embedPics[0] + "/") && msg.length == embedPics[0].name.length + 2 ){
+        if(msg.startsWith("<" + embedPics[0] + ">") && msg.length == embedPics[0].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://i.redd.it/upw0gq0e7xc01.jpg")
@@ -194,7 +196,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith("/" + embedPics[3] + "/") && msg.length == embedPics[3].name.length + 2 ){
+        if(msg.startsWith("<" + embedPics[3] + ">") && msg.length == embedPics[3].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://f4.bcbits.com/img/a3364840726_10.jpg")
@@ -202,7 +204,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith("/" + embedPics[1] + "/") && msg.length == embedPics[1].name.length + 2 ){
+        if(msg.startsWith("<" + embedPics[1] + ">") && msg.length == embedPics[1].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://img00.deviantart.net/a011/i/2014/022/2/0/behemoth_by_der_reiko-d73ajev.jpg")
@@ -210,7 +212,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith("/" + embedPics[2] + "/") && msg.length == embedPics[2].name.length + 2 ){
+        if(msg.startsWith("<" + embedPics[2] + ">") && msg.length == embedPics[2].name.length + 2 ){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("http://www.reuun.com/data/out/76/403102015-leviathan-wallpapers.png")
@@ -262,7 +264,7 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['CLEANSE', 'ID', 'PLAY', 'SKIP', 'STOP', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase()))  && message.content.startsWith(prefix)){
@@ -277,6 +279,14 @@ bot.on('message', message => {
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
    
  
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Leveling-Based-Point-System
+
+
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // Purge, Cleanse... call it what you want idgaf
 
@@ -335,6 +345,7 @@ bot.on('message', message => {
           .addField("`.roll`",`*Roll a dice :)*`)
           .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
+          .addField("`.action`",`*Action command to fulfill actions. Currently available actions: *  \u200b ````slap - hug - kiss`` \u200b *How to execute an action: .action exampleaction @exampleuser`)
           .addField("`.play`",`*This command added with a YouTube Link makes me join your Voice Channel and  play the music of your likings. WORK IN PROGRESS*`)
           .addField("`.skip`",`*Skip to next song. WORK IN PROGRESS*`)
           .addField("`.stop`",`*Stops the song queue and disconnects me from the voice channel. WORK IN PROGRESS*`)
@@ -363,6 +374,84 @@ bot.on('message', message => {
         }    
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //ACTION Command. Important stuff :)
+    if (msg.startsWith(prefix + 'ACTION')){
+       
+    let iduser = message.mentions.users.first(); //checks if a user is mentioned = var
+
+        const action = [
+            {
+                name: "slap",
+                url1: 'https://media.giphy.com/media/reXcrlJ3OhvDq/giphy.gif',
+                url2: 'https://remezcla.com/wp-content/uploads/2017/04/deigo-luna_star-wars_film1.gif?x63031'
+            },
+            {
+                name: "hug",
+                url1: 'https://media1.tenor.com/images/0be55a868e05bd369606f3684d95bf1e/tenor.gif?itemid=7939558',
+                url2: 'https://media1.tenor.com/images/86f902d19abe48e914e3c30d4e04dc08/tenor.gif?itemid=3578446'
+            },
+            {
+                name: "kiss",
+                url1: 'https://m.popkey.co/f53862/aWAjx.gif'
+            }
+        ]
+    
+    var embed = new Discord.RichEmbed()    
+
+    for (let s = 0; s < action.length; s++) { //for loop for length of array
+    
+      if (action[s].name != args1[0] & s == (action.length - 1)) { 
+         message.reply('Yeah cool story bro.\nNow WHICH action do you want to do it to?\nWrite a correct action and valid user please!'); 
+         return;
+      }
+
+      if (action[s].name != args1[0]) { continue; } //if not found move on to next
+    
+ 
+      if (iduser){ //if a user is mentioned
+         
+
+            if (iduser.id == message.author.id){ //if the user id that is mentioned equals the authors id do dis
+                message.channel.bulkDelete(1);
+                  if (s == 0) { message.channel.send("***Why would you wantingly slap yourself? Don't do that... Pls...***");   }
+                  else if (s == 1) { message.channel.send(`***You can't just hug yourself. You are not that lonely :) I will hug you instead: <@${bot.user.id}> hugged <@${message.author.id}>***`); embed.setImage(action[1].url2); message.channel.sendMessage({embed});  }
+                  else if (s == 2) { message.channel.send(`***How would you even kiss yourself? Are you arrogant enough to want to kiss yourself?`) }
+                  else { return;  } 
+            } 
+         
+             else {
+                message.channel.bulkDelete(1);
+                embed.setImage(action[s].url1)
+                
+                  if (s == 0) {message.channel.send(`***<@${message.author.id}> just slapped <@${iduser.id}>. Harder than imagined!***`); }
+                  else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); }
+                  else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); }
+                  else { return;  }
+                message.channel.sendMessage({embed});
+               
+             }
+
+       return;
+      }
+   
+      else {
+        message.channel.bulkDelete(1); 
+        if (s == 0) {message.reply(`***So, because you damn MOFO didn't mention anyone, I am the one slapping you now for that: <@${bot.user.id}> slapped <@${message.author.id}> !***`); embed.setImage(action[0].url2); message.channel.sendMessage({embed});}
+        else if (s == 1) {message.channel.send(`***What? Who do you want to hug? Pls decide!***`); }
+        else if (s == 2) {message.channel.send(`***What? Who do you want to kiss? Everyone or what?***`); }
+        else { return;  }   
+      } 
+ 
+    return;
+    }
+    }
+    
+    
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
     //CREATOR INFO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     if (msg.startsWith(prefix + 'CREATOR')){
@@ -521,4 +610,5 @@ bot.on('message', message => {
 });
 
 
-bot.login(process.env.BOT_TOKEN); //refers to token on host
+bot.login("NDE3NzcxNzIyMTk3MDQxMTUz.DXaQkA.lqVpp0fLUbKZOUVSrbZEUgh9pCw");
+//acts as a reference on which bot to use, also acts as a LOGIN, if anyone gets this they can login as bot: DONT SHARE 

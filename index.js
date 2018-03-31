@@ -275,7 +275,7 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['CLEANSE', 'ID', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -339,6 +339,7 @@ bot.on('message', message => {
           .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")
           .setColor(0x00ffff)
           .addBlankField()
+          .addField("`.invite`",`*Get the permanent Invite Link for this server*`)
           .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Specified Roles. (without the <>)*`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
           .addField("`.creator`",`*Who is my creator? Find out.*`)
@@ -373,7 +374,15 @@ bot.on('message', message => {
         }    
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Find out your damn ID
+    if (msg.startsWith(prefix + 'INVITE')){
+        message.reply("**Here is the permanent Invite Link:** https://discord.gg/WXskmcN ")
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    
      //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //ACTION Command. Important stuff :)
     if (msg.startsWith(prefix + 'ACTION')){

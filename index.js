@@ -202,7 +202,7 @@ bot.on("message", async message => {
             }
         }
         //have a different reply than said
-        if(msg.startsWith("/" + embedPics[0] + "/") && msg.length == embedPics[0].name.length + 2 ){
+        if(msg.startsWith("/" + embedPics[0] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://i.redd.it/upw0gq0e7xc01.jpg")
@@ -210,7 +210,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith("/" + embedPics[3] + "/") && msg.length == embedPics[3].name.length + 2 ){
+        if(msg.startsWith("/" + embedPics[3] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://f4.bcbits.com/img/a3364840726_10.jpg")
@@ -218,7 +218,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith("/" + embedPics[1] + "/") && msg.length == embedPics[1].name.length + 2 ){
+        if(msg.startsWith("/" + embedPics[1] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("https://img00.deviantart.net/a011/i/2014/022/2/0/behemoth_by_der_reiko-d73ajev.jpg")
@@ -226,7 +226,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
 
-        if(msg.startsWith("/" + embedPics[2] + "/") && msg.length == embedPics[2].name.length + 2 ){
+        if(msg.startsWith("/" + embedPics[2] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
             .setImage("http://www.reuun.com/data/out/76/403102015-leviathan-wallpapers.png")
@@ -234,7 +234,7 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
     
-         if(msg.startsWith("/" + embedPics[4] + "/") && msg.length == embedPics[2].name.length + 2 ){
+         if(msg.startsWith("/" + embedPics[4] + "/")){
                 message.channel.bulkDelete(1);
                 var embed = new Discord.RichEmbed()
                 .setImage(" https://cdn.discordapp.com/attachments/418449226440245250/429755633961795586/xZ2sEbd.gif")

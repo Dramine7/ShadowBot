@@ -130,6 +130,17 @@ bot.on("message", async message => {
     
     //replaces message lol with linked image... or other terms that is-----------------------------------------------------------
         const embedPics = ["submap", "behemoth", "leviathan", "fenrir", "praise"]; //string of possible texts
+        
+        const praise = ["https://cdn.discordapp.com/attachments/418449226440245250/429755633961795586/xZ2sEbd.gif", "https://cdn.discordapp.com/attachments/418449226440245250/429755634947194881/tenor_7.gif", "https://cdn.discordapp.com/attachments/418449226440245250/429755634947194880/Vwcsphp.gif"]
+
+        
+        if(msg.startsWith("/" + embedPics[4] + "/")){
+            message.channel.bulkDelete(1);
+            var embed = new Discord.RichEmbed()
+            .setImage(Math.floor(Math.random()*praise.length))
+            message.reply(`**just praised the sun ☀**`);
+            message.channel.sendMessage({embed});
+       }
 
         const embedsmolPics = [ //array for shorter pic interchangeables
         {
@@ -234,16 +245,6 @@ bot.on("message", async message => {
             message.channel.sendMessage({embed});
         }
     
-         if(msg.startsWith("/" + embedPics[4] + "/")){
-                message.channel.bulkDelete(1);
-                var embed = new Discord.RichEmbed()
-                .setImage(" https://cdn.discordapp.com/attachments/418449226440245250/429755633961795586/xZ2sEbd.gif")
-                message.reply(`**just praised the sun ☀**`);
-                message.channel.sendMessage({embed});
-           }
-    
-    
-   
     
     //-----------------------------------------------------------
    

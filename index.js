@@ -609,6 +609,4 @@ bot.on('message', message => {
     
 });
 
-
-bot.login("NDE3NzcxNzIyMTk3MDQxMTUz.DXaQkA.lqVpp0fLUbKZOUVSrbZEUgh9pCw");
 //acts as a reference on which bot to use, also acts as a LOGIN, if anyone gets this they can login as bot: DONT SHARE 

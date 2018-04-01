@@ -50,24 +50,28 @@ bot.on("guildMemberAdd", member => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//Damn Events---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Really Simple Events and Word Replacements---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on("message", message => {
     let msg = message.content.toLowerCase(); //allows every word in array be in any written way because it converts it to lower case
-
     //Reaction Replies
     
     const fuckup = ["fuck", "dammit", "damnit", "damn", "shit"];
-    if(fuckup.some(word => msg.startsWith(word))) {
+    for(var fu = 0; fu < fuckup.length; fu++) { 
+    if(fuckup.some(word => msg.startsWith(word)) && message.content == fuckup[fu].toLowerCase()) {
         message.react("💩")
-    } 
+    }
+} 
 
+    
     const success = ["finally", "woop", "i did it", "nice"];
-    if(success.some(word => msg.startsWith(word))) {
+    for(var su = 0; su < success.length; su++) { 
+    if(success.some(word => msg.startsWith(word)) && message.content == success[su].toLowerCase()) {
         message.react("👌")
-    }     
+    }  
+}   
     
      //overkill
-    if(msg.startsWith("yeet")) {
+    if(message.content.toLowerCase() == "yeet") {
     message.react("👌")
     message.react("🤣" )
     message.react("💩")
@@ -86,37 +90,43 @@ bot.on("message", message => {
     //SIMPLE MESSAGE REPLIES-----------------------------------------------------------
     
         const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck", "asshole", "you asshole", "kys", "kill yourself", "cunt"]; //string of possible texts
-        if( swearWords.some(word => msg.startsWith(word)) ) {
+        for(var sw = 0; sw < swearWords.length; sw++) { 
+        if( swearWords.some(word => msg.startsWith(word)) && message.content == swearWords[sw].toLowerCase() ) {
             message.reply("Your pathetic intellect cannot withstand the intelligence of any digital matter or even other organic matter <:cyka:417458881443397642> "); //reply tags the person who wrote the message
             //message.channel.sendMessage('He wants to fight us? Pathetic') //sends message to channel rather than tag
         } 
+    }
 
         const hi = ["hey", "hello", "good morning", "hi", "good evening", "good afternoon"];
-        if( hi.some(word => msg.startsWith(word)) ) {
+        for(var h = 0; h < swearWords.length; h++) { 
+        if( hi.some(word => msg.startsWith(word))  && message.content == hi[h].toLowerCase()) {
             message.reply("Hello Human..."); 
         }
+    }
 
         const cya = ["bye", "goodybe", "cya", "bai", "see you later", "see you", "good night", "gnight"];
-        if( cya.some(word => msg.startsWith(word)) ) {
+        for(var bye = 0; bye < cya.length; bye++) { 
+        if( cya.some(word => msg.startsWith(word)) && message.content == cya[bye].toLowerCase()) {
             message.reply("I shall be at your service Human, once you get back. See You Later :)"); 
         }
+    }
     //-----------------------------------------------------------
 
     //MOUSTACHE MAN-----------------------------------------------------------
-        if(msg.startsWith("moustache man")){
+        if(message.content.toLowerCase() == "moustache man"){
             message.channel.sendMessage("The popular Moustache Man, also known as the splendid <@!271352165958680576> :)") //@<ID> mentions the user (tags). 
         }
     //-----------------------------------------------------------
     
     
     //Fap-----------------------------------------------------------
-        if(msg.startsWith("colin")){
+        if(message.content.toLowerCase() == "colin"){
             message.channel.sendMessage("Fapmaster 7, also known as professional jerker aka <@!222093918043373578> 😏") //@<ID> mentions the user (tags). 
         }
     //-----------------------------------------------------------
 
     //Code God-----------------------------------------------------------
-        if(msg.startsWith("god")){
+        if(message.content.toLowerCase() == "god"){
             message.channel.sendMessage("<@146323250706644993> is a god in coding!") 
         }
 
@@ -124,9 +134,11 @@ bot.on("message", message => {
     
 
     //Glorious Behemoth-----------------------------------------------------------
-        if(msg.startsWith('kay')){
+        if(message.content.toLowerCase() == "kay"){
             message.channel.sendMessage('The Glorious Behemoth <@!252091777115226114>')
         }
+    //-----------------------------------------------------------
+    //-----------------------------------------------------------
     //-----------------------------------------------------------
     
     //replaces message lol with linked image... or other terms that is-----------------------------------------------------------

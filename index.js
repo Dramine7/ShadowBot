@@ -33,7 +33,7 @@ bot.on("ready", function(){ //if the mofo bot is ready it tells me like my littl
 });
 
 bot.on("ready", () => { //sets bot activity
-    var status = ["with Cortana", "with Life", "Software", "with Humans"]
+    var status = ["with Cortana", "with Life", "Software", "with Humans", "in the Shadows"]
     bot.user.setActivity(status[Math.floor(Math.random() * status.length)]);
 });
 
@@ -271,9 +271,25 @@ bot.on("message", async message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//Special Fag commands which require asnyc
+bot.on('message', async message => {
+    let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
+   
+   
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Pingeroni
+    if (msg.startsWith(prefix + 'PING')){
+        const p = await message.channel.send("hehe");
+        p.edit(`🏓 PONG \n Your Latency is ${p.createdTimestamp - message.createdTimestamp} ms \n My Latency is ${Math.round(bot.ping)} ms`);
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
 
+});
 
-
+//Normal Commands
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on('message', message => {
     
     if (message.author.bot) return; //if author of message is bot do not do anything = prevents spam of messages
@@ -285,7 +301,7 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['CLEANSE', 'ID', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -349,6 +365,7 @@ bot.on('message', message => {
           .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")
           .setColor(0x00ffff)
           .addBlankField()
+          .addField("`.ping`",`*Get Your and the Bot's Latency*`)
           .addField("`.invite`",`*Get the permanent Invite Link for this server*`)
           .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Specified Roles. (without the <>)*`)
           .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)

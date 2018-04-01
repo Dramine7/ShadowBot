@@ -253,7 +253,7 @@ bot.on("message", message => {
                 //addition to top line, only works with // to not make it annoying, also if text is longer than this it will not work -> if text wants to be written 
                 message.channel.bulkDelete(1);
                 embed.setImage(embedsmolPics[e].url); //set the immage to the mentioned url under the mentioned name
-                message.reply("**said:** " + embedsmolPics[e].name.toUpperCase); //always replies with
+                message.reply("**said:** " + embedsmolPics[e].name); //always replies with
                 message.channel.sendMessage({embed});
                 return;
             }

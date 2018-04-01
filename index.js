@@ -280,7 +280,7 @@ bot.on('message', async message => {
     //Pingeroni
     if (msg.startsWith(prefix + 'PING')){
         const p = await message.channel.send("hehe");
-        p.edit(`🏓 PONG \n Your Latency is ${p.createdTimestamp - message.createdTimestamp} ms \n My Latency is ${Math.round(bot.ping)} ms`);
+        p.edit(`🏓 PONG \n Latency between writing and receiving the message is ${p.createdTimestamp - message.createdTimestamp} ms \n Latency between Bot and Discord API is ${Math.round(bot.ping)} ms`);
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

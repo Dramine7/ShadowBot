@@ -240,9 +240,12 @@ bot.on("message", message => {
         {
             name: 'yeahboi',
             url: 'https://i.imgur.com/2wikZvy.gif'
+        },
+        {
+            name: 'what',
+            url: 'https://media.giphy.com/media/CDJo4EgHwbaPS/giphy.gif'
         }
-            
-                   
+          
         ]
           var embed = new Discord.RichEmbed();
             for(var e = 0; e < embedsmolPics.length; e++) { //fixes size to array length and loops it for the array
@@ -408,7 +411,7 @@ bot.on('message', message => {
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
           .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat```\u200b*How to execute an action: .action exampleaction @exampleuser*")
           .addBlankField()
-          .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - kms - yeahboi- submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
+          .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
           .addBlankField()
           .setTimestamp()
            message.channel.send({embed});

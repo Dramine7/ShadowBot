@@ -132,13 +132,13 @@ bot.on("message", async message => {
     //replaces message lol with linked image... or other terms that is-----------------------------------------------------------
         const embedPics = ["submap", "behemoth", "leviathan", "fenrir", "praise"]; //string of possible texts
         
-        const praise = //praising our sun is important!!!!!!!!!
-            ["https://cdn.discordapp.com/attachments/418449226440245250/429755633961795586/xZ2sEbd.gif", 
+    //praising our sun is important!!!!!!!!!
+        const praise = ["https://cdn.discordapp.com/attachments/418449226440245250/429755633961795586/xZ2sEbd.gif", 
             "https://cdn.discordapp.com/attachments/418449226440245250/429755634947194881/tenor_7.gif", 
             "https://cdn.discordapp.com/attachments/418449226440245250/429755634947194880/Vwcsphp.gif",
             "https://cdn.discordapp.com/attachments/418449226440245250/429907093936406528/evCop.gif",
             "https://cdn.discordapp.com/attachments/418449226440245250/429907093936406529/8f6.gif",
-            "https://cdn.discordapp.com/attachments/418449226440245250/429907155999784960/1511128429_tenor.gif]
+            "https://cdn.discordapp.com/attachments/418449226440245250/429907155999784960/1511128429_tenor.gif];
 
         
         if(msg.startsWith("/" + embedPics[4] + "/")){

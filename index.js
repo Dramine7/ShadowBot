@@ -57,7 +57,7 @@ bot.on("message", message => {
     
     const fuckup = ["fuck", "dammit", "damnit", "damn", "shit"];
     for(var fu = 0; fu < fuckup.length; fu++) { 
-    if(fuckup.some(word => msg.startsWith(word)) && message.content == fuckup[fu].toLowerCase()) {
+    if(fuckup.some(word => msg.startsWith(word)) && message.content.toLowerCase() == fuckup[fu]) {
         message.react("💩")
     }
 } 
@@ -65,7 +65,7 @@ bot.on("message", message => {
     
     const success = ["finally", "woop", "i did it", "nice"];
     for(var su = 0; su < success.length; su++) { 
-    if(success.some(word => msg.startsWith(word)) && message.content == success[su].toLowerCase()) {
+    if(success.some(word => msg.startsWith(word)) && message.content.toLowerCase() == success[su]) {
         message.react("👌")
     }  
 }   
@@ -91,7 +91,7 @@ bot.on("message", message => {
     
         const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck", "asshole", "you asshole", "kys", "kill yourself", "cunt"]; //string of possible texts
         for(var sw = 0; sw < swearWords.length; sw++) { 
-        if( swearWords.some(word => msg.startsWith(word)) && message.content == swearWords[sw].toLowerCase() ) {
+        if( swearWords.some(word => msg.startsWith(word)) && message.content.toLowerCase() == swearWords[sw]) {
             message.reply("Your pathetic intellect cannot withstand the intelligence of any digital matter or even other organic matter <:cyka:417458881443397642> "); //reply tags the person who wrote the message
             //message.channel.sendMessage('He wants to fight us? Pathetic') //sends message to channel rather than tag
         } 
@@ -99,14 +99,14 @@ bot.on("message", message => {
 
         const hi = ["hey", "hello", "good morning", "hi", "good evening", "good afternoon"];
         for(var h = 0; h < swearWords.length; h++) { 
-        if( hi.some(word => msg.startsWith(word))  && message.content == hi[h].toLowerCase()) {
+        if( hi.some(word => msg.startsWith(word))  && message.content.toLowerCase() == hi[h]) {
             message.reply("Hello Human..."); 
         }
     }
 
         const cya = ["bye", "goodybe", "cya", "bai", "see you later", "see you", "good night", "gnight"];
         for(var bye = 0; bye < cya.length; bye++) { 
-        if( cya.some(word => msg.startsWith(word)) && message.content == cya[bye].toLowerCase()) {
+        if( cya.some(word => msg.startsWith(word)) && message.content.toLowerCase() == cya[bye]) {
             message.reply("I shall be at your service Human, once you get back. See You Later :)"); 
         }
     }
@@ -137,6 +137,7 @@ bot.on("message", message => {
         if(message.content.toLowerCase() == "kay"){
             message.channel.sendMessage('The Glorious Behemoth <@!252091777115226114>')
         }
+    //-----------------------------------------------------------
     //-----------------------------------------------------------
     //-----------------------------------------------------------
     //-----------------------------------------------------------

@@ -225,7 +225,7 @@ bot.on("message", async message => {
             url: 'https://media1.tenor.com/images/26035613fbee1c4e7543d0b5bb3c81df/tenor.gif?itemid=3563661'
         },
         {
-            name: 'yeahboi'.
+            name: 'yeahboi',
             url: 'https://i.imgur.com/2wikZvy.gif'
         }
             

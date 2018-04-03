@@ -373,7 +373,7 @@ bot.on('message', message => {
             message.channel.bulkDelete(args1[0])
                 .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
 
-            bot.channels.get('419204128527482880').send('**Successfully cleansed ' + args1 + ' messages, as requested by <@${message.author.id}>**') //uses input from user to give out how many message have been cleansed
+            bot.channels.get('419204128527482880').send('**Successfully cleansed** ' + args1 + ` **messages, as requested by <@${message.author.id}>**`); //uses input from user to give out how many message have been cleansed
         }
         cleanse(); //allows the cleanse command to be always ready
 

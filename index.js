@@ -312,7 +312,7 @@ bot.on('message', async message => {
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Pingeroni
     if (msg.startsWith(prefix + 'PING')){
-        const p = await message.channel.send("hehe");
+        const p = await message.channel.send('\u200b');
         p.edit(`🏓 PONG \n Latency between writing and receiving the message is ${p.createdTimestamp - message.createdTimestamp} ms \n Latency between Bot and Discord API is ${Math.round(bot.ping)} ms`);
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -391,8 +391,6 @@ bot.on('message', message => {
     //Help Embed for commands
     if (msg.startsWith(prefix + 'HELP')){
     
-          //let user = message.mentions.users.first();
-          //let member = message.mentions.members.first();
           var embed = new Discord.RichEmbed()
           .setThumbnail("https://i.imgur.com/SbFkbKa.png")
           .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")

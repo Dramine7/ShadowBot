@@ -410,7 +410,7 @@ bot.on('message', message => {
           .addField("`.roll`",`*Roll a dice :)*`)
           .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
           .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
-          .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat```\u200b*How to execute an action: .action exampleaction @exampleuser*")
+          .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat - fuck```\u200b*How to execute an action: .action exampleaction @exampleuser*")
           .addBlankField()
           .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
           .addBlankField()

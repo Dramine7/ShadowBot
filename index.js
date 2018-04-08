@@ -16,6 +16,7 @@
 //17 Edit 01.04.2018 - Dramine7
 //18 Edit 02.04.2018 - Dramine7
 //19 Edit 04.04.2018 - Dramine7
+//20 Edit 08.04.2018 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -340,7 +341,7 @@ bot.on('message', message => {
     //-----------------------------------------------------------------
 
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
-    message.reply("Apparently you are too incompetent to write a correct command. Type .help to see all the commands.");
+    message.reply("Apparently you are too incompetent to write a correct command. Type .help to see all the commands. Or <@240145873202446347> is abusing this command again 🖕");
     return;
     }
 
@@ -448,6 +449,7 @@ bot.on('message', message => {
     if (msg.startsWith(prefix + 'ACTION')){
        
         let iduser = message.mentions.users.first(); //checks if a user is mentioned = var
+        const fuckyfucky = bot.emojis.get("430033873393680385");
     
             const action = [
                 {
@@ -468,6 +470,11 @@ bot.on('message', message => {
                     name: "pat",
                     url1: 'http://gifimage.net/wp-content/uploads/2017/07/head-pat-gif-1.gif',
                     url2: 'https://media0.giphy.com/media/mn1cym1jiJOUg/giphy.gif'
+                },
+                {
+                    name: "fuck",
+                    url1: 'http://img.chan4chan.com/img/2011-04-05/1302036602906.gif',
+                    url2: 'https://i.imgur.com/gRZQHu2.gif'
                 }
             ]
         
@@ -492,6 +499,7 @@ bot.on('message', message => {
                       else if (s == 1) { message.channel.send(`***You can't just hug yourself. You are not that lonely :) I will hug you instead: <@${bot.user.id}> hugged <@${message.author.id}>***`); embed.setImage(action[1].url2); message.channel.sendMessage({embed});  }
                       else if (s == 2) { message.channel.send(`***How would you even kiss yourself? Are you arrogant enough to want to kiss yourself?***`); }
                       else if (s == 3) { message.channel.send(`***Yes... This is definitely how this works...***`); embed.setImage(action[3].url2); message.channel.sendMessage({embed}); }
+                      else if (s == 4) { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
                 else { return;  } 
                 } 
              
@@ -503,6 +511,7 @@ bot.on('message', message => {
                       else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); }
                       else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); }
                       else if (s == 3) {message.channel.send(`***<@${message.author.id}> just patted <@${iduser.id}>. So Soft :O ***`); }
+                      else if (s == 4) {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
                       else { return;  }
                     message.channel.sendMessage({embed});
                    
@@ -517,6 +526,7 @@ bot.on('message', message => {
             else if (s == 1) {message.channel.send(`***What? Who do you want to hug? Pls decide!***`); }
             else if (s == 2) {message.channel.send(`***Huh? Who do you want to kiss? Everyone or what?***`); }
             else if (s == 3) {message.channel.send(`***Okay now please... Whomst does thy toucheth want to patteth?***`); }
+            else if (s == 4) {message.channel.send(`***You didn't mention anyone to fuck so now I will fuck you MWAHAHAHA: <@${bot.user.id}> inserts his Metal Dong into <@${message.author.id}>***`); embed.setImage(action[4].url2); message.channel.sendMessage({embed});}
             else { return;  }   
           } 
      

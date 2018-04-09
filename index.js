@@ -17,13 +17,13 @@
 //18 Edit 02.04.2018 - Dramine7
 //19 Edit 04.04.2018 - Dramine7
 //20 Edit 08.04.2018 - Dramine7
+//21 Edit 09.04.2018 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
-var embed = new Discord.RichEmbed(); //for embeds
 
 const prefix = '.';
 
@@ -307,26 +307,10 @@ bot.on("message", message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//Special Fag commands which require asnyc
-bot.on('message', async message => {
-    let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-   
-   
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //Pingeroni
-    if (msg.startsWith(prefix + 'PING')){
-        const p = await message.channel.send('\u200b');
-        p.edit(`🏓 PONG \n Latency between writing and receiving the message is ${p.createdTimestamp - message.createdTimestamp} ms \n Latency between Bot and Discord API is ${Math.round(bot.ping)} ms`);
-    }
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
-
-});
 
 //Normal Commands
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-bot.on('message', message => {
+bot.on('message', async message => {
     
     if (message.author.bot) return; //if author of message is bot do not do anything = prevents spam of messages
     
@@ -337,92 +321,83 @@ bot.on('message', message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['CLEANSE', 'ID', 'HELP', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
-
+    /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
     message.reply("Apparently you are too incompetent to write a correct command. Type .help to see all the commands. Or <@240145873202446347> is abusing this command again 🖕");
     return;
     }
-
+    */
     //Various Variables MOOOOOOAR VARIABLES-----------------------------------------------------------
     let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the space
     let args1 = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
-   
+    
+    
+    
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Help Embed for commands
+    if (msg.startsWith(prefix + commands[0])){
+    
+        var embed = new Discord.RichEmbed()
+        .setThumbnail("https://i.imgur.com/SbFkbKa.png")
+        .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")
+        .setColor(0x00ffff)
+        .addBlankField()
+        .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Specified Roles. (without the <>)*`)
+        .addField("`.id`",`*Get your ID*`)
+        .addField("`.id <name>`",`*Tag someone to get their ID (without the <>)*`)
+        .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
+        .addField("`.roll`",`*Roll a dice :)*`)
+        .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
+        .addField("`.creator`",`*Who is my creator? Find out.*`)
+        .addField("`.weather <location>`",`*Get the weather of a specific location. (without the <>)*`)
+        .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
+        .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat - fuck```\u200b*How to execute an action: .action exampleaction @exampleuser*\n*Restrictions:* `fuck` *can only be performed in <#422872480152027136>*")
+        .addField("`.invite`",`*Get the permanent Invite Link for this server*`)
+        .addField("`.ping`",`*Get Your and the Bot's Latency*`)
+        .addField("`.emojis`", `*Get a list of all the Emojis available in within this Discord Server*`)
+        .addBlankField()
+        .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
+        .addBlankField()
+        .setTimestamp()
+         message.channel.send({embed});
+  }
+  
+  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
  
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // Purge, Cleanse... call it what you want idgaf
 
-    if (msg.startsWith(prefix + 'CLEANSE')) { 
+    if (msg.startsWith(prefix + commands[1])) { 
 
         message.delete();
-        
-        async function cleanse() { //await only works in async
-           
+      
         if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Singularity (Allies)", "Leviathan", "Them very gay"].includes(r.name)) ) {  //checks if users name includes the roles listed
                 message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role for the **Oblivious Realm Server** or the **Them very gay** Role for the **Rainbow Six | Siege Server**  to cleanse all our souls' past"); // you gotta have the role biatch.
                 return; 
             }
 
-            if (isNaN(args1[0]) || parseInt(args1[0]) < 2 || parseInt(args1[0]) > 50) { //if there is no number, the number is smaller than 2 or the number is bigger than 50 it gives the following message
+        if (isNaN(args1[0]) || parseInt(args1[0]) < 2 || parseInt(args1[0]) > 50) { //if there is no number, the number is smaller than 2 or the number is bigger than 50 it gives the following message
           
                 message.channel.send('__**Would thy be honoured to please grant me an arabic numeral inbetween 2 and 50 to cleanse said amount of messages from thy sins**__ \n \n **Usage for Dummies:** ' + prefix + '*cleanse <amount>*'); 
    
                 return;
             }
 
-            message.channel.bulkDelete(args1[0])
+        message.channel.bulkDelete(args1[0])
                 .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
 
-            bot.channels.get('419204128527482880').send('**Successfully cleansed** ' + args1 + ` **messages, as requested by <@${message.author.id}>**`); //uses input from user to give out how many message have been cleansed
-        }
-        cleanse(); //allows the cleanse command to be always ready
-
+        bot.channels.get('419204128527482880').send('**Successfully cleansed** ' + args1 + ` **messages, as requested by <@${message.author.id}>**`); //uses input from user to give out how many message have been cleansed
         
 
     }
-    //yeah well... pretty much self explanatory-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      if (msg.startsWith(prefix + 'SOURCECODE')){
-        message.reply('**Go to this link to see my brain... You are gross and perverted now :)**' + '\n https://github.com/Dramine7/ShadowBot/edit/master/index.js');
-    }
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //Help Embed for commands
-    if (msg.startsWith(prefix + 'HELP')){
-    
-          var embed = new Discord.RichEmbed()
-          .setThumbnail("https://i.imgur.com/SbFkbKa.png")
-          .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")
-          .setColor(0x00ffff)
-          .addBlankField()
-          .addField("`.ping`",`*Get Your and the Bot's Latency*`)
-          .addField("`.invite`",`*Get the permanent Invite Link for this server*`)
-          .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Specified Roles. (without the <>)*`)
-          .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
-          .addField("`.creator`",`*Who is my creator? Find out.*`)
-          .addField("`.weather <location>`",`*Get the weather of a specific location. (without the <>)*`)
-          .addField("`.id`",`*Get your ID*`)
-          .addField("`.id <name>`",`*Tag someone to get their ID (without the <>)*`)
-          .addField("`.roll`",`*Roll a dice :)*`)
-          .addField("`.roll <number>`", `*Outputs a random numbere between 1 and the Input. Parameters: 2-1000 (without the <>)*`)
-          .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
-          .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat - fuck```\u200b*How to execute an action: .action exampleaction @exampleuser*")
-          .addBlankField()
-          .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
-          .addBlankField()
-          .setTimestamp()
-           message.channel.send({embed});
-    }
-    
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Find out your damn ID
-    if (msg.startsWith(prefix + 'ID')){
+    if (msg.startsWith(prefix + commands[2])){
         const iduser = message.mentions.users.first(); //checks if a user is mentioned
         
         if(iduser){ //if yes gets id of mentioned user
@@ -436,17 +411,100 @@ bot.on('message', message => {
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //Find out your damn ID
-    if (msg.startsWith(prefix + 'INVITE')){
-        message.reply("**Here is the permanent Invite Link:** https://discord.gg/WXskmcN ")
+    //LUCKY PHRASE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    if (msg.startsWith(prefix + commands[3])){
+        const lucky = ["You are beautiful", "Everyone loves you", "Have a nice day", "You are indubitably intelligent", "What a splendid personality you have", "Have a bad... I mean good day", "Fuggu", "Not every phrase is positive dumbass", "You thought you were being lucky? Wrong", "Luck is non-existent, it's about skill", "Woah there, G'day", "How are you today my good sir", "Dammit bruv, this is not always lucky", "Life is hard, isn't it?", "I am a bot, you are a human. We co-exist :) YAY", "Sometimes I wonder if Life can be more than just 1's and 0's", "Fun fact: These lucky phrases are pulled from an Array", "The creator of this code spent too much time on these sentences...", "I wish you the best for the rest of your life :)", "If this is the only command you know, try type .help", "The earth is beautiful, so are you!"]; //for lucky phrase if statement
+        message.reply(lucky[Math.floor(Math.random() * lucky.length)]);
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    //ROLLS A DAMN DICE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    if (msg.startsWith(prefix + commands[4])){
+        //if command roll is called in, it creates a number between 1 and 6 as if throwing a dice
+     
+        message.delete();
+               
+        if (isNaN(args1[0])) { //if there is no number make a normal dice roll
+                let random = Math.floor(Math.random()*6) + 1 ;
+                message.channel.send(`Your dice fell of the table, but your random number is: ${random}`);
+                return;
+            
+        }
+
+        if (parseInt(args1[0]) < 2 || parseInt(args1[0]) > 9999){ //if number is below 2 and over 50 do dis, PARSING ANALYIZES OBJECT, THIS MEANS SOME OBJECTS NEED TO BE PARSED IN ORDER TO BE COMPILED = CONVERTED/UNDERSTOOD
+                //a string of args get parsed and returned as a integer = needed here
+                message.reply("Your number is not included in the parameters. Please input a number between 2 to 9999")
+                return;
+        }
+
+        if (!isNaN(args1[0])){ //if there is a number take that number and give random number between 1 and said number 
+            
+            let random = Math.floor(Math.random()*args1) + 1 ;
+            message.channel.send(`Your random number between 1 and ` + args1 + ` is: ${random}`);
+            return;
+
+        }
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //CREATOR INFO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    if (msg.startsWith(prefix + commands[5])){
+        message.channel.sendMessage("My creator is the Behemoth <@!252091777115226114>")
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
-     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //WEATHER-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    if (msg.startsWith(prefix + commands[6])) { 
+
+        weather.find({search: args1.join(" "), degreeType: 'C'}, function(err, result) {
+            if (err) message.channel.send(err);
+
+            if(!args1[0] || result.length === 0){ //makes sure that if there is no input or the input is non existant give this output
+        
+                message.reply('**I think this location might not be on planet Earth. Probably in your Fantasy? Please give an existing location!**') 
+                return; 
+            }
+
+            var current = result[0].current;  //define variable for current
+            var location = result[0].location; //etc...
+
+            const embed = new Discord.RichEmbed()
+                .setTitle(`🤖 **Weather for ${current.observationpoint}**`) //sets title so it refers to called location
+                .setFooter(`Weather, Requested by ${message.author.username}`, `${message.author.avatarURL}`) //author username + avatar
+                .setColor(0x00ffff) 
+
+                //From here on should be self-explanatory
+                .addField('\u200b','**Location Info**') 
+                .addField('🗓 Date', `${current.date}, ${current.shortday}`, true) 
+                .addField('🕐 Timezone',`UTC ${location.timezone}`, true)
+                .addField('🌍 Latitude/Longitude',`Lat ${location.lat}° / Long ${location.long}°`, true)
+
+
+                .addField('\u200b','**Weather Conditions**') //\u always calls upon a special character, 200b is a blank one, making a space not as big as blankfield
+                .addField('☀ Sky Condition', `${current.skytext}`, true)
+                .addField('🌡 Temperature',`${current.temperature} °C`, true)
+                .addField('💩 Feels Like', `${current.feelslike} °C`, true)
+                .addField('🌊 Humidity', `${current.humidity} %`, true)
+                .addField('🌬 Winds',`${current.winddisplay}`, true)
+                .addField('🚤 Windspeed', `${current.windspeed}`, true)
+            
+                .addBlankField()
+
+                message.channel.send({embed});
+        });
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    //yeah well... pretty much self explanatory-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      if (msg.startsWith(prefix + commands[7])){
+        message.reply('**Go to this link to see my brain... You are gross and perverted now :)**' + '\n https://github.com/Dramine7/ShadowBot/edit/master/index.js');
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //ACTION Command. Important stuff :)
-    if (msg.startsWith(prefix + 'ACTION')){
+    if (msg.startsWith(prefix + commands[8])){
        
         let iduser = message.mentions.users.first(); //checks if a user is mentioned = var
         const fuckyfucky = bot.emojis.get("430033873393680385");
@@ -493,17 +551,21 @@ bot.on('message', message => {
           if (iduser){ //if a user is mentioned
              
     
-                if (iduser.id == message.author.id){ //if the user id that is mentioned equals the authors id do dis
+            if (iduser.id == message.author.id){ //if the user id that is mentioned equals the authors id do dis
                     message.channel.bulkDelete(1);
                       if (s == 0) { message.channel.send("***Why would you wantingly slap yourself? Don't do that... Pls...***");   }
                       else if (s == 1) { message.channel.send(`***You can't just hug yourself. You are not that lonely :) I will hug you instead: <@${bot.user.id}> hugged <@${message.author.id}>***`); embed.setImage(action[1].url2); message.channel.sendMessage({embed});  }
                       else if (s == 2) { message.channel.send(`***How would you even kiss yourself? Are you arrogant enough to want to kiss yourself?***`); }
                       else if (s == 3) { message.channel.send(`***Yes... This is definitely how this works...***`); embed.setImage(action[3].url2); message.channel.sendMessage({embed}); }
-                      else if (s == 4) { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
-                else { return;  } 
-                } 
-             
-                 else {
+                      else if (s == 4 && message.channel.id == '422872480152027136') { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
+                
+                    else {
+                    if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
+                    message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
+                    }
+                    return;  } 
+            
+            }else {
                     message.channel.bulkDelete(1);
                     embed.setImage(action[s].url1)
                     
@@ -511,23 +573,29 @@ bot.on('message', message => {
                       else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); }
                       else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); }
                       else if (s == 3) {message.channel.send(`***<@${message.author.id}> just patted <@${iduser.id}>. So Soft :O ***`); }
-                      else if (s == 4) {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
-                      else { return;  }
+                      else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
+                      
+                    else { 
+                    if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
+                    message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
+                    }
+                    return;  }
                     message.channel.sendMessage({embed});
                    
-                 }
-    
-           return;
-          }
-       
-          else {
+                 }return;
+                
+        }else {
             message.channel.bulkDelete(1); 
             if (s == 0) {message.reply(`***So, because you damn MOFO didn't mention anyone, I am the one slapping you now for that: <@${bot.user.id}> slapped <@${message.author.id}> !***`); embed.setImage(action[0].url2); message.channel.sendMessage({embed});}
             else if (s == 1) {message.channel.send(`***What? Who do you want to hug? Pls decide!***`); }
             else if (s == 2) {message.channel.send(`***Huh? Who do you want to kiss? Everyone or what?***`); }
             else if (s == 3) {message.channel.send(`***Okay now please... Whomst does thy toucheth want to patteth?***`); }
-            else if (s == 4) {message.channel.send(`***You didn't mention anyone to fuck so now I will fuck you MWAHAHAHA: <@${bot.user.id}> inserts his Metal Dong into <@${message.author.id}>***`); embed.setImage(action[4].url2); message.channel.sendMessage({embed});}
-            else { return;  }   
+            else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***You didn't mention anyone to fuck so now I will fuck you MWAHAHAHA: <@${bot.user.id}> inserts his Metal Dong into <@${message.author.id}>***`); embed.setImage(action[4].url2); message.channel.sendMessage({embed});}
+            
+            else { if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
+                message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
+            }
+            return;  }  
           } 
      
         return;
@@ -536,97 +604,42 @@ bot.on('message', message => {
         
         
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
-
-    //CREATOR INFO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    if (msg.startsWith(prefix + 'CREATOR')){
-        message.channel.sendMessage("My creator is the Behemoth <@!252091777115226114>")
-    }
+   
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
-    //LUCKY PHRASE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    if (msg.startsWith(prefix + 'LUCKY')){
-        const lucky = ["You are beautiful", "Everyone loves you", "Have a nice day", "You are indubitably intelligent", "What a splendid personality you have", "Have a bad... I mean good day", "Fuggu", "Not every phrase is positive dumbass", "You thought you were being lucky? Wrong", "Luck is non-existent, it's about skill"]; //for lucky phrase if statement
-        message.reply(lucky[Math.floor(Math.random() * lucky.length)]);
-    }
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
-    
-    //ROLLS A DAMN DICE-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    if (msg.startsWith(prefix + 'ROLL')){
-        //if command roll is called in, it creates a number between 1 and 6 as if throwing a dice
-        async function roll() { //await only works in async
-        
-            message.delete();
-               
-            if (isNaN(args1[0])) { //if there is no number make a normal dice roll
-                let random = Math.floor(Math.random()*6) + 1 ;
-                message.channel.send(`Your dice fell of the table, but your random number is: ${random}`);
-                return;
-            
-            }
-
-            if (parseInt(args1[0]) < 2 || parseInt(args1[0]) > 1000){ //if number is below 2 and over 50 do dis, PARSING ANALYIZES OBJECT, THIS MEANS SOME OBJECTS NEED TO BE PARSED IN ORDER TO BE COMPILED = CONVERTED/UNDERSTOOD
-                //a string of args get parsed and returned as a integer = needed here
-                message.reply("Your number is not included in the parameters. Please input a number between 2 to 1000")
-                return;
-            }
-
-            if (!isNaN(args1[0])){ //if there is a number take that number and give random number between 1 and said number 
-            
-            let random = Math.floor(Math.random()*args1) + 1 ;
-            message.channel.send(`Your random number between 1 and ` + args1 + ` is: ${random}`);
-            return;
-
-            }
-        }
-        roll(); //allows the roll to be ready
-    }
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
-    //WEATHER-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    if (msg.startsWith(prefix + 'WEATHER')) { 
-
-        weather.find({search: args1.join(" "), degreeType: 'C'}, function(err, result) {
-            if (err) message.channel.send(err);
-
-            if(!args1[0] || result.length === 0){ //makes sure that if there is no input or the input is non existant give this output
-        
-                message.reply('**I think this location might not be on planet Earth. Probably in your Fantasy? Please give an existing location!**') 
-                return; 
-            }
-
-            var current = result[0].current;  //define variable for current
-            var location = result[0].location; //etc...
-
-            const embed = new Discord.RichEmbed()
-                .setTitle(`🤖 **Weather for ${current.observationpoint}**`) //sets title so it refers to called location
-                .setFooter(`Weather, Requested by ${message.author.username}`, `${message.author.avatarURL}`) //author username + avatar
-                .setColor(0x00ffff) 
-
-                //From here on should be self-explanatory
-                .addField('\u200b','**Location Info**') 
-                .addField('🗓 Date', `${current.date}, ${current.shortday}`, true) 
-                .addField('🕐 Timezone',`UTC ${location.timezone}`, true)
-                .addField('🌍 Latitude/Longitude',`Lat ${location.lat}° / Long ${location.long}°`, true)
-
-
-                .addField('\u200b','**Weather Conditions**') //\u always calls upon a special character, 200b is a blank one, making a space not as big as blankfield
-                .addField('☀ Sky Condition', `${current.skytext}`, true)
-                .addField('🌡 Temperature',`${current.temperature} °C`, true)
-                .addField('💩 Feels Like', `${current.feelslike} °C`, true)
-                .addField('🌊 Humidity', `${current.humidity} %`, true)
-                .addField('🌬 Winds',`${current.winddisplay}`, true)
-                .addField('🚤 Windspeed', `${current.windspeed}`, true)
-            
-                .addBlankField()
-
-                message.channel.send({embed});
-        });
+    //Find out your damn ID
+    if (msg.startsWith(prefix + commands[9])){
+        message.reply("**Here is the permanent Invite Link:** https://discord.gg/WXskmcN ")
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Pingeroni
+    if (msg.startsWith(prefix + commands[10])){
+        const p = await message.channel.send('\u200b');
+        p.edit(`🏓 PONG \n Latency between sending and receiving the message is ${p.createdTimestamp - message.createdTimestamp} ms \n Latency between Bot and Discord API is ${Math.round(bot.ping)} ms`);
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //Emoji-List
+    if (msg.startsWith(prefix + commands[11])){
+        const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+        message.channel.send(emojiList);
+    }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     
+    
 });
+
+
+
+
+
+
+
+
+
 
 
 

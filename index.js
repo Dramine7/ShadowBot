@@ -531,7 +531,7 @@ bot.on('message', async message => {
                 },
                 {
                     name: "fuck",
-                    url1: 'http://img.chan4chan.com/img/2011-04-05/1302036602906.gif',
+                    url1: 'https://cdn.discordapp.com/attachments/422872480152027136/432841923934420992/16819157.gif',
                     url2: 'https://i.imgur.com/gRZQHu2.gif'
                 }
             ]

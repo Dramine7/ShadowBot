@@ -18,6 +18,7 @@
 //19 Edit 04.04.2018 - Dramine7
 //20 Edit 08.04.2018 - Dramine7
 //21 Edit 09.04.2018 - Dramine7
+//22 Edit 10.04.2018 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -625,7 +626,7 @@ bot.on('message', async message => {
     //Emoji-List
     if (msg.startsWith(prefix + commands[11])){
         const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-        message.channel.send(emojiList);
+        message.channel.send("**The available Emojis on this server, are:**\n" + emojiList);
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      

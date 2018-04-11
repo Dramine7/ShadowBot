@@ -257,6 +257,10 @@ bot.on("message", message => {
         {
             name: 'invisible',
             url: 'http://www.reactiongifs.com/r/2013/06/hiding.gif'
+        },
+        {
+            name: 'stalked',
+            url: 'https://media1.tenor.com/images/0d2195125df83edcf87fe75fe634fecf/tenor.gif?itemid=7357576'
         }
           
         ]
@@ -370,7 +374,7 @@ bot.on('message', async message => {
         .addField("`.ping`",`*Get Your and the Bot's Latency*`)
         .addField("`.emojis`", `*Get a list of all the Emojis available in within this Discord Server*`)
         .addBlankField()
-        .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
+        .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - invisible - stalked - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
         .addBlankField()
         .setTimestamp()
          message.author.sendMessage({embed});

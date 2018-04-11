@@ -253,6 +253,10 @@ bot.on("message", message => {
         {
             name: 'what',
             url: 'https://media.giphy.com/media/CDJo4EgHwbaPS/giphy.gif'
+        },
+        {
+            name: 'invisible',
+            url: 'http://www.reactiongifs.com/r/2013/06/hiding.gif'
         }
           
         ]

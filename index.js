@@ -260,7 +260,7 @@ bot.on("message", message => {
         },
         {
             name: 'stalked',
-            url: 'https://media1.tenor.com/images/0d2195125df83edcf87fe75fe634fecf/tenor.gif?itemid=7357576'
+            url: 'https://cdn.discordapp.com/attachments/418449226440245250/433632307069452298/8iNmW.gif'
         }
           
         ]

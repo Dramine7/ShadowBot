@@ -563,10 +563,10 @@ bot.on('message', async message => {
                       else if (s == 1) { message.channel.send(`***You can't just hug yourself. You are not that lonely :) I will hug you instead: <@${bot.user.id}> hugged <@${message.author.id}>***`); embed.setImage(action[1].url2); message.channel.sendMessage({embed});  }
                       else if (s == 2) { message.channel.send(`***How would you even kiss yourself? Are you arrogant enough to want to kiss yourself?***`); }
                       else if (s == 3) { message.channel.send(`***Yes... This is definitely how this works...***`); embed.setImage(action[3].url2); message.channel.sendMessage({embed}); }
-                      else if (s == 4 && message.channel.id == '422872480152027136') { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
+                      else if (s == 4 && message.channel.id == '422872480152027136' || '403927636314685441') { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
                 
                     else {
-                    if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
+                    if(s == 4 && message.channel.id !== '422872480152027136' || '403927636314685441') { //this indicates, that this action can only be sent in a certain channel
                     message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
                     }
                     return;  } 
@@ -579,10 +579,10 @@ bot.on('message', async message => {
                       else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); }
                       else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); }
                       else if (s == 3) {message.channel.send(`***<@${message.author.id}> just patted <@${iduser.id}>. So Soft :O ***`); }
-                      else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
+                      else if (s == 4 && message.channel.id == '422872480152027136' || '403927636314685441') {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
                       
                     else { 
-                    if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
+                    if(s == 4 && message.channel.id !== '422872480152027136' || '403927636314685441') { //this indicates, that this action can only be sent in a certain channel
                     message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
                     }
                     return;  }

@@ -122,6 +122,11 @@ bot.on("message", message => {
         }
     //-----------------------------------------------------------
     
+    //GAY MAN-----------------------------------------------------------
+        if(message.content.toLowerCase() == "gay man"){
+            message.channel.sendMessage("The popular gay boyo, also known as the handsome <@!268740645529583617>... hehe") //@<ID> mentions the user (tags). 
+        }
+    //-----------------------------------------------------------
     
     //Fap-----------------------------------------------------------
         if(message.content.toLowerCase() == "colin"){

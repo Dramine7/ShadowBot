@@ -179,13 +179,16 @@ bot.on("message", message => {
     }
 
     //-----------------------------------------------------------
-    
-    if(message.content.toLowerCase() == "/eastereggs"){
+      if(message.content.toLowerCase() == "/eastereggs"){
         message.delete();
         var embed = new Discord.RichEmbed()
+        .setThumbnail("https://media1.tenor.com/images/62fa490103c427b4c118336aa223b27a/tenor.gif?itemid=8292814")
+        .setTitle("Les Easter Eggs")
         .setColor(0xFF69B4)
-        .setField("**Easter Egg Words General**","```/moustacheman - /colin - /codegod -/kay```")
-        .setField("**Easter Egg Words Darklight Collective**","```/elias - /zozo - /raishin - /amber - /lulu - /sith```")
+        .addBlankField()
+        .addField("**Easter Egg Words General**","```/moustacheman - /colin - /codegod -/kay```")
+        .addField("**Easter Egg Words Darklight Collective**","```/elias - /zozo - /raishin - /amber - /lulu - /sith```")
+        .setTimestamp()
         message.channel.sendMessage({embed});
     }
     //-----------------------------------------------------------

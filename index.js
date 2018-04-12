@@ -19,6 +19,8 @@
 //20 Edit 08.04.2018 - Dramine7
 //21 Edit 09.04.2018 - Dramine7
 //22 Edit 10.04.2018 - Dramine7
+//23 Edit 11.04.2018 - Dramine7
+//24 Edit 13.04.2018 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -115,38 +117,77 @@ bot.on("message", message => {
         }
     }
     //-----------------------------------------------------------
-
+    //DEFAULT EASTER EGGS:
     //MOUSTACHE MAN-----------------------------------------------------------
-        if(message.content.toLowerCase() == "moustache man"){
+        if(message.content.toLowerCase() == "/moustacheman"){
+            message.delete();
             message.channel.sendMessage("The popular Moustache Man, also known as the splendid <@!271352165958680576> :)") //@<ID> mentions the user (tags). 
         }
     //-----------------------------------------------------------
-    
-    //GAY MAN-----------------------------------------------------------
-        if(message.content.toLowerCase() == "gay man"){
-            message.channel.sendMessage("The popular gay boyo, also known as the handsome <@!268740645529583617>... hehe") //@<ID> mentions the user (tags). 
-        }
-    //-----------------------------------------------------------
-    
+   
     //Fap-----------------------------------------------------------
-        if(message.content.toLowerCase() == "colin"){
+        if(message.content.toLowerCase() == "/colin"){
+            message.delete();
             message.channel.sendMessage("Fapmaster 7, also known as professional jerker aka <@!222093918043373578> 😏") //@<ID> mentions the user (tags). 
         }
     //-----------------------------------------------------------
 
     //Code God-----------------------------------------------------------
-        if(message.content.toLowerCase() == "god"){
+        if(message.content.toLowerCase() == "/codegod"){
+            message.delete();
             message.channel.sendMessage("<@146323250706644993> is a god in coding!") 
         }
 
     //-----------------------------------------------------------
     
-
     //Glorious Behemoth-----------------------------------------------------------
-        if(message.content.toLowerCase() == "kay"){
+        if(message.content.toLowerCase() == "/kay"){
+            message.delete();
             message.channel.sendMessage('The Glorious Behemoth <@!252091777115226114>')
         }
     //-----------------------------------------------------------
+    //-----------------------------------------------------------
+    //For my friends at Darklight / EASTER EGGS:
+    if(message.content.toLowerCase() == "/elias"){
+        message.delete();
+        message.channel.sendMessage('The one and only real MVP OF DARKLIGHT... <@!268740645529583617> HECK YEAH 🤘')
+    }
+
+    if(message.content.toLowerCase() == "/zozo"){
+        message.delete();
+        message.channel.sendMessage('She is really creepy and might actually kill you if you do not watch out... <@!304318872813699082> :/ ')
+    }
+
+    if(message.content.toLowerCase() == "/raishin"){
+        message.delete();
+        message.channel.sendMessage('A big fuggin Faguette. He is so straight he be bent and gay. Thou shalt not compete with his gayness... <@!272445874754289665> 8=====D')
+    }
+
+    if(message.content.toLowerCase() == "/amber"){
+        message.delete();
+        message.channel.sendMessage('<@!375678688798441472> and Zozo are a relentless team. Though shy, it deludes you of her true power :O')
+    }
+
+    if(message.content.toLowerCase() == "/lulu"){
+        message.delete();
+        message.channel.sendMessage('<@!279959229736026115> is a true Lewd Goddess. Once she hits the NSFW chat... we aint safe D:')
+    }
+
+    if(message.content.toLowerCase() == "/sith"){
+        message.delete();
+        message.channel.sendMessage('Quality Memes? Daily activity for the Meme Lord <@!301364050300764161>')
+    }
+
+    //-----------------------------------------------------------
+    
+    if(message.content.toLowerCase() == "/eastereggs"){
+        message.delete();
+        var embed = new Discord.RichEmbed()
+        .setColor(0xFF69B4)
+        .setField("**Easter Egg Words General**","```/moustacheman - /colin - /codegod -/kay```")
+        .setField("**Easter Egg Words Darklight Collective**","```/elias - /zozo - /raishin - /amber - /lulu - /sith```")
+        message.channel.sendMessage({embed});
+    }
     //-----------------------------------------------------------
     //-----------------------------------------------------------
     //-----------------------------------------------------------
@@ -164,7 +205,7 @@ bot.on("message", message => {
 
         
         if(msg.startsWith("/" + embedPics[4] + "/")){
-            message.channel.bulkDelete(1);
+            message.delete();
             var randompic = praise[Math.floor(Math.random()*praise.length)];
             var embed = new Discord.RichEmbed()
             .setImage(randompic)

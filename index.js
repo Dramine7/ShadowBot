@@ -185,7 +185,6 @@ bot.on("message", message => {
         var embed = new Discord.RichEmbed()
         .setThumbnail("https://media1.tenor.com/images/62fa490103c427b4c118336aa223b27a/tenor.gif?itemid=8292814")
         .setTitle("Les Easter Eggs")
-        .addBlankField()
         .setDescription("**DISCLAIMER:** If you use any of the following Easter Eggs, that person gets pinged. Use with Caution!!!")
         .setColor(0xFF69B4)
         .addBlankField()

@@ -105,7 +105,7 @@ bot.on("message", message => {
 
         const hi = ["hey", "hello", "good morning", "hi", "good evening", "good afternoon"];
         for(var h = 0; h < swearWords.length; h++) { 
-        if( hi.some(word => msg.startsWith(word))  && message.content.toLowerCase() == hi[h]) {
+        if( hi.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == hi[h] + " <@414814903946182686>") {
             message.reply("Hello Human..."); 
         }
     }
@@ -559,7 +559,7 @@ bot.on('message', async message => {
 
     //yeah well... pretty much self explanatory-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       if (msg.startsWith(prefix + commands[7])){
-        message.reply('**Go to this link to see my brain... You are gross and perverted now :)**' + '\n https://github.com/Dramine7/ShadowBot/edit/master/index.js');
+        message.reply('**Go to this link to see my brain... You are gross and perverted now :)**' + '\n https://github.com/Dramine7/ShadowBot/index.js');
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

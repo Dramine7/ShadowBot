@@ -63,7 +63,7 @@ bot.on("message", message => {
     
     const fuckup = ["fuck", "dammit", "damnit", "damn", "shit"];
     for(var fu = 0; fu < fuckup.length; fu++) { 
-    if(fuckup.some(word => msg.startsWith(word)) && message.content.toLowerCase() == fuckup[fu]) {
+    if(fuckup.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == fuckup[fu] + " <@414814903946182686>") {
         message.react("💩")
     }
 } 
@@ -71,7 +71,7 @@ bot.on("message", message => {
     
     const success = ["finally", "woop", "i did it", "nice"];
     for(var su = 0; su < success.length; su++) { 
-    if(success.some(word => msg.startsWith(word)) && message.content.toLowerCase() == success[su]) {
+    if(success.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == success[su] + " <@414814903946182686>") {
         message.react("👌")
     }  
 }   
@@ -97,7 +97,7 @@ bot.on("message", message => {
     
         const swearWords = ["fuck you", "fucker", "bitch", "dick", "you suck", "asshole", "you asshole", "kys", "kill yourself", "cunt"]; //string of possible texts
         for(var sw = 0; sw < swearWords.length; sw++) { 
-        if( swearWords.some(word => msg.startsWith(word)) && message.content.toLowerCase() == swearWords[sw]) {
+        if( swearWords.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == swearWords[sw] + " <@414814903946182686>") {
             message.reply("Your pathetic intellect cannot withstand the intelligence of any digital matter or even other organic matter <:cyka:417458881443397642> "); //reply tags the person who wrote the message
             //message.channel.sendMessage('He wants to fight us? Pathetic') //sends message to channel rather than tag
         } 
@@ -112,7 +112,7 @@ bot.on("message", message => {
 
         const cya = ["bye", "goodybe", "cya", "bai", "see you later", "see you", "good night", "gnight"];
         for(var bye = 0; bye < cya.length; bye++) { 
-        if( cya.some(word => msg.startsWith(word)) && message.content.toLowerCase() == cya[bye]) {
+        if( cya.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == cya[bye] + " <@414814903946182686>") {
             message.reply("I shall be at your service Human, once you get back. See You Later :)"); 
         }
     }

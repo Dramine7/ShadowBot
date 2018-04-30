@@ -61,9 +61,10 @@ bot.on("message", message => {
     let msg = message.content.toLowerCase(); //allows every word in array be in any written way because it converts it to lower case
     //Reaction Replies
     
+
     const fuckup = ["fuck", "dammit", "damnit", "damn", "shit"];
     for(var fu = 0; fu < fuckup.length; fu++) { 
-    if(fuckup.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == fuckup[fu] + " <@414814903946182686>") {
+    if(fuckup.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == fuckup[fu]) {
         message.react("💩")
     }
 } 
@@ -71,7 +72,7 @@ bot.on("message", message => {
     
     const success = ["finally", "woop", "i did it", "nice"];
     for(var su = 0; su < success.length; su++) { 
-    if(success.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == success[su] + " <@414814903946182686>") {
+    if(success.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == success[su]) {
         message.react("👌")
     }  
 }   
@@ -621,7 +622,7 @@ bot.on('message', async message => {
                       else if (s == 4 && message.channel.id == '422872480152027136' || '403927636314685441') { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
                 
                     else {
-                    if(s == 4 && message.channel.id !== '422872480152027136' || '403927636314685441') { //this indicates, that this action can only be sent in a certain channel
+                    if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
                     message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
                     }
                     return;  } 
@@ -634,10 +635,10 @@ bot.on('message', async message => {
                       else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); }
                       else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); }
                       else if (s == 3) {message.channel.send(`***<@${message.author.id}> just patted <@${iduser.id}>. So Soft :O ***`); }
-                      else if (s == 4 && message.channel.id == '422872480152027136' || '403927636314685441') {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
+                      else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
                       
                     else { 
-                    if(s == 4 && message.channel.id !== '422872480152027136' || '403927636314685441') { //this indicates, that this action can only be sent in a certain channel
+                    if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
                     message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
                     }
                     return;  }

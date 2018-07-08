@@ -422,6 +422,7 @@ bot.on('message', async message => {
         .addField("`.invite`",`*Get the permanent Invite Link for this server*`)
         .addField("`.ping`",`*Get Your and the Bot's Latency*`)
         .addField("`.emojis`", `*Get a list of all the Emojis available in within this Discord Server*`)
+        .addField("`.info`", `*add "server" to find information about the Server. Tag a person to find information about them*`)
         .addBlankField()
         .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - invisible - stalked - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
         .addBlankField()
@@ -702,7 +703,9 @@ bot.on('message', async message => {
     if(args1 == 'server'){
         const embed = new Discord.RichEmbed()
   
-        .setTitle('Server info')
+        .setThumbnail(`${message.guild.iconURL}`)
+        .setColor(0x8A2BE2)
+        .addBlankField()
         .addField('Server name:', `${message.guild.name}`)
         .addField('Server owner:', `${message.guild.owner}`)
         .addField('Creation Date', `${message.guild.createdAt}`)
@@ -716,14 +719,11 @@ bot.on('message', async message => {
     }
     else if(args1 == user || member){
        
-        if(!user)
-            return message.reply('Mention who you want to find more about')
-        if(!member)
-            return message.reply('Mention who you want to find more about')  
-
         const embed = new Discord.RichEmbed()
-        .setTitle(`Info about ${user.tag}`)
-        .setColor(0x00AE86)
+
+        .setThumbnail(`${user.displayAvatarURL}`)
+        .setColor(0x8A2BE2)
+        .addBlankField()
         .addField(`Joined discord at:`,`${user.createdAt}`)
         .addField(`Joined server at:`, `${member.joinedAt}`)
         .addField('Nickname: ', `${member.displayName}`)
@@ -744,6 +744,12 @@ bot.on('message', async message => {
 
  
 });
+
+
+
+
+
+
 
 
 

@@ -705,7 +705,6 @@ bot.on('message', async message => {
   
         .setThumbnail(`${message.guild.iconURL}`)
         .setColor(0x8A2BE2)
-        .addBlankField()
         .addField('Server name:', `${message.guild.name}`)
         .addField('Server owner:', `${message.guild.owner}`)
         .addField('Creation Date', `${message.guild.createdAt}`)
@@ -723,7 +722,6 @@ bot.on('message', async message => {
 
         .setThumbnail(`${user.displayAvatarURL}`)
         .setColor(0x8A2BE2)
-        .addBlankField()
         .addField(`Joined discord at:`,`${user.createdAt}`)
         .addField(`Joined server at:`, `${member.joinedAt}`)
         .addField('Nickname: ', `${member.displayName}`)

@@ -21,6 +21,7 @@
 //22 Edit 10.04.2018 - Dramine7
 //23 Edit 11.04.2018 - Dramine7
 //24 Edit 13.04.2018 - Dramine7
+//25 Edit 08.07.2018 - Dramine7
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
 
@@ -383,7 +384,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -430,7 +431,6 @@ bot.on('message', async message => {
   
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // Purge, Cleanse... call it what you want idgaf
 
@@ -693,9 +693,63 @@ bot.on('message', async message => {
         message.channel.send("**The available Emojis on this server, are:**\n" + emojiList);
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     
+
+  //sum cool stuff to request more info and stuffa  
+ //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    if (msg.startsWith(prefix + commands [12])) {
+    let user = message.mentions.users.first();
+    let member = message.mentions.members.first();
+    if(args1 == 'server'){
+        const embed = new Discord.RichEmbed()
+  
+        .setTitle('Server info')
+        .addField('Server name:', `${message.guild.name}`)
+        .addField('Server owner:', `${message.guild.owner}`)
+        .addField('Creation Date', `${message.guild.createdAt}`)
+        .addField('Server location:', `${message.guild.region}`)
+        .addField('Server ID', `${message.guild.id}`)
+        .addField('Member count:', `${message.guild.memberCount}`)
+        .addField('Is server online?: ', `${message.guild.available}`)
+        .addField('Server Icon', `${message.guild.iconURL}`)
+        .setTimestamp()
+        message.channel.send({embed});
+    }
+    else if(args1 == user || member){
+       
+        if(!user)
+            return message.reply('Mention who you want to find more about')
+        if(!member)
+            return message.reply('Mention who you want to find more about')  
+
+        const embed = new Discord.RichEmbed()
+        .setTitle(`Info about ${user.tag}`)
+        .setColor(0x00AE86)
+        .addField(`Joined discord at:`,`${user.createdAt}`)
+        .addField(`Joined server at:`, `${member.joinedAt}`)
+        .addField('Nickname: ', `${member.displayName}`)
+        .addField('Role:', `${member.highestRole}`)
+        .addField('Mute status:', `${member.serverMute}`)
+        .addField('Status:',`${user.presence.status}`)
+        .addField('Pic:', `${user.displayAvatarURL}`)
+        .setFooter(`ID: ${user.id}`)
+        .setTimestamp()
+        message.channel.send({embed});
+
+    }else{message.reply("Please specify the info you'd like to know. Available specifications are: server, user.")}
+
+  }
+  
+  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
+
+ 
 });
+
+
+
+
+
+
 
 
 

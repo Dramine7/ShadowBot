@@ -23,13 +23,13 @@
 //24 Edit 13.04.2018 - Dramine7
 //25 Edit 08.07.2018 - Dramine7
 //26 Edit 15.11.2018 - Dramine7
-
-//SERVE THY OWNER LIKE A SLAVE. I luv u <3
+//let emojiDB = {};
 let emojiDB = require('./database/emojireact.json');
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
+const fs = require('fs'); //native module for file reading, writing etc.
 
 const prefix = '.';
 
@@ -399,6 +399,7 @@ bot.on('message', async message => {
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the space
     let args1 = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
+    let channel = message.channel;
     
     
     
@@ -740,7 +741,7 @@ bot.on('message', async message => {
   }
   
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   
+ 
   //giveaway commando
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
@@ -773,10 +774,45 @@ bot.on('message', async message => {
 }
  
 };
-   
-
  
+
+
+
+//💩 
+//() => {} blockscopes
+//never semicolon after blockscope
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//💩
+
 });
+//console.log(`test \n\n`);
+/*
+bot.on("messageReactionAdd",  (messageReaction, user) => {
+    //let emojiDB = require('./database/emojireact.json');
+    //console.log(`running message reaction\n\n`);
+    if (emojiDB[messageReaction.message.id]) {
+        //console.log(messageReaction.message.guild.id);
+        if (messageReaction.emoji.name === "💩") {
+            let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Dev');
+            if (emojiRole) {
+                let target = messageReaction.message.guild.member(user.id);
+                if (target) {
+                    target.addRole(emojiRole);
+                }
+            }
+            //console.log(`we are giving 💩 poop emoji role stuff and stuff etc.`);
+        } 
+        if (messageReaction.emoji.name === "👍") {
+            //console.log(`we are giving 👍 thumbs up role  stuff and stuff etc.`);
+        } 
+       //console.log("gives role to user");
+        //console.log(messageReaction.emoji.name);
+    }
+
+    //console.log(messageReaction.message.id);
+});
+*/
 
 bot.on('raw', async (data) => {
     let EventName = data.t;
@@ -866,6 +902,18 @@ bot.on('raw', async (data) => {
         }
     }
 });
+
+/*bot.on('debug', (info) => {
+    console.log(info);
+});*/
+
+
+
+
+
+
+
+
 
 
 

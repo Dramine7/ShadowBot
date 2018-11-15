@@ -22,9 +22,11 @@
 //23 Edit 11.04.2018 - Dramine7
 //24 Edit 13.04.2018 - Dramine7
 //25 Edit 08.07.2018 - Dramine7
+//26 Edit 15.11.2018 - Dramine7
 //test
 
 //SERVE THY OWNER LIKE A SLAVE. I luv u <3
+let emojiDB = require('./database/emojireact.json');
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const weather = require('weather-js');
@@ -385,7 +387,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'GIVEAWAY'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -739,12 +741,132 @@ bot.on('message', async message => {
   }
   
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
+   
+  //giveaway commando
+ //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ if (msg.startsWith(prefix + commands[13])) {
+    //hello event
+    message.delete();
+
+    if(message.author.id !== '252091777115226114' ) {  //checks if users name includes the roles listed
+        message.reply("You don't have the permissions to use this command"); // you gotta have the role biatch.
+        return; 
+    }
+
+    if(message.author.id == '252091777115226114' ) {
+    let emojiDB = require('./database/emojireact.json');
+    channel.send(`If you would like to be pinged for Giveaways A upvote with the 💩 Emoji in order to get Samplerole 1\nIf you would like to be pinged for Giveaways B upvote with the 👍 Emoji in order to get Samplerole 2\n\n If you don't want the role anymore just remove the Emoji`)
+    .then(message => {
+        emojiDB[message.id] = {
+            "id": message.id
+
+    }
+        fs.writeFile('./database/emojireact.json', JSON.stringify(emojiDB, null, 4), (err) => {
+            if (err) { return console.log(err); }
+            console.log(`saved emojiDB successfully\n\n`);
+        });
+        console.log(emojiDB);
+        console.log(`Sent message: ${message.id}`);
+        //console.log(message.content);
+    })
+    .catch(console.error);
+}
+ 
+};
+   
 
  
 });
 
+bot.on('raw', async (data) => {
+    let EventName = data.t;
+    let EventData = data.d;
+    let messageReaction = EventData;
+    //console.log(`Raw Event Detected\nEventName: ${EventName}\nEventData: ${EventData}\n\n`);
+    //console.log(data);
 
+    if (EventName === "MESSAGE_REACTION_ADD") {
+        //console.log(EventData);
+        let user = bot.users.get(EventData.user_id);
+        messageReaction.message = {};
+        messageReaction.message.guild = await bot.guilds.get(EventData.guild_id);
+        messageReaction.channel = await messageReaction.message.guild.channels.get(EventData.channel_id);
+        messageReaction.message = await messageReaction.channel.fetchMessage(EventData.message_id);
+        //console.log(messageReaction.message.id);
+        if (emojiDB[messageReaction.message.id]) {
+            //console.log(messageReaction.message.guild.id);
+            if (messageReaction.emoji.name === "💩") {
+                console.log("messagereactionworks1...\n\n");
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole1');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                        //message.author.sendMessage(`You got the role "samplerole1". In the future you will be pinged in relation to samplerole1 stuff. `);
+                    }
+                }
+                //console.log(`we are giving 💩 poop emoji role stuff and stuff etc.`);
+            } 
+            if (messageReaction.emoji.name === "👍") {
+                console.log("messagereactionworks2...\n\n");
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole2');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                        //message.author.send(`You got the role "samplerole2". In the future you will be pinged in relation to samplerole2 stuff. `);
+                    }
+                }
+                //console.log(`we are giving 👍 thumbs up role  stuff and stuff etc.`);
+            } 
+           /* console.log("gives role to user");
+            console.log(messageReaction.emoji.name);*/
+        }
+    }
+
+
+
+
+    if (EventName === "MESSAGE_REACTION_REMOVE") {
+        //console.log(EventData);
+        let user = bot.users.get(EventData.user_id);
+        messageReaction.message = {};
+        messageReaction.message.guild = await bot.guilds.get(EventData.guild_id);
+        messageReaction.channel = await messageReaction.message.guild.channels.get(EventData.channel_id);
+        messageReaction.message = await messageReaction.channel.fetchMessage(EventData.message_id);
+        //console.log(messageReaction.message.id);
+        if (emojiDB[messageReaction.message.id]) {
+            //console.log(messageReaction.message.guild.id);
+            if (messageReaction.emoji.name === "💩") {
+                console.log("messagereactionremoveworks1...\n\n");
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole1');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.removeRole(emojiRole);
+                        //message.author.sendMessage(`You were stripped from the "samplerole1". In the future you won't be pinged anymore in relation to samplerole1 stuff. `);
+                    }
+                }
+                //console.log(`we are giving 💩 poop emoji role stuff and stuff etc.`);
+            } 
+            if (messageReaction.emoji.name === "👍") {
+                console.log("messagereactionremoveworks2...\n\n");
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole2');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.removeRole(emojiRole);
+                        //message.author.sendMessage(`You were stripped from the "samplerole2". In the future you won't be pinged anymore in relation to samplerole2 stuff. `);
+                    }
+                }
+                //console.log(`we are giving 👍 thumbs up role  stuff and stuff etc.`);
+            } 
+           /* console.log("gives role to user");
+            console.log(messageReaction.emoji.name);*/
+        }
+    }
+});
 
 
 

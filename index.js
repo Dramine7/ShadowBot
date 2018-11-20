@@ -765,6 +765,7 @@ bot.on('message', async message => {
         fs.writeFile('./database/emojireact.json', JSON.stringify(emojiDB, null, 4), (err) => {
             if (err) { return console.log(err); }
             console.log(`saved emojiDB successfully\n\n`);
+            message.channel.send("it worked");
         });
         console.log(emojiDB);
         console.log(`Sent message: ${message.id}`);

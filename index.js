@@ -838,7 +838,7 @@ bot.on('raw', async (data) => {
             //console.log(messageReaction.message.guild.id);
 
             //Announcements
-            if (messageReaction.emoji.name === "<:politecat:487159896211456001>") { 
+            if (messageReaction.emoji.name === "💩") { 
                // console.log("messagereactionworks1...\n\n");
                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Announcements');
                 if (emojiRole) {

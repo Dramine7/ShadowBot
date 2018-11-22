@@ -755,11 +755,11 @@ bot.on('message', async message => {
         message.reply("You don't have the permissions to use this command"); // you gotta have the role biatch.
         return; 
     }
-    if(channel.id !== '420624249430999040' ) {  //checks if users name includes the roles listed
+    if(channel.id !== '483605369541623816' ) {  //checks if users name includes the roles listed
         message.reply("You cannot use this command within this channel"); // you gotta have the role biatch.
         return; 
     }
-    if(channel.id == '420624249430999040' ) {  //checks if users name includes the roles listed
+    if(channel.id == '483605369541623816' ) {  //checks if users name includes the roles listed
     
     if(message.author.id == '252091777115226114' && message.author.id == '268740645529583617') {
     let emojiDB = require('./database/emojireact.json');

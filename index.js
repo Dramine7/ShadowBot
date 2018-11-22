@@ -780,14 +780,14 @@ bot.on('message', async message => {
     `)
     
     .then(message => {
-        message.react("487159896211456001") //server announce
+        /*message.react("487159896211456001") //server announce
         message.react("387009799985954816") //wf announce
         message.react("511592393502359552") //alerts
         message.react("474825929680486401") //wf giveaways
         message.react("486263137109147649") //game giveaways
         message.react("385154701848739840") //free games
         message.react("376539827610320897") //wf contributer
-        message.react("377950833830264832") //nsfw
+        message.react("377950833830264832") //nsfw*/
         emojiDB[message.id] = {
             "id": message.id
 

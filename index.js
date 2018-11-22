@@ -32,7 +32,7 @@ const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
 const fs = require('fs'); //native module for file reading, writing etc.
 
-const prefix = '_';
+const prefix = '.';
 
 bot.on("message", function(message){ //Kinda Useless but types message of any user in cmd log
     console.log(message.content);

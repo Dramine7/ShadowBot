@@ -23,6 +23,7 @@
 //24 Edit 13.04.2018 - Dramine7
 //25 Edit 08.07.2018 - Dramine7
 //26 Edit 15.11.2018 - Dramine7
+//27 Edit 22.11.2018 - Dramine7
 //let emojiDB = {};
 let emojiDB = require('./database/emojireact.json');
 

@@ -761,7 +761,7 @@ bot.on('message', async message => {
     }
     if(channel.id == '483605369541623816' ) {  //checks if users name includes the roles listed
     
-    if(message.author.id == '252091777115226114' && message.author.id == '268740645529583617') {
+    if(message.author.id == '252091777115226114' || message.author.id == '268740645529583617') {
     let emojiDB = require('./database/emojireact.json');
 
     channel.send(`

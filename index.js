@@ -32,7 +32,7 @@ const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
 const fs = require('fs'); //native module for file reading, writing etc.
 
-const prefix = '.';
+const prefix = '_';
 
 bot.on("message", function(message){ //Kinda Useless but types message of any user in cmd log
     console.log(message.content);
@@ -387,7 +387,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'GIVEAWAY'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -427,6 +427,7 @@ bot.on('message', async message => {
         .addField("`.ping`",`*Get Your and the Bot's Latency*`)
         .addField("`.emojis`", `*Get a list of all the Emojis available in within this Discord Server*`)
         .addField("`.info`", `*add "server" to find information about the Server. Tag a person to find information about them*`)
+        .addField("`.roleassign`", `*Posts a message which allows the bot to assign/remove Roles on Emoji-Add/Remove*`)
         .addBlankField()
         .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - invisible - stalked - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
         .addBlankField()
@@ -750,15 +751,43 @@ bot.on('message', async message => {
     //hello event
     message.delete();
 
-    if(message.author.id !== '252091777115226114' ) {  //checks if users name includes the roles listed
+    if(message.author.id !== '252091777115226114' || message.author.id !== '268740645529583617') {  //checks if users name includes the roles listed
         message.reply("You don't have the permissions to use this command"); // you gotta have the role biatch.
         return; 
     }
-
-    if(message.author.id == '252091777115226114' ) {
+    if(channel.id !== '483605369541623816' ) {  //checks if users name includes the roles listed
+        message.reply("You cannot use this command within this channel"); // you gotta have the role biatch.
+        return; 
+    }
+    if(channel.id == '483605369541623816' ) {  //checks if users name includes the roles listed
+    
+    if(message.author.id == '252091777115226114' || message.author.id == '268740645529583617') {
     let emojiDB = require('./database/emojireact.json');
-    channel.send(`If you would like to be pinged for Giveaways A upvote with the 💩 Emoji in order to get Samplerole 1\nIf you would like to be pinged for Giveaways B upvote with the 👍 Emoji in order to get Samplerole 2\n\n If you don't want the role anymore just remove the Emoji`)
+
+    channel.send(`
+**On our server you can choose what you want to get notified about!**
+**It's simple: Upvote the emoji for the thing you're interested in receiving notifications about! If you have any questions or suggestions, let us know!**
+    
+-Server Announcements: <:politecat:487159896211456001>
+-Warframe Announcements: <:communismsmiley:387009799985954816>
+-Alerts: <:feelshappyhugman:511592393502359552> (Nitain Extract, Riven mods, Orokin Reactors, etc)
+-Warframe Giveaways: <:02dab:474825929680486401>
+-Game Giveaways: <:coolerseal:486263137109147649>
+-Free Games: <:PLS:385154701848739840>
+-Warframe Contributor: <:wide_eye_pepe:376539827610320897> (Notices about the resources needed for the awesome clan dojo builds we put together from your ideas)
+    
+-NSFW Access: <:fuckyfucky:377950833830264832> (for all you lewd nuggets)
+    `)
+    
     .then(message => {
+        message.react("487159896211456001") //server announce
+        message.react("387009799985954816") //wf announce
+        message.react("511592393502359552") //alerts
+        message.react("474825929680486401") //wf giveaways
+        message.react("486263137109147649") //game giveaways
+        message.react("385154701848739840") //free games
+        message.react("376539827610320897") //wf contributer
+        message.react("377950833830264832") //nsfw
         emojiDB[message.id] = {
             "id": message.id
 
@@ -766,7 +795,6 @@ bot.on('message', async message => {
         fs.writeFile('./database/emojireact.json', JSON.stringify(emojiDB, null, 4), (err) => {
             if (err) { return console.log(err); }
             console.log(`saved emojiDB successfully\n\n`);
-            message.channel.send("it worked");
         });
         console.log(emojiDB);
         console.log(`Sent message: ${message.id}`);
@@ -774,6 +802,7 @@ bot.on('message', async message => {
     })
     .catch(console.error);
 }
+    }
  
 };
  
@@ -788,33 +817,7 @@ bot.on('message', async message => {
 //💩
 
 });
-//console.log(`test \n\n`);
-/*
-bot.on("messageReactionAdd",  (messageReaction, user) => {
-    //let emojiDB = require('./database/emojireact.json');
-    //console.log(`running message reaction\n\n`);
-    if (emojiDB[messageReaction.message.id]) {
-        //console.log(messageReaction.message.guild.id);
-        if (messageReaction.emoji.name === "💩") {
-            let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Dev');
-            if (emojiRole) {
-                let target = messageReaction.message.guild.member(user.id);
-                if (target) {
-                    target.addRole(emojiRole);
-                }
-            }
-            //console.log(`we are giving 💩 poop emoji role stuff and stuff etc.`);
-        } 
-        if (messageReaction.emoji.name === "👍") {
-            //console.log(`we are giving 👍 thumbs up role  stuff and stuff etc.`);
-        } 
-       //console.log("gives role to user");
-        //console.log(messageReaction.emoji.name);
-    }
 
-    //console.log(messageReaction.message.id);
-});
-*/
 
 bot.on('raw', async (data) => {
     let EventName = data.t;
@@ -833,9 +836,11 @@ bot.on('raw', async (data) => {
         //console.log(messageReaction.message.id);
         if (emojiDB[messageReaction.message.id]) {
             //console.log(messageReaction.message.guild.id);
-            if (messageReaction.emoji.name === "💩") {
-                console.log("messagereactionworks1...\n\n");
-                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole1');
+
+            //Announcements
+            if (messageReaction.emoji.name === "<:politecat:487159896211456001>") { 
+               // console.log("messagereactionworks1...\n\n");
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Announcements');
                 if (emojiRole) {
                     let target = messageReaction.message.guild.member(user.id);
                     if (target) {
@@ -845,20 +850,83 @@ bot.on('raw', async (data) => {
                 }
                 //console.log(`we are giving 💩 poop emoji role stuff and stuff etc.`);
             } 
-            if (messageReaction.emoji.name === "👍") {
-                console.log("messagereactionworks2...\n\n");
-                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole2');
+
+            //WF Announcements
+            if (messageReaction.emoji.name === "<:communismsmiley:387009799985954816>") { 
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Announcements');
                 if (emojiRole) {
                     let target = messageReaction.message.guild.member(user.id);
                     if (target) {
                         target.addRole(emojiRole);
-                        //message.author.send(`You got the role "samplerole2". In the future you will be pinged in relation to samplerole2 stuff. `);
                     }
                 }
-                //console.log(`we are giving 👍 thumbs up role  stuff and stuff etc.`);
             } 
-           /* console.log("gives role to user");
-            console.log(messageReaction.emoji.name);*/
+            
+            //WF Alerts
+            if (messageReaction.emoji.name === "<:feelshappyhugman:511592393502359552>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Alerts');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //WF Giveaways
+            if (messageReaction.emoji.name === "<:02dab:474825929680486401>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Giveaways');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Game Giveaways
+            if (messageReaction.emoji.name === "<:coolerseal:486263137109147649>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Game Giveaways');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Free Games
+            if (messageReaction.emoji.name === "<:PLS:385154701848739840>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Free Games');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Contributer
+            if (messageReaction.emoji.name === "<:wide_eye_pepe:376539827610320897>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Contributor');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Lewd Access
+            if (messageReaction.emoji.name === "<:fuckyfucky:377950833830264832>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Lewd Access');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }     
+            }
         }
     }
 
@@ -875,32 +943,98 @@ bot.on('raw', async (data) => {
         //console.log(messageReaction.message.id);
         if (emojiDB[messageReaction.message.id]) {
             //console.log(messageReaction.message.guild.id);
-            if (messageReaction.emoji.name === "💩") {
-                console.log("messagereactionremoveworks1...\n\n");
-                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole1');
-                if (emojiRole) {
-                    let target = messageReaction.message.guild.member(user.id);
-                    if (target) {
+
+             //Announcements
+             if (messageReaction.emoji.name === "<:politecat:487159896211456001>") { 
+                // console.log("messagereactionworks1...\n\n");
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Announcements');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
+                         target.removeRole(emojiRole);
+                         //message.author.sendMessage(`You got the role "samplerole1" removed. In the future you will be pinged in relation to samplerole1 stuff. `);
+                     }
+                 }
+                 //console.log(`we are removing 💩 poop emoji role stuff and stuff etc.`);
+             } 
+ 
+             //WF Announcements
+             if (messageReaction.emoji.name === "<:communismsmiley:387009799985954816>") { 
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Announcements');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
+                         target.removeRole(emojiRole);
+                     }
+                 }
+             } 
+             
+             //WF Alerts
+             if (messageReaction.emoji.name === "<:feelshappyhugman:511592393502359552>") {
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Alerts');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
+                         target.removeRole(emojiRole);
+                     }
+                 }
+             } 
+             
+             //WF Giveaways
+             if (messageReaction.emoji.name === "<:02dab:474825929680486401>") {
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Giveaways');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
+                         target.removeRole(emojiRole);
+                     }
+                 }
+             } 
+             
+             //Game Giveaways
+             if (messageReaction.emoji.name === "<:coolerseal:486263137109147649>") {
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Game Giveaways');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
+                         target.removeRole(emojiRole);
+                     }
+                 }
+             } 
+             
+             //Free Games
+             if (messageReaction.emoji.name === "<:PLS:385154701848739840>") {
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Free Games');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
+                         target.removeRole(emojiRole);
+                     }
+                 }
+             } 
+             
+             //Contributer
+             if (messageReaction.emoji.name === "<:wide_eye_pepe:376539827610320897>") {
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Contributor');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
                         target.removeRole(emojiRole);
-                        //message.author.sendMessage(`You were stripped from the "samplerole1". In the future you won't be pinged anymore in relation to samplerole1 stuff. `);
-                    }
-                }
-                //console.log(`we are giving 💩 poop emoji role stuff and stuff etc.`);
-            } 
-            if (messageReaction.emoji.name === "👍") {
-                console.log("messagereactionremoveworks2...\n\n");
-                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'samplerole2');
-                if (emojiRole) {
-                    let target = messageReaction.message.guild.member(user.id);
-                    if (target) {
+                     }
+                 }
+             } 
+             
+             //Lewd Access
+             if (messageReaction.emoji.name === "<:fuckyfucky:377950833830264832>") {
+                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Lewd Access');
+                 if (emojiRole) {
+                     let target = messageReaction.message.guild.member(user.id);
+                     if (target) {
                         target.removeRole(emojiRole);
-                        //message.author.sendMessage(`You were stripped from the "samplerole2". In the future you won't be pinged anymore in relation to samplerole2 stuff. `);
-                    }
-                }
-                //console.log(`we are giving 👍 thumbs up role  stuff and stuff etc.`);
-            } 
-           /* console.log("gives role to user");
-            console.log(messageReaction.emoji.name);*/
+                     }
+                 }     
+             }
+    
         }
     }
 });
@@ -908,6 +1042,8 @@ bot.on('raw', async (data) => {
 /*bot.on('debug', (info) => {
     console.log(info);
 });*/
+
+
 
 
 

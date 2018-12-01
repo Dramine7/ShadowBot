@@ -391,7 +391,7 @@ if (message.content.toLowerCase() == "adventcalendar"){
             break;
       
             case 2:
-            bot.channels.get("420624249430999040").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\nYou will get a direct message");
+            bot.channels.get("518086741924642819").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
             }
     }

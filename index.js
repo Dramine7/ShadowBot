@@ -381,7 +381,7 @@ bot.on("message", message => {
 //Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
 bot.on("ready", () => {
     switch(new Date().getHours()){
-        case 17:
+        case 19:
         switch(new Date().getDate()){
             case 1:
             switch(new Date().getMinutes()){

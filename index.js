@@ -378,8 +378,8 @@ bot.on("message", message => {
 
 //advent calendar
 //Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
-var adv1 = new Date(2018, 11, 1, 1, 29, 0);
-var adv2 = new Date(2018, 11, 1, 1, 30, 0);
+var adv1 = new Date(2018, 11, 1, 1, 32, 0);
+var adv2 = new Date(2018, 11, 1, 1, 33, 0);
 var adv3 = new Date(2018, 11, 3, 0, 0, 0);
 
 var schedool = schedule.scheduleJob(adv1, function(){

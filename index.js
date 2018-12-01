@@ -25,6 +25,7 @@
 //26 Edit 15.11.2018 - Dramine7
 //27 Edit 22.11.2018 - Dramine7
 //28 Edit 01.12.2018 - Dramine7
+
 //let emojiDB = {};
 let emojiDB = require('./database/emojireact.json');
 
@@ -62,11 +63,12 @@ bot.on("guildMemberAdd", member => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
 //Really Simple Events and Word Replacements---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on("message", message => {
     let msg = message.content.toLowerCase(); //allows every word in array be in any written way because it converts it to lower case
     //Reaction Replies
-    
+
 
     const fuckup = ["fuck", "dammit", "damnit", "damn", "shit"];
     for(var fu = 0; fu < fuckup.length; fu++) { 
@@ -378,17 +380,17 @@ bot.on("message", message => {
 
 //advent calendar
 //Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
-var adv1 = new Date(2018, 11, 1, 1, 32, 0);
-var adv2 = new Date(2018, 11, 1, 1, 33, 0);
+var adv1 = new Date(2018, 11, 1, 1, 42, 0);
+var adv2 = new Date(2018, 11, 1, 1, 43, 0);
 var adv3 = new Date(2018, 11, 3, 0, 0, 0);
 
-var schedool = schedule.scheduleJob(adv1, function(){
-    bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nIf you open a door every single day there might be a bigger surprise waiting for you on the last advent\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message");
+var testschedule = schedule.scheduleJob(adv1, function(){
+    bot.channels.get("420624249430999040").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nIf you open a door every single day there might be a bigger surprise waiting for you on the last advent\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message");
 });
-var schedool = schedule.scheduleJob(adv2, function(){
-    bot.channels.get("518086741924642819").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\n You will get a direct message");
+var testschedule = schedule.scheduleJob(adv2, function(){
+    bot.channels.get("420624249430999040").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\n You will get a direct message");
 });
-var schedool = schedule.scheduleJob(adv3, function(){
+var testschedule = schedule.scheduleJob(adv3, function(){
     bot.channels.get("518086741924642819").send("Door 3 has now been opened. Write .opendoor\n You will get a direct message");
 });
 
@@ -407,7 +409,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN', 'OPENDOOR'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN','OPENDOOR'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -447,7 +449,7 @@ bot.on('message', async message => {
         .addField("`.ping`",`*Get Your and the Bot's Latency*`)
         .addField("`.emojis`", `*Get a list of all the Emojis available in within this Discord Server*`)
         .addField("`.info`", `*add "server" to find information about the Server. Tag a person to find information about them*`)
-        .addField("`.roleassign`", `*Posts a message which allows the bot to assign/remove Roles on Emoji-Add/Remove*`)
+        .addField("`.roleassign`", `*Posts a message which allows the bot to assign/remove Roles on Em*`)
         .addBlankField()
         .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - invisible - stalked - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
         .addBlankField()
@@ -775,11 +777,11 @@ bot.on('message', async message => {
         message.reply("You don't have the permissions to use this command"); // you gotta have the role biatch.
         return; 
     }
-    if(channel.id !== '483605369541623816' ) {  //checks if users name includes the roles listed
+    if(channel.id !== '420624249430999040' ) {  //checks if users name includes the roles listed
         message.reply("You cannot use this command within this channel"); // you gotta have the role biatch.
         return; 
     }
-    if(channel.id == '483605369541623816' ) {  //checks if users name includes the roles listed
+    if(channel.id == '420624249430999040' ) {  //checks if users name includes the roles listed
     
     if(message.author.id == '252091777115226114' || message.author.id == '268740645529583617') {
     let emojiDB = require('./database/emojireact.json');
@@ -835,7 +837,7 @@ bot.on('message', async message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //💩
-//advent calendar
+ //advent calendar
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  if (msg.startsWith(prefix + commands[14])) {
@@ -920,6 +922,8 @@ bot.on('message', async message => {
 }else{
     message.author.send("This command can only be used in December during Advent Time :/");
 }
+ };
+
 });
 
 
@@ -1146,7 +1150,6 @@ bot.on('raw', async (data) => {
 /*bot.on('debug', (info) => {
     console.log(info);
 });*/
-
 
 
 

@@ -385,7 +385,7 @@ bot.on("ready", () => {
         switch(new Date().getDate()){
             case 1:
             switch(new Date().getMinutes()){
-            case 43:
+            case 45:
                 bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nIf you open a door every single day there might be a bigger surprise waiting for you on the last advent\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message\n\nIf You do not know what an Advent Calendar is look it up here: https://en.wikipedia.org/wiki/Advent_calendar");
             break;
             }

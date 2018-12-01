@@ -1201,3 +1201,4 @@ bot.on('raw', async (data) => {
 
 bot.login(process.env.BOT_TOKEN);
 //acts as a reference on which bot to use, also acts as a LOGIN, if anyone gets this they can login as bot: DONT SHARE 
+//

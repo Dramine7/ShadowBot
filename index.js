@@ -851,14 +851,14 @@ bot.on('message', async message => {
     message.delete();
     if(new Date().getMonth() == 11){
     switch(new Date().getDate()){
-        case 2:
-        message.author.send("***DOOR 1***\n\n\n**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names\n");
-        break;
         case 1:
-        message.author.send("***DOOR 2***\n\n\n**Happy 1st Advent :)**\nFrom within our hearts we wish you the best regards for the last month of December 2018\nWe hope you can fully enjoy the 1. Advent\nWe would also like to say that if you **open the door every single day** you will have a chance for a **bigger suprise** every Advent!");
+        message.author.send("***DOOR 1***\n\n**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names\n");
+        break;
+        case 2:
+        message.author.send("***DOOR 2***\n\n**Happy 1st Advent :)**\nFrom within our hearts we wish you the best regards for the last month of December 2018\nWe hope you can fully enjoy the 1. Advent\nWe would also like to say that if you **open the door every single day** you will have a chance for a **bigger suprise** every Advent!");
         break;
         case 3:
-        message.author.send("***DOOR 3***\n\n\nThere is a website which has saves old chat logs which can turn out to be pretty funny\nhttp://www.bash.org/?random\n");
+        message.author.send("***DOOR 3***\n\nThere is a website which has saves old chat logs which can turn out to be pretty funny\nhttp://www.bash.org/?random\n");
         break;
         case 4:
         message.author.send("");

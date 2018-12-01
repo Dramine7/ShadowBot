@@ -24,11 +24,13 @@
 //25 Edit 08.07.2018 - Dramine7
 //26 Edit 15.11.2018 - Dramine7
 //27 Edit 22.11.2018 - Dramine7
+//28 Edit 01.12.2018 - Dramine7
 //let emojiDB = {};
 let emojiDB = require('./database/emojireact.json');
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const weather = require('weather-js');
+const schedule = require('node-schedule');
 const bot = new Discord.Client(); //offers more possibilities
 const fs = require('fs'); //native module for file reading, writing etc.
 
@@ -374,6 +376,24 @@ bot.on("message", message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//advent calendar
+//Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
+var adv1 = new Date(2018, 11, 1, 1, 29, 0);
+var adv2 = new Date(2018, 11, 1, 1, 30, 0);
+var adv3 = new Date(2018, 11, 3, 0, 0, 0);
+
+var schedool = schedule.scheduleJob(adv1, function(){
+    bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nIf you open a door every single day there might be a bigger surprise waiting for you on the last advent\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message");
+});
+var schedool = schedule.scheduleJob(adv2, function(){
+    bot.channels.get("518086741924642819").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\n You will get a direct message");
+});
+var schedool = schedule.scheduleJob(adv3, function(){
+    bot.channels.get("518086741924642819").send("Door 3 has now been opened. Write .opendoor\n You will get a direct message");
+});
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //Normal Commands
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on('message', async message => {
@@ -387,7 +407,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN', 'OPENDOOR'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -815,7 +835,91 @@ bot.on('message', async message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //💩
-
+//advent calendar
+ //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ if (msg.startsWith(prefix + commands[14])) {
+    message.delete();
+    if(new Date().getMonth() == 11){
+    switch(new Date().getDate()){
+        case 1:
+        message.author.send("**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names");
+        break;
+        case 2:
+        message.author.send("");
+        break;
+        case 3:
+        message.author.send("");
+        break;
+        case 4:
+        message.author.send("");
+        break;
+        case 5:
+        message.author.send("");
+        break;
+        case 6:
+        message.author.send("");
+        break;
+        case 7:
+        message.author.send("");
+        break;
+        case 8:
+        message.author.send("");
+        break;
+        case 9:
+        message.author.send("");
+        break;
+        case 10:
+        message.author.send("");
+        break;
+        case 11:
+        message.author.send("");
+        break;
+        case 12:
+        message.author.send("");
+        break;
+        case 13:
+        message.author.send("");
+        break;
+        case 14:
+        message.author.send("");
+        break;
+        case 15:
+        message.author.send("");
+        break;
+        case 16:
+        message.author.send("");
+        break;
+        case 17:
+        message.author.send("");
+        break;
+        case 18:
+        message.author.send("");
+        break;
+        case 19:
+        message.author.send("");
+        break;
+        case 20:
+        message.author.send("");
+        break;
+        case 21:
+        message.author.send("");
+        break;
+        case 22:
+        message.author.send("");
+        break;
+        case 23:
+        message.author.send("");
+        break;
+        case 24:
+        message.author.send("");
+        break;
+        default:
+        message.channel.send("something must've went wrong");
+    }
+}else{
+    message.author.send("This command can only be used in December during Advent Time :/");
+}
 });
 
 

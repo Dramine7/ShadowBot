@@ -851,10 +851,10 @@ bot.on('message', async message => {
     if(new Date().getMonth() == 11){
     switch(new Date().getDate()){
         case 1:
-        message.author.send("**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names");
+        message.author.send("***DOOR 1***\n\n\n**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names\n");
         break;
         case 2:
-        message.author.send("**Happy 1st Advent :)**\nThere is a website which has saves old chat logs which can turn out to be pretty funny\nhttp://www.bash.org/?random");
+        message.author.send("***DOOR 2***\n\n\n**Happy 1st Advent :)**\nThere is a website which has saves old chat logs which can turn out to be pretty funny\nhttp://www.bash.org/?random\n");
         break;
         case 3:
         message.author.send("");

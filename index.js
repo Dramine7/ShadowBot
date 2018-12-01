@@ -380,6 +380,9 @@ bot.on("message", message => {
 //advent calendar
 //Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
 bot.on("ready", () => {
+    var currenttime = Date();
+    bot.channels.get("518086741924642819").send(currenttime);
+    
     switch(new Date().getHours()){
         case 19:
         switch(new Date().getDate()){

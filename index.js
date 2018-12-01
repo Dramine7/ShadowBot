@@ -384,11 +384,11 @@ bot.on("ready", () => {
     bot.channels.get("518086741924642819").send(currenttime);*/
     
     switch(new Date().getHours()){
-        case 19:
+        case 20:
         switch(new Date().getDate()){
             case 1:
             switch(new Date().getMinutes()){
-            case 57:
+            case 5:
                 bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nIf you open a door every single day there might be a bigger surprise waiting for you on the last advent\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message\n\nIf You do not know what an Advent Calendar is look it up here: https://en.wikipedia.org/wiki/Advent_calendar");
             break;
             }
@@ -422,7 +422,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN','OPENDOOR','TIME'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN','OPENDOOR','BOTTIME'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -940,7 +940,7 @@ bot.on('message', async message => {
  
  if (msg.startsWith(prefix + commands[15])) {
     var currenttime = Date();
-    message.channel.sendMessage("The Current Time is: " + currenttime);
+    message.channel.sendMessage("The Current Time for the Bot is: " + currenttime);
   };
     
 });

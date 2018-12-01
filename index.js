@@ -403,10 +403,6 @@ bot.on("ready", () => {
             break;
         }
         break;
-
-        default:
-        bot.channels.get("518086741924642819").send("-----------------------------------");
-        break;
     }
 });
 
@@ -426,7 +422,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN','OPENDOOR'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', 'ROLEASSIGN','OPENDOOR','TIME'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -940,8 +936,15 @@ bot.on('message', async message => {
     message.author.send("This command can only be used in December during Advent Time :/");
 }
  };
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ if (msg.startsWith(prefix + commands[15])) {
+    var currenttime = Date();
+    message.channel.sendMessage("The Current Time is: " + currenttime);
+  };
+    
 });
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 bot.on('raw', async (data) => {

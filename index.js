@@ -380,9 +380,10 @@ bot.on("message", message => {
 //advent calendar
 //Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
 bot.on("message", message => {
-
+if (message.author.bot) return; //so bot doesnt react to his own things
+if(message.channel.id == "518086741924642819"){
+    message.delete()
 if (message.content.toLowerCase() == "adventcalendar"){
-    message.delete();
     if(message.author.id == "252091777115226114"){
 
         switch(new Date().getDate()){
@@ -396,7 +397,7 @@ if (message.content.toLowerCase() == "adventcalendar"){
             }
     }
 }
-
+}
 
 });
 

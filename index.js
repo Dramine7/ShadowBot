@@ -379,33 +379,26 @@ bot.on("message", message => {
 
 //advent calendar
 //Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
-bot.on("ready", () => {
-    /*var currenttime = Date();
-    bot.channels.get("518086741924642819").send(currenttime);*/
-    
-    switch(new Date().getHours()){
-        case 20:
+bot.on("message", message => {
+
+if (message.content.toLowerCase() == "adventcalendar"){
+    message.delete();
+    if(message.author.id == "252091777115226114"){
+
         switch(new Date().getDate()){
             case 1:
-            switch(new Date().getMinutes()){
-            case 5:
-                bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nIf you open a door every single day there might be a bigger surprise waiting for you on the last advent\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message\n\nIf You do not know what an Advent Calendar is look it up here: https://en.wikipedia.org/wiki/Advent_calendar");
+            bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nIf you open a door every single day there might be a bigger surprise waiting for you on the last advent\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message\n\nIf You do not know what an Advent Calendar is look it up here: https://en.wikipedia.org/wiki/Advent_calendar");
+            break;
+      
+            case 2:
+            bot.channels.get("420624249430999040").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
             }
-            break;
-        }
-        break;
-        
-        case 0:
-        switch(new Date().getDate()){
-            case 2:
-            bot.channels.get("518086741924642819").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\n You will get a direct message");
-            break;
-        }
-        break;
     }
-});
+}
 
+
+});
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

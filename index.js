@@ -170,12 +170,12 @@ bot.on('message', async message => {
 };
 
 });
-
+/*
 bot.on('debug', (info) => {
     bot.channels.get("518809818895613953").send(info);
 });
 
-
+*/
 
 
  

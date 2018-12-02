@@ -33,7 +33,8 @@ const bot = new Discord.Client(); //offers more possibilities
 const prefix = '.';
 
 bot.on("ready", () => { //sets bot activity
-    bot.channels.get("419204128527482880").send("Bot is ready");
+    var currenttime = Date();
+    bot.channels.get("419204128527482880").send(`<@252091777115226114> Bot is ready as of ` + currenttime);
     var status = ["with Cortana", "with Life", "Software", "with Humans", "in the Shadows"]
     bot.user.setActivity(status[Math.floor(Math.random() * status.length)]);
 });

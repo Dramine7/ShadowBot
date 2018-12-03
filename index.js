@@ -64,6 +64,10 @@ if (message.content.toLowerCase() == "adventcalendar"){
             case 3:
             bot.channels.get("518086741924642819").send("**MONDAY**\nDoor 3 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
+                
+            case 4:
+            bot.channels.get("518086741924642819").send("**Tuesday**\nDoor 4 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;
             }
     }
 }
@@ -98,7 +102,7 @@ bot.on('message', async message => {
         message.author.send("***DOOR 3***\n\nThere is a website which has saves of old chat logs. These can turn out to be pretty funny\nhttp://www.bash.org/?random\n");
         break;
         case 4:
-        message.author.send("");
+        message.author.send("***DOOR 4***\n\n**There are really strange laws all around the world. Few examples are**:\nIn the UK it's not allowed to suspiciously hold a salmon\nIn Georgia you're not allowed to let your chicken cross the road\nIn Western Australia you're not allowed to own more than 50kg of potatoes at once\nIn Tuszyn (Poland) Winnie the Poo is considered a hermaphrodite and therefore banned from all playground/child areas\nIn Japan it's illegal to be obese\nIn Argentina feather mattresses are banned\nIn Switzerland you're not allowed to hike nude\nIn Texas (USA) it's illegal to sell your eyeballs (Well there goes everyone's dream)\nIn Sweden it's illegal to spontaneously dance\nIn Cambodia pretty much all water weaponry is banned. NO SQUIRTING\n");
         break;
         case 5:
         message.author.send("");

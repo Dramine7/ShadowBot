@@ -49,7 +49,7 @@ bot.on("message", message => {
 if(message.author.bot) return; //so bot doesnt react to his own things
 if(message.channel.id == "518086741924642819"){
     message.channel.bulkDelete(1);
-if (message.content.toLowerCase() == "adventcalendar"){
+if (message.content.toLowerCase() == "ac"){
     if(message.author.id == "252091777115226114"){
 
         switch(new Date().getDate()){
@@ -71,6 +71,10 @@ if (message.content.toLowerCase() == "adventcalendar"){
                 
             case 5:
             bot.channels.get("518086741924642819").send("**WEDNESDAY**\nDoor 5 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;
+                
+            case 6:
+            bot.channels.get("518086741924642819").send("**SAINT NICHOLAS DAY**\nDoor 6 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
             }
     }
@@ -97,22 +101,22 @@ bot.on('message', async message => {
     if(new Date().getMonth() == 11){
     switch(new Date().getDate()){
         case 1:
-        message.author.send("***DOOR 1***\n\n**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names\n");
+        message.author.send("***DOOR 1***\n\n**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names");
         break;
         case 2:
         message.author.send("***DOOR 2***\n\n**Happy 1st Advent :)**\nFrom within our hearts we wish you the best regards for the last month of 2018\nWe hope you can fully enjoy the 1. Advent\nWe would also like to say that if you **open the door every single day** you will have a chance for a **bigger suprise** every Advent!");
         break;
         case 3:
-        message.author.send("***DOOR 3***\n\nThere is a website which has saves of old chat logs. These can turn out to be pretty funny\nhttp://www.bash.org/?random\n");
+        message.author.send("***DOOR 3***\n\nThere is a website which has saves of old chat logs. These can turn out to be pretty funny\nhttp://www.bash.org/?random");
         break;
         case 4:
-        message.author.send("***DOOR 4***\n\n**There are really strange laws all around the world. Few examples are**:\nIn the UK it's not allowed to suspiciously hold a salmon\nIn Georgia you're not allowed to let your chicken cross the road\nIn Western Australia you're not allowed to own more than 50kg of potatoes at once\nIn Tuszyn (Poland) Winnie the Poo is considered a hermaphrodite and therefore banned from all playground/child areas\nIn Japan it's illegal to be obese\nIn Argentina feather mattresses are banned\nIn Switzerland you're not allowed to hike nude\nIn Texas (USA) it's illegal to sell your eyeballs (Well there goes everyone's dream)\nIn Sweden it's illegal to spontaneously dance\nIn Cambodia pretty much all water weaponry is banned. NO SQUIRTING\n");
+        message.author.send("***DOOR 4***\n\n**There are really strange laws all around the world. Few examples are**:\nIn the UK it's not allowed to suspiciously hold a salmon\nIn Georgia you're not allowed to let your chicken cross the road\nIn Western Australia you're not allowed to own more than 50kg of potatoes at once\nIn Tuszyn (Poland) Winnie the Poo is considered a hermaphrodite and therefore banned from all playground/child areas\nIn Japan it's illegal to be obese\nIn Argentina feather mattresses are banned\nIn Switzerland you're not allowed to hike nude\nIn Texas (USA) it's illegal to sell your eyeballs (Well there goes everyone's dream)\nIn Sweden it's illegal to spontaneously dance\nIn Cambodia pretty much all water weaponry is banned. NO SQUIRTING");
         break;
         case 5:
         message.author.send("***DOOR 5***\n\n**Try and solve these riddles without the internet. DM <@!252091777115226114> (Stealthy Dramine) if you think you've found the solution**\n1. If a famous tropical Disney movie created a christmas song, what would it be called?\n2. Why didn't the turkey want to eat on Christmas?\n3. You exclusively find me in the month December, what am I?\n4. An odd number, if stripped of one of its letters becomes even. What is it?\n5. What walks on four feet in the morning, on two feet by lunch and on three feet in the evening but has only one name?");
         break;
         case 6:
-        message.author.send("");
+        message.author.send("***DOOR 6***\n\n**Happy Saint Nicholas Day :D I hope you'll get fully stuffed boots**\n**You know what's annoying? Waiting. Therefore here's a list of free offline mobile games to spend your time**\nDrive Ahead (you can play this with two people on one phone)\nHill Climb Racing (go for as long as you can)\nHeadsoccer (soccer but with the head)\nConnection (puzzle your mind by connecting)\nAge of War (progress through ages to defeat the enemy castle)\nWarlings (basically like Worms)\nBloons (one of the best mobile tower defense games)\nDoodle Jump (platforming game, get as high as you can)\nTemple Run or Subway Surfers(endless running game)\nJetpack Joyride (endless side-scrolling runner)\nBeat Stomper (vertical platforming mixed with music)\nMusiverse (like Audiosurf but for phone and with whatever music you like)\nInto the Dead (run as long as you can while surviving Zombies)\nDead Trigger (First Person Zombie Shooter)\nZombie Tsunami (eat humans to get a bigger hoard of Zombies)\nAlto's Adventure (snowboarding to a chill mood)\nVector (level based side scrolling parkour game with tricks)");
         break;
         case 7:
         message.author.send("");

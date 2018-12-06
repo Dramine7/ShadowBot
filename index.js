@@ -76,6 +76,10 @@ if (message.content.toLowerCase() == "ac"){
             case 6:
             bot.channels.get("518086741924642819").send("**SAINT NICHOLAS DAY**\nDoor 6 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
+                
+            case 6:
+            bot.channels.get("518086741924642819").send("**FRIDAY**\nDoor 7 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;
             }
     }
 }
@@ -119,7 +123,7 @@ bot.on('message', async message => {
         message.author.send("***DOOR 6***\n\n**Happy Saint Nicholas Day :D I hope you'll get fully stuffed boots**\n**You know what's annoying? Waiting. Therefore here's a list of free offline mobile games to spend your time**\n\nDrive Ahead (you can play this with two people on one phone)\nHill Climb Racing (go for as long as you can)\nHeadsoccer (soccer but with the head)\nConnection (puzzle your mind by connecting)\nAge of War (progress through ages to defeat the enemy castle)\nWarlings (basically like Worms)\nBloons (one of the best mobile tower defense games)\nDoodle Jump (platforming game, get as high as you can)\nTemple Run or Subway Surfers(endless running game)\nJetpack Joyride (endless side-scrolling runner)\nBeat Stomper (vertical platforming mixed with music)\nMusiverse (like Audiosurf but for phone and with whatever music you like)\nInto the Dead (run as long as you can while surviving Zombies)\nDead Trigger (First Person Zombie Shooter)\nZombie Tsunami (eat humans to get a bigger hoard of Zombies)\nAlto's Adventure (snowboarding to a chill mood)\nVector (level based side scrolling parkour game with tricks)");
         break;
         case 7:
-        message.author.send("");
+        message.author.send("***DOOR 7***\n\n**The number 7 is actually very intriguing**\n1. There are 7 primary colours\n2. There are 7 wonders of the world\n3. 7 is associated with luck, magical properties and important in every major religion\n4.In a study of George Miller he discovered that most people can retain roughly 7 different things in their short term memory\n5. In the decimal system there are 10 different symbols to form all numbers. 7 is the greatest prime number within these\n6. On the 7th of December there are 24 days left till the end of the year. Christmas is on the 24th. Coincidence? I THINK NOT (except if you celebrate it on 25th)\n7. I made 7 points (I am running out of ideas, don't judge me <:WOWERS:519808363790598145> I barely had time to come up with ideas. Have a nice day!)");
         break;
         case 8:
         message.author.send("");

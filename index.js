@@ -130,7 +130,7 @@ bot.on('message', async message => {
         message.author.send("***DOOR 7***\n\n**The number 7 is actually very intriguing**\n1. There are 7 primary colours\n2. There are 7 wonders of the world\n3. 7 is associated with luck, magical properties and important in every major religion\n4. In a study of George Miller he discovered that most people can retain roughly 7 different things in their short term memory\n5. In the decimal system there are 10 different symbols to form all numbers. 7 is the greatest prime number within these\n6. On the 7th of December there are 24 days left till the end of the year. Christmas is on the 24th. Coincidence? I THINK NOT (except if you celebrate it on 25th)\n7. I made 7 points (I am running out of ideas, don't judge me <:WOWERS:519808363790598145> I barely had time to come up with ideas. Have a nice day!)");
         break;
         case 8:
-        message.author.send("***DOOR 8***\n\n**Community Challenge**\n Try and find the cheapest article in a nearby supermarket or fuel station and post a pic with #cheapest in <#414907061462106113>. Let's see who get's the lowest! Good luck :D");
+        message.author.send("***DOOR 8***\n\n**Community Challenge**\n Try and find the cheapest article in a nearby supermarket or fuel station and post a pic with #cheapest in <#375969636342169600>. Let's see who get's the lowest! Good luck :D");
         break;
         case 9:
         message.author.send("");

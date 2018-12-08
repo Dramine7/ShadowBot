@@ -86,7 +86,7 @@ if (message.content.toLowerCase() == "ac"){
             break;
                 
             case 9:
-            bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nToday the people who opened a door every single day up to this yesterday will be entered into a giveaway of a steam gift card. The result will be revealed later today. If you didn't open every door do not worry. The count will be reset today so be sure to open your doors :) There will also be a door to open later today for those who haven't won anything!");
+            bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nToday the people who opened a door every single day up to yesterday will be entered into a giveaway of a steam gift card. The result will be revealed later today. If you didn't open every door do not worry. The count will be reset today so be sure to open your doors :) There will also be a door to open later today for those who haven't won anything!");
             break;
             }
     }

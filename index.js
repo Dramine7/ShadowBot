@@ -84,6 +84,10 @@ if (message.content.toLowerCase() == "ac"){
             case 8:
             bot.channels.get("518086741924642819").send("**SATURDAY**\nDoor 8 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
+                
+            case 9:
+            bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nToday the people who opened a door every single day up to this yesterday will be entered into a giveaway of a steam gift card. The result will be revealed later today. If you didn't open every door do not worry. The count will be reset today so be sure to open your doors :) There will also be a door to open later today for those who haven't won anything!");
+            break;
             }
     }
 }
@@ -133,7 +137,7 @@ bot.on('message', async message => {
         message.author.send("***DOOR 8***\n\n**Community Challenge**\n Try and find the cheapest article in a nearby supermarket or fuel station and post a pic with #cheapest in <#375969636342169600>. Let's see who get's the lowest! Good luck :D");
         break;
         case 9:
-        message.author.send("");
+        message.author.send("This door is not available yet. Be sure to check later :)");
         break;
         case 10:
         message.author.send("");

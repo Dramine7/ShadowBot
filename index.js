@@ -86,7 +86,7 @@ if (message.content.toLowerCase() == "ac"){
             break;
                 
             case 9:
-            bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nToday the people who opened a door every single day up to yesterday will be entered into a giveaway of a steam gift card. The result will be revealed later today. If you didn't open every door do not worry. The count will be reset today so be sure to open your doors :) There will also be a door to open later today for those who haven't won anything!");
+            bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nUp until today 00:00 CET two people openend their doors every single day and we are very grateful for your dedication and time <@229231166845222913> and <@110471898793525248>!\nThe random name picker has decided that Damian has won the 10 Euros (message <@268740645529583617> to retrieve it).\n\nDoor 8 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
             }
     }
@@ -134,10 +134,10 @@ bot.on('message', async message => {
         message.author.send("***DOOR 7***\n\n**The number 7 is actually very intriguing**\n1. There are 7 primary colours\n2. There are 7 wonders of the world\n3. 7 is associated with luck, magical properties and important in every major religion\n4. In a study of George Miller he discovered that most people can retain roughly 7 different things in their short term memory\n5. In the decimal system there are 10 different symbols to form all numbers. 7 is the greatest prime number within these\n6. On the 7th of December there are 24 days left till the end of the year. Christmas is on the 24th. Coincidence? I THINK NOT (except if you celebrate it on 25th)\n7. I made 7 points (I am running out of ideas, don't judge me <:WOWERS:519808363790598145> I barely had time to come up with ideas. Have a nice day!)");
         break;
         case 8:
-        message.author.send("***DOOR 8***\n\n**Community Challenge**\n Try and find the cheapest article in a nearby supermarket or fuel station and post a pic with #cheapest in <#375969636342169600>. Let's see who get's the lowest! Good luck :D");
+        message.author.send("***DOOR 8***\n\n**Community Challenge**\nTry and find the cheapest article in a nearby supermarket or fuel station and post a pic with #cheapest in <#375969636342169600>. Let's see who get's the lowest! Good luck :D");
         break;
         case 9:
-        message.author.send("This door is not available yet. Be sure to check later :)");
+        message.author.send("***DOOR 9***\n\n**Maybe fun but unnecessary facts:**\nBees have 5 eyes. Three small ones on top and two larger ones in front\nSex burns 360 Calories an hour <:2bclimax:376491019702632448>\nA pregnant goldfish is called 'twit'\nA Boeing 747's wingspan is longer than the Wright Brother's frist flight\nMen can read smaller print than women; women can hear better\nThe average American butt is 14.9 inches long\nA dragonfly has an average lifespan of 24 hours.\nAn ostrich's eye is bigger than its brain\nThe first owner of Marlboro company died of lung cancer\nA jellyfish is 95 percent water (haha it beat the watermelon)\n\n**ENJOY YOUR ADVENT!**");
         break;
         case 10:
         message.author.send("");

@@ -88,6 +88,11 @@ if (message.content.toLowerCase() == "ac"){
             case 9:
             bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nUp until today 00:00 CET two people openend their doors every single day and we are very grateful for your dedication and time <@229231166845222913> and <@110471898793525248>!\nThe random name picker has decided that Damian has won the 10 Euros (message <@268740645529583617> to retrieve it).\n\nDoor 9 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
+            
+            case 10:
+            bot.channels.get("518086741924642819").send("**MONDAY**\nDoor 10 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;   
+             
             }
     }
 }
@@ -152,7 +157,7 @@ if (message.content.toLowerCase() == "sm"){
         message.author.send("***DOOR 9***\n\n**Maybe fun but unnecessary facts:**\nBees have 5 eyes. Three small ones on top and two larger ones in front\nSex burns 360 Calories an hour <:2bclimax:376491019702632448>\nA pregnant goldfish is called 'twit'\nA Boeing 747's wingspan is longer than the Wright Brother's first flight\nMen can read smaller print than women; women can hear better\nThe average American butt is 14.9 inches long\nA dragonfly has an average lifespan of 24 hours.\nAn ostrich's eye is bigger than its brain\nThe first owner of Marlboro company died of lung cancer\nA jellyfish is 95 percent water (haha it beat the watermelon)\n\n**ENJOY YOUR ADVENT!**");
         break;
         case 10:
-        message.author.send("");
+        message.author.send("***DOOR 10***\n\n**It's monday again <:WOWERS:519808363790598145> Let's start off with some Dad Jokes:**\nWhy couldn't the bicycle stand up by itself? It was two tired HA!\nThe shovel was a ground-breaking invention\nWhat do you call a fat psychic? A four-chin teller. So funny!!!\nPeople don't like having to bend over to get their drinks. We really need to raise the bar\nNo wonder Finland won so many Formula 1 races... They owned the Finnish line Haha\nOur solar system must suck! It only has one star\nAmazon has come up with a new service where they will deliver custom made shirts within 48 hours of ordering. It's called Tailor Swift\nWhat do you call a depressed horse? Instable\nWhat do you call a pony with a sore throat? A little Hoarse\nWhy did the student take a ladder to school? Because he was going to high school!\nWhat do you call a laughing jar of mayonnaise? LMAYO\nlmao sorry for the cringe, I hope it lit you up a bit (I will make sure the firefighters will be nearby).\nOkay I am gonna stop after this last one: Whot is Grammer? The diferance beetwen nowing your shit, and knowing you're shit! (I definitely know my place)");
         break;
         case 11:
         message.author.send("");

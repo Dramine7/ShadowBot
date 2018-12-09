@@ -137,7 +137,7 @@ bot.on('message', async message => {
         message.author.send("***DOOR 8***\n\n**Community Challenge**\nTry and find the cheapest article in a nearby supermarket or fuel station and post a pic with #cheapest in <#375969636342169600>. Let's see who get's the lowest! Good luck :D");
         break;
         case 9:
-        message.author.send("***DOOR 9***\n\n**Maybe fun but unnecessary facts:**\nBees have 5 eyes. Three small ones on top and two larger ones in front\nSex burns 360 Calories an hour <:2bclimax:376491019702632448>\nA pregnant goldfish is called 'twit'\nA Boeing 747's wingspan is longer than the Wright Brother's frist flight\nMen can read smaller print than women; women can hear better\nThe average American butt is 14.9 inches long\nA dragonfly has an average lifespan of 24 hours.\nAn ostrich's eye is bigger than its brain\nThe first owner of Marlboro company died of lung cancer\nA jellyfish is 95 percent water (haha it beat the watermelon)\n\n**ENJOY YOUR ADVENT!**");
+        message.author.send("***DOOR 9***\n\n**Maybe fun but unnecessary facts:**\nBees have 5 eyes. Three small ones on top and two larger ones in front\nSex burns 360 Calories an hour <:2bclimax:376491019702632448>\nA pregnant goldfish is called 'twit'\nA Boeing 747's wingspan is longer than the Wright Brother's first flight\nMen can read smaller print than women; women can hear better\nThe average American butt is 14.9 inches long\nA dragonfly has an average lifespan of 24 hours.\nAn ostrich's eye is bigger than its brain\nThe first owner of Marlboro company died of lung cancer\nA jellyfish is 95 percent water (haha it beat the watermelon)\n\n**ENJOY YOUR ADVENT!**");
         break;
         case 10:
         message.author.send("");

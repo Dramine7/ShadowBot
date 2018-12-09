@@ -47,8 +47,8 @@ bot.on("guildMemberAdd", member => {
 //Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
 bot.on("message", message => {
 if(message.author.bot) return; //so bot doesnt react to his own things
+ 
 if(message.channel.id == "518086741924642819"){
-    message.channel.bulkDelete(1);
 if (message.content.toLowerCase() == "ac"){
     if(message.author.id == "252091777115226114"){
 
@@ -108,7 +108,19 @@ bot.on('message', async message => {
   
  //advent calendar
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
+ if(message.channel.id == "521346049890189312" && message.content !== ".opendoor"){
+     message.channel.bulkDelete(1);
+ };
+    
+if(message.channel.id == "521346049890189312"){
+if (message.content.toLowerCase() == "sm"){
+    if(message.author.id == "252091777115226114"){
+    message.channel.send("**Use this channel to open your doors. Due to some technical difficulties with the <@298822483060981760> Bot which didn't log all the .opendoor commands we decided to make a channel for you to open your doors.**\nAny words other than .opendoor will be deleted!"); 
+        }
+    }
+}
+ //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
  if (msg.startsWith(prefix + commands[0])) {
     if(new Date().getMonth() == 11){
     switch(new Date().getDate()){

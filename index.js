@@ -86,7 +86,7 @@ if (message.content.toLowerCase() == "ac"){
             break;
                 
             case 9:
-            bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nUp until today 00:00 CET two people openend their doors every single day and we are very grateful for your dedication and time <@229231166845222913> and <@110471898793525248>!\nThe random name picker has decided that Damian has won the 10 Euros (message <@268740645529583617> to retrieve it).\n\nDoor 8 has now been opened. Write .opendoor\nYou will get a direct message");
+            bot.channels.get("518086741924642819").send("**SECOND ADVENT**\nUp until today 00:00 CET two people openend their doors every single day and we are very grateful for your dedication and time <@229231166845222913> and <@110471898793525248>!\nThe random name picker has decided that Damian has won the 10 Euros (message <@268740645529583617> to retrieve it).\n\nDoor 9 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
             }
     }

@@ -50,6 +50,7 @@ if(message.author.bot) return; //so bot doesnt react to his own things
  
 if(message.channel.id == "518086741924642819"){
 if (message.content.toLowerCase() == "ac"){
+    message.delete();
     if(message.author.id == "252091777115226114"){
 
         switch(new Date().getDate()){

@@ -101,6 +101,10 @@ if (message.content.toLowerCase() == "ac"){
             case 12:
             bot.channels.get("518086741924642819").send("**WEDNESDAY**\nDoor 12 has now been opened. Write .opendoor\nYou will get a direct message");
             break;   
+                
+            case 13:
+            bot.channels.get("518086741924642819").send("**THURSDAY**\nDoor 13 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;   
              
             }
     }
@@ -175,7 +179,7 @@ if (message.content.toLowerCase() == "sm"){
         message.author.send("***DOOR 12***\n\n**Here is a list of a few useful applications (I hope you don't know all of them <:PLS:385154701848739840>)**\n*-Shazam:* This is for your phone. It allows you to detect a lot of songs by letting your phone listen to it <https://www.shazam.com/gb> \n*-Clip Grab:* Download every YouTube video of your liking in various formats (.mp4, .mp3 etc.) <https://clipgrab.org> \n*-Popcorntime:*Watch nearly every movie or series for free, even on phone (this is not illegal in my country so fuggu fbi) <https://popcorn-time.to> \n*-Grammarly:* Let this application correct your essay or any document file (in English) <https://www.grammarly.com/native> \n*-Paint.net:* Edit pictures rudimentarily, fast and simple <https://www.getpaint.net/download.html> \n*-7zip:* Unpack and unzip just about every format for free <https://www.7-zip.org> \n*-f.lux:* Allow this application to automatically filter out blue light at set times to relax your eyes <https://justgetflux.com> \n*-Franz:* Combine chat and messages into one app. Have e.g. Discord, Whatsapp, Skype, Gmail etc. in one place <https://www.techspot.com/downloads/6892-franz.html> \n*-TreeSize:* Quickly scan directories for file sizes. Makes it easy to see what exactly is taking up space! <https://www.jam-software.com/treesize_free/> \n*-OBS:* Free and easy recording software without big file output <https://obsproject.com/download> \n\n*Discord:* <https://bit.ly/1OstGRQ>");
         break;
         case 13:
-        message.author.send("");
+        message.author.send("***DOOR 13***\n\n**Time for some strange websites/video:**\n*-First YouTube video uploaded April 2005:* <https://www.youtube.com/watch?v=jNQXAC9IVRw>\n*-Live location of every plane in the world:* <https://www.flightradar24.com/>\n*-Seizure inducing website:* <https://omfgdogs.com>\n*-Turn down your volume to the lowest and don't turn off your lights (spook):* <http://prestrasi.ga>\n*-Click the button and it will randomly take you to a useless website:* <https://theuselessweb.com>\n*-NSFW... I guess? I dunno:* <https://111111111111111111111111111111111111111111111111111111111111.com>\n*-Hover over the letters huehue:* <https://www.rrrgggbbb.com>\n*-Wobbly thing follows your mouse and gives seizures if wobbled too fast: <http://www.staggeringbeauty.com>\n\nHave a nice day. It's nearly friday ;)");
         break;
         case 14:
         message.author.send("");

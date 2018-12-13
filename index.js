@@ -105,6 +105,10 @@ if (message.content.toLowerCase() == "ac"){
             case 13:
             bot.channels.get("518086741924642819").send("**THURSDAY**\nDoor 13 has now been opened. Write .opendoor\nYou will get a direct message");
             break;   
+                
+            case 14:
+            bot.channels.get("518086741924642819").send("**THURSDAY**\nDoor 13 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;   
              
             }
     }
@@ -182,7 +186,13 @@ if (message.content.toLowerCase() == "sm"){
         message.author.send("***DOOR 13***\n\n**Time for some strange websites/video:**\n*-First YouTube video uploaded April 2005:* <https://www.youtube.com/watch?v=jNQXAC9IVRw>\n*-Live location of every plane in the world:* <https://www.flightradar24.com/>\n*-Seizure inducing website:* <https://omfgdogs.com>\n*-Turn down your volume to the lowest and don't turn off your lights (spook):* <http://prestrasi.ga>\n*-Click the button and it will randomly take you to a useless website:* <https://theuselessweb.com>\n*-NSFW... I guess? I dunno:* <https://111111111111111111111111111111111111111111111111111111111111.com>\n*-Hover over the letters huehue:* <https://www.rrrgggbbb.com>\n*-Wobbly thing follows your mouse and gives seizures if wobbled too fast:* <http://www.staggeringbeauty.com>\n\nHave a nice day. It's nearly friday ;)");
         break;
         case 14:
-        message.author.send("");
+        message.author.send("***DOOR 14***\n\n*It's friday, hold in there for one day, you can do it :)\nI just wanted to say that I really appreciate the support and positive feedback I've been getting on the advent calendar and I absolutely endorse this community.\nIt doesn't matter if I know you or not (or the other way around) but my experiences have been vastly wholesome and generally one of the coolest bunch of people to talk to online\nWith this I wish you a wonderful friday and a splendid start into the weekend :)*\n-Dramine7 <a:pepelove:522901225956704296>");
+        var embed = new Discord.RichEmbed()
+        .setThumbnail("https://cdn.discordapp.com/emojis/396521772758990851.gif")
+        .setTitle("Croissant Doggo")
+        .setColor(0xffa500)
+        .setImage("https://media.tenor.com/images/2e134ea071498a68c777d5540b65fecd/tenor.gif")
+        message.author.sendMessage({embed});
         break;
         case 15:
         message.author.send("");

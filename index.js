@@ -109,6 +109,10 @@ if (message.content.toLowerCase() == "ac"){
             case 14:
             bot.channels.get("518086741924642819").send("**FRIDAY**\nDoor 14 has now been opened. Write .opendoor\nYou will get a direct message");
             break;   
+
+            case 15:
+            bot.channels.get("518086741924642819").send("**SATURDAY**\nDoor 15 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;   
              
             }
     }
@@ -142,7 +146,53 @@ if (message.content.toLowerCase() == "sm"){
     }
 }
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
+if(new Date().getMonth() == 11){
+    switch(new Date().getDate()){
+        case 14:
+        const memes = [
+            'https://i.redd.it/jga3w9n1t8421.png',
+            'https://preview.redd.it/5rzogcyvl9421.jpg?width=640&crop=smart&auto=webp&s=90e294c2d061de59ef96d79532100854a8bd089d',
+            'https://preview.redd.it/zrn6k684h8421.png?width=640&crop=smart&auto=webp&s=28e6fbd65366b36794af6fc395fe027affa22a0f',
+            'https://i.redd.it/2djmlszpo7421.png',
+            'https://preview.redd.it/lsljvrcl89421.jpg?width=640&crop=smart&auto=webp&s=3b7b9e2dde38a82de3b6bb2f5cf01f1e8c674587',
+            'https://preview.redd.it/gryx0p10n6421.jpg?width=640&crop=smart&auto=webp&s=9db5783c900521e8d13bf49396e67cc3d8309d83',
+            'https://preview.redd.it/1z6foxqi97421.png?width=640&crop=smart&auto=webp&s=46f0de3748556a145ff621987570decfdb1e7b5a',
+            'https://preview.redd.it/gcg7q6p809421.jpg?width=640&crop=smart&auto=webp&s=c0508d66713586ebe6039265bbcdc7efb10900b4',
+            'https://preview.redd.it/9qgoqomy19421.jpg?width=640&crop=smart&auto=webp&s=5688b2d5c129573eb7fd0ef4c6563e3bb6b8461a',
+            'https://preview.redd.it/qnv2bdt737421.jpg?width=640&crop=smart&auto=webp&s=cfb539584eec0b4184a080c25a2466323383932f',
+            'https://preview.redd.it/f5o8h99fn8421.jpg?width=640&crop=smart&auto=webp&s=834812aeeccd34bba6a83fd9ab653ee4a11ddadb',
+            'https://preview.redd.it/7dqlsv4xs9421.jpg?width=640&crop=smart&auto=webp&s=e5045d20feaf378839a59cb96e63c9f3fe488aa1',
+            'https://preview.redd.it/6btholfh88421.jpg?width=640&crop=smart&auto=webp&s=51e92c7ce4f712077dddec686dc37c7f22c7d825',
+            'https://external-preview.redd.it/3M6bmGIvX5XBqn3TLhzDxsYa34HJ7fBSfv3PzYrXQ4E.jpg?width=640&crop=smart&auto=webp&s=10fc4ba53fc904010adcc03065ab4b81c0f8fb01',
+            'https://preview.redd.it/xoadiphyw8421.jpg?width=640&crop=smart&auto=webp&s=3280ad5d7af508c0ce123f3148761a812eab1699',
+            'https://preview.redd.it/uz9iyq4xw9421.jpg?width=640&crop=smart&auto=webp&s=86f6129fb9ae0a1c41d383adc0a3dd68688b25aa',
+            'https://external-preview.redd.it/4EIEfXFIldWBnxZjmJnV4GcUDE7oPZxOsnVch_-mVJQ.jpg?width=640&crop=smart&auto=webp&s=80c5ce5a2cb31c87bb69d9b1e83af9891595a70b',
+            'https://preview.redd.it/b733b9ib78421.png?width=640&crop=smart&auto=webp&s=1d924850a1bd9002e16b7c42db68201d6d0fb1e8',
+            'https://i.redd.it/7qzlz0jyl9421.jpg',
+            'https://i.redd.it/qn92vbfhv8421.png',
+            'https://preview.redd.it/3be8r9vue9421.png?width=640&crop=smart&auto=webp&s=bb58da4c20f6b421930f8a0833869a798399d395',
+            'https://i.redd.it/fqnx95vbe8421.jpg',
+            'https://preview.redd.it/iy6wg2jum9421.jpg?width=640&crop=smart&auto=webp&s=91918efa86f9b43cf80d56fc2c9eab325ad3ea93',
+            'https://preview.redd.it/2zqybgz3p8421.jpg?width=640&crop=smart&auto=webp&s=a64f444418439457422827d5cef5034f9e96aba2',
+            'https://preview.redd.it/0erlxyrg49421.jpg?width=640&crop=smart&auto=webp&s=4cf225ae121e189ad931ce9484deac216fcd77c4',
+
+
+        ]
+        if(message.channel.type === 'dm') {
+            if(message.content.toLowerCase() == "givepls"){
+                var embed = new Discord.RichEmbed()
+                .setColor(0xafff14)
+                .setImage(memes[Math.floor(Math.random() * memes.length)])
+                message.author.sendMessage({embed});
+            }else{return;}
+        }
+        break;
+        default:
+        message.author.send("Something must've went wrong. Did you spell right?")
+        break;
+    }
+}
+
  if (msg.startsWith(prefix + commands[0])) {
     if(new Date().getMonth() == 11){
     switch(new Date().getDate()){
@@ -195,7 +245,12 @@ if (message.content.toLowerCase() == "sm"){
         message.author.sendMessage({embed});
         break;
         case 15:
-        message.author.send("");
+        message.author.send("***DOOR 15***\n\n**With the short time I had I created a smol meme library of rather new memes. Write 'givepls' here to get a random meme**\nThis will only be available today\n");
+        if(message.author.id == "216518590495588352")
+        {
+            message.author.send("\u200b \nI am NOT running out of Ideas Jimboza <:fuck:415255875255533580>")
+        }
+
         break;
         case 16:
         message.author.send("");
@@ -243,6 +298,32 @@ bot.on('debug', (info) => {
 
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -146,9 +146,10 @@ if (message.content.toLowerCase() == "sm"){
     }
 }
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-if(new Date().getMonth() == 11){
+if(message.channel.type === 'dm'){
+ if(new Date().getMonth() == 11){
     switch(new Date().getDate()){
-        case 14:
+        case 15:
         const memes = [
             'https://i.redd.it/jga3w9n1t8421.png',
             'https://preview.redd.it/5rzogcyvl9421.jpg?width=640&crop=smart&auto=webp&s=90e294c2d061de59ef96d79532100854a8bd089d',
@@ -175,9 +176,8 @@ if(new Date().getMonth() == 11){
             'https://preview.redd.it/iy6wg2jum9421.jpg?width=640&crop=smart&auto=webp&s=91918efa86f9b43cf80d56fc2c9eab325ad3ea93',
             'https://preview.redd.it/2zqybgz3p8421.jpg?width=640&crop=smart&auto=webp&s=a64f444418439457422827d5cef5034f9e96aba2',
             'https://preview.redd.it/0erlxyrg49421.jpg?width=640&crop=smart&auto=webp&s=4cf225ae121e189ad931ce9484deac216fcd77c4',
-
-
         ]
+        
         if(message.channel.type === 'dm') {
             if(message.content.toLowerCase() == "givepls"){
                 var embed = new Discord.RichEmbed()
@@ -188,9 +188,10 @@ if(new Date().getMonth() == 11){
         }
         break;
         default:
-        message.author.send("Something must've went wrong. Did you spell right?")
+        return;
         break;
     }
+}
 }
 
  if (msg.startsWith(prefix + commands[0])) {

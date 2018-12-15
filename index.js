@@ -113,6 +113,10 @@ if (message.content.toLowerCase() == "ac"){
             case 15:
             bot.channels.get("518086741924642819").send("**SATURDAY**\nDoor 15 has now been opened. Write .opendoor\nYou will get a direct message");
             break;   
+                
+            case 16:
+            bot.channels.get("518086741924642819").send("**THIRD ADVENT**\nToday the people who opened a door every single day up to yesterday will be entered into a giveaway of some MONAY. The result will be revealed later today. If you didn't open every door do not worry. The count will be reset today so be sure to open your doors :) There will also be a door to open later today for those who haven't won anything!");
+            break;   
              
             }
     }
@@ -251,10 +255,9 @@ if(message.channel.type === 'dm'){
         {
             message.author.send("\u200b \nI am NOT running out of Ideas Jimboza <:fuck:415255875255533580>")
         }
-
         break;
         case 16:
-        message.author.send("");
+        message.author.send("Door unavailable at the moment. Check again later (12pm CET tops)");
         break;
         case 17:
         message.author.send("");

@@ -115,7 +115,7 @@ if (message.content.toLowerCase() == "ac"){
             break;   
                 
             case 16:
-            bot.channels.get("518086741924642819").send("**THIRD ADVENT**\nToday the people who opened a door every single day up to yesterday will be entered into a giveaway of some MONAY. The result will be revealed later today. If you didn't open every door do not worry. The count will be reset today so be sure to open your doors :) There will also be a door to open later today for those who haven't won anything!");
+            bot.channels.get("518086741924642819").send("**THIRD ADVENT**\nDoor 16 has now been openend. Write .opendoor\nYou will get a direct message\nWinner of the giveaway will be revealed later today!");
             break;   
              
             }
@@ -257,7 +257,7 @@ if(message.channel.type === 'dm'){
         }
         break;
         case 16:
-        message.author.send("Door unavailable at the moment. Check again later (12pm CET tops)");
+        message.author.send("***DOOR 16***\n\n**Here are some useful websites you might need :)\n*-PDF Escape:* A free online editor for .pdf files <https://www.pdfescape.com>\n*-Diffchecker:* Compare text differences between two text files <https://www.diffchecker.com>\n*-Skyscanner:* Get a list of comparisons for millions of flights, car hires and hotels <https://www.skyscanner.net>\n*-BugMeNot:* Annoyed of having to sign into some website and then get spammed? BugMeNot has a shared logins for various websites for you to use! <https://bugmenot.com>\n*-Boxoh:* Shows the current location of just about any item delivering at the moment. Just enter the tracking number! <http://www.boxoh.com>\n*-KissPNG:* A nearly endless list of various png's without background <https://www.kisspng.com>\n*-MailCatch:* Disposable temporary email addresses <http://mailcatch.com/en/disposable-email> (Credit to X2yt so I don't get in trouble)");
         break;
         case 17:
         message.author.send("");

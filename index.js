@@ -117,6 +117,10 @@ if (message.content.toLowerCase() == "ac"){
             case 16:
             bot.channels.get("518086741924642819").send("**THIRD ADVENT**\nStarting last Sunday up until Today 00:00 CET 9 NINE people openend their doors every single day and we have to thank you for your sufferance ^^ <a:pepelove:522901225956704296>:\n<@187884400602644480>\n<@304318872813699082>\n<@229231166845222913>\n<@301364050300764161>\n<@216518590495588352>\n<@167207297829830657>\n<@180371270226018304>\n<@192973470689132544>\n<@275209041062395906>\n\nThe random name picker has decided that Jimboza has won the 15 Euros (message <@268740645529583617> to retrieve it).");
             break;   
+                
+            case 17:
+            bot.channels.get("518086741924642819").send("**MONDAY AGAIN**\nDoor 17 has now been opened. Write .opendoor\nYou will get a direct message");
+            break; 
              
             }
     }
@@ -260,7 +264,7 @@ if(message.channel.type === 'dm'){
         message.author.send("***DOOR 16***\n\n**Here are some useful websites you might need :)**\n*-PDF Escape:* A free online editor for .pdf files <https://www.pdfescape.com>\n*-Diffchecker:* Compare text differences between two text files <https://www.diffchecker.com>\n*-Skyscanner:* Get a list of comparisons for millions of flights, car hires and hotels <https://www.skyscanner.net>\n*-BugMeNot:* Annoyed of having to sign into some website and then get spammed? BugMeNot has a shared logins for various websites for you to use! <https://bugmenot.com>\n*-Boxoh:* Shows the current location of just about any item delivering at the moment. Just enter the tracking number! <http://www.boxoh.com>\n*-KissPNG:* A nearly endless list of various png's without background <https://www.kisspng.com>\n*-MailCatch:* Disposable temporary email addresses <http://mailcatch.com/en/disposable-email> (Credit to X2yt so I don't get in trouble)");
         break;
         case 17:
-        message.author.send("");
+        message.author.send("***DOOR 17***\n\n**Me on Mondays:**\nI've hunted near, I've hunted far\nI even looked inside my car.\nI've lost my glasses, I'm in need,\nTo have them now so I can read.\nI loudly swear and I curse\nDid I leave them in my purse?\nAre they behind the sofa, under the bed?\nOh there they are - on my head!\n\nIt makes me feel old... Ha syke there's still a long way to go!");
         break;
         case 18:
         message.author.send("");

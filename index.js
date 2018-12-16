@@ -115,7 +115,7 @@ if (message.content.toLowerCase() == "ac"){
             break;   
                 
             case 16:
-            bot.channels.get("518086741924642819").send("**THIRD ADVENT**\nDoor 16 has now been openend. Write .opendoor\nYou will get a direct message\nWinner of the giveaway will be revealed later today!");
+            bot.channels.get("518086741924642819").send("**THIRD ADVENT**\nStarting last Sunday up until Today 00:00 CET 9 NINE people openend their doors every single day and we have to thank you for your sufferance ^^ <a:pepelove:522901225956704296>:\n<@187884400602644480>\n<@304318872813699082>\n<@229231166845222913>\n<@301364050300764161>\n<@216518590495588352>\n<@167207297829830657>\n<@180371270226018304>\n<@192973470689132544>\n<@275209041062395906>\n\nThe random name picker has decided that Jimboza has won the 15 Euros (message <@268740645529583617> to retrieve it).");
             break;   
              
             }

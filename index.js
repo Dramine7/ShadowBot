@@ -121,6 +121,10 @@ if (message.content.toLowerCase() == "ac"){
             case 17:
             bot.channels.get("518086741924642819").send("**MONDAY AGAIN**\nDoor 17 has now been opened. Write .opendoor\nYou will get a direct message");
             break; 
+                
+            case 18:
+            bot.channels.get("518086741924642819").send("**TOOOSDAY**\nDoor 18 has now been opened. Write .opendoor\nYou will get a direct message");
+            break; 
              
             }
     }
@@ -267,7 +271,7 @@ if(message.channel.type === 'dm'){
         message.author.send("***DOOR 17***\n\n**Me on Mondays:**\nI've hunted near, I've hunted far\nI even looked inside my car.\nI've lost my glasses, I'm in need,\nTo have them now so I can read.\nI loudly swear and I curse\nDid I leave them in my purse?\nAre they behind the sofa, under the bed?\nOh there they are - on my head!\n\nIt makes me feel old... Ha syke there's still a long way to go!");
         break;
         case 18:
-        message.author.send("");
+        message.author.send("***DOOR 18***\n\n**Here's a list of some great educational YouTubers about tactics, news and knowledge about certain Games. Maybe it helps :)**\n*-Rainbow Six Siege:* The Dangleberries <https://www.youtube.com/user/HuntThemDownPS3> or Coconut Brah <https://www.youtube.com/channel/UC6k-gn9VICNXUusw5_mS0wQ>\n*-Warframe:* PsycoCinematics <https://www.youtube.com/user/PsyCoCinematics>\n*-For Honor:* Infinite <https://www.youtube.com/channel/UCzQgwCuFZI6-dwZy2W8JECg> or Mege <https://www.youtube.com/channel/UCjNwP3wJfwkReTloLBZEXOw/featured>\n*-Various Battle Royale Games:* Aculite <https://www.youtube.com/user/AculiteGaming>\n*-Overwatch:* Unit Lost - Great British Gaming <https://www.youtube.com/user/unitlosttube>\n*-CS:GO:* Yellow <https://www.youtube.com/user/CYellowan>\n*-League Of Legends:* Phy <https://www.youtube.com/user/ThePhylol>\n*-Battlefield:* Jackfrags <https://www.youtube.com/user/jackfrags>\n*-Call of Duty:* Tyger <https://www.youtube.com/channel/UC1nfHMTPGyOYtUPomjKjn1w/featured>\n\n*And here are some funny or good general content creators you should check out in my opinion :)*\nJackalWolfenheart <https://www.youtube.com/user/jackalleon>\nFitz <https://www.youtube.com/channel/UCtb8P4rf_1n8KS8eZk_lNNw>\nCallMeCarson<https://www.youtube.com/user/TheBlueCrewPros>\nCallMeKevin <https://www.youtube.com/channel/UCdoPCztTOW7BJUPk2h5ttXA>\nFlying Kitty <https://www.youtube.com/channel/UCYQT13AtrJC0gsM1far_zJg>\nAnthonyPit1 <https://www.youtube.com/channel/UCceTn1PVvHhxxbS0gvboBQQ>\nQuite Shallow <https://www.youtube.com/channel/UCLPBnMwDwtOOEegviAyKcEg>");
         break;
         case 19:
         message.author.send("");

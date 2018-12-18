@@ -125,6 +125,10 @@ if (message.content.toLowerCase() == "ac"){
             case 18:
             bot.channels.get("518086741924642819").send("**TOOOSDAY**\nDoor 18 has now been opened. Write .opendoor\nYou will get a direct message");
             break; 
+                
+            case 19:
+            bot.channels.get("518086741924642819").send("**WOODSDAY**\nDoor 19 has now been opened. Write .opendoor\nYou will get a direct message");
+            break; 
              
             }
     }

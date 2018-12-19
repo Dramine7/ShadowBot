@@ -129,6 +129,10 @@ if (message.content.toLowerCase() == "ac"){
             case 19:
             bot.channels.get("518086741924642819").send("**WOODSDAY**\nDoor 19 has now been opened. Write .opendoor\nYou will get a direct message");
             break; 
+                
+            case 20:
+            bot.channels.get("518086741924642819").send("**THURTITDAY**\nDoor 20 has now been opened. Write .opendoor\nYou will get a direct message");
+            break; 
              
             }
     }
@@ -281,7 +285,11 @@ if(message.channel.type === 'dm'){
         message.author.send("***DOOR 19***\n\n**Been searching for some series to watch? Here's a list of a few:**\n*-iZombie:* Chick at a party turns into a Zombie. Works as a medical resident, eats brains of ded peepo to have flashbacks on how they died\n*-The Man in the High Castle:* What would the world have look liked if the Nazis had won the World War 2?\n*-Black Mirror:* Features stand-alone dramas which often refer to how the future might look like\n*-Altered Carbon:* 300 Years into the future with interchangeable humans a only surviving soldier of interstellar warriors who's been imprisoned for centuries and woken up to solve a murder on a rich dood\n*-Stranger Things:* In 1984 some kids start discovering paranormal activities...\n*-Blood Drive:* In the near future climate change makes water scarce and fuel expensive. People participate in races with human blood driven cars. Watch out this movie has a LOT of gore and sex\n*-House M.D.:* A prickly genius doctor solves health mysteries. A lot of medical terms used but still funny for the uneducated bastard like me\n\n**I specifically chose some series which aren't the most famous (Game of Thrones or The Walking Dead) and I have watched nearly all of them so it's a personal recommendation. Nonetheless I hope this list helped some of you ^^**\nLuv y'all <:feelshappyhugman:511592393502359552>\n\nHint: <https://popcorn-time.to> (watch free)");
         break;
         case 20:
-        message.author.send("");
+        message.author.send("***DOOR 20***\n\n**Ultra Mini 24 Hour Captura Challenge**\n\n*Send <@252091777115226114> your best Captura in Warframe*\n*Captura Winner gets to choose one of the many colour palettes!*");
+        if(message.author.id == "268740645529583617")
+        {
+            message.author.send("Elias you can participate too my man!!!")
+        }
         break;
         case 21:
         message.author.send("");

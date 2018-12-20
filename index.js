@@ -221,9 +221,8 @@ if(message.channel.type === 'dm'){
             const sayMessage = args.join(" ");
             // Here bot actually says what you wanted 
             bot.channels.get("375969636342169600").send(sayMessage);
-
-            
-    
+            bot.channels.get("430077650581585922").send("Message: " + sayMessage + ` was said by  <@${message.author.id}>`);
+  
         }
         break;
         default:

@@ -212,6 +212,20 @@ if(message.channel.type === 'dm'){
             }else{return;}
         }
         break;
+        case 21:
+        
+            if(msg.startsWith(prefix)) {
+            let cont = message.content.slice(prefix.length).split(" ");
+            var args = cont.slice(0);
+            //if(message.author.id !== "252091777115226114"){message.reply("You can't use this command"); return;}
+            const sayMessage = args.join(" ");
+            // Here bot actually says what you wanted 
+            bot.channels.get("375969636342169600").send(sayMessage);
+
+            
+    
+        }
+        break;
         default:
         return;
         break;
@@ -298,18 +312,6 @@ if(message.channel.type === 'dm'){
         break;
         case 21:
         message.author.send("***DOOR 21***\n\n**Use me to write whatever you want or troll someone (24 Hours)**\n\n*Command only works via DM. Type the prefix (which is '.' without quotation marks) and follow it up with whatever message you want me to say*\n*Example: .hey guys or . hey guys*\nThe message writing is restricted to <#375969636342169600>\n\n*If you want to tag someone use the following: <@ID> and replace the 'ID' with the person's ID.*\n*Find the information on how to get someone's ID here:* <https://support.discordapp.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID->\n\nIf you have any questions feel free to ask <@252091777115226114> Have Fun :D");
-        if(message.channel.type === 'dm') {
-        if(msg.startsWith(prefix)) {
-            let cont = message.content.slice(prefix.length).split(" ");
-            var args = cont.slice(0);
-            //if(message.author.id !== "252091777115226114"){message.reply("You can't use this command"); return;}
-            const sayMessage = args.join(" ");
-            // Here bot actually says what you wanted 
-            bot.channels.get("375969636342169600").send(sayMessage);
-
-            }
-    
-        }
         break;
         case 22:
         message.author.send("");

@@ -171,9 +171,9 @@ if(msg.startsWith(prefix)) {
     let cont = message.content.slice(prefix.length).split(" ");
     var args = cont.slice(0);
     //if(message.author.id !== "252091777115226114"){message.reply("You can't use this command"); return;}
-    const sayMessage = args/*.slice(1)*/.join(" ");
+    const sayMessage = args.join(" ");
     // Here bot actually says what you wanted 
-    bot.channels.get(/*args[0]*/375969636342169600).send(sayMessage);
+    bot.channels.get(375969636342169600).send(sayMessage);
     
     }
     

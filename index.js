@@ -166,6 +166,19 @@ if (message.content.toLowerCase() == "sm"){
     }
 }
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+if(message.channel.type === 'dm') {
+if(msg.startsWith(prefix)) {
+    let cont = message.content.slice(prefix.length).split(" ");
+    var args = cont.slice(0);
+    if(message.author.id !== "252091777115226114"){message.reply("You can't use this command"); return;}
+    const sayMessage = args.slice(1).join(" ");
+    // Here bot actually says what you wanted 
+    bot.channels.get(args[0]).send(sayMessage);
+    
+    }
+    
+}
+ //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if(message.channel.type === 'dm'){
  if(new Date().getMonth() == 11){
     switch(new Date().getDate()){

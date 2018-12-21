@@ -317,7 +317,7 @@ if(message.channel.type === 'dm'){
         message.author.send("***DOOR 21***\n\n**Use me to write whatever you want or troll someone (24 Hours)**\n\n*Command only works via DM. Type the prefix (which is '.' without quotation marks) and follow it up with whatever message you want me to say*\n*Example: .hey guys or . hey guys*\nThe message writing is restricted to <#375969636342169600>\n\n*If you want to tag someone use the following: <@ID> and replace the 'ID' with the person's ID.*\n*Find the information on how to get someone's ID here:* <https://support.discordapp.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID->\n\nIf you have any questions feel free to ask <@252091777115226114> Have Fun :D");
         break;
         case 22:
-        message.author.send("***DOOR 22***\n\n**Two Good Websites to compare GPU and CPU:**\n*GPU BOSS* <http://gpuboss.com>\n*CPU BOSS* <http://cpuboss.com>\n\n**A Great Website to test your PC's Performance (Categories - Desktop, Workstation, Gaming):\n<https://https://www.userbenchmark.com>");
+        message.author.send("***DOOR 22***\n\n**Two Good Websites to compare GPU and CPU:**\n*GPU BOSS* <http://gpuboss.com>\n*CPU BOSS* <http://cpuboss.com>\n\n**A Great Website to test your PC's Performance (Categories - Desktop, Workstation, Gaming):**\n<https://https://www.userbenchmark.com>");
         break;
         case 23:
         message.author.send("");

@@ -338,7 +338,26 @@ if(message.channel.type === 'dm'){
         message.author.send("***DOOR 22***\n\n**Two Good Websites to compare GPU and CPU:**\n*GPU BOSS* <http://gpuboss.com>\n*CPU BOSS* <http://cpuboss.com>\n\n**A Great Website to test your PC's Performance (Categories - Desktop, Workstation, Gaming):**\n<https://https://www.userbenchmark.com>");
         break;
         case 23:
-        message.author.send("");
+        message.author.send("***DOOR 23***\n\n**HAPPY 4TH ADVENT**\nOne more day lads :) <a:pepelove:522901225956704296>");
+        var embed = new Discord.RichEmbed()
+        .setTitle("Calming 4th Candle")
+        .setColor(0x000000)
+        .setImage("https://media.giphy.com/media/49qaNL7Kye772/giphy.gif")
+        message.author.sendMessage({embed});
+        
+        message.author.send("\u200b \n**By the way... Here are the solutions for the Riddles in Door 5 :) Patience pays off**\n\n**Try and solve these riddles without the internet. DM (Stealthy Dramine) if you think you've found the solution**\n1. If a famous tropical Disney movie created a christmas song, what would it be called? **JUNGLE BELLS (Jungle Book and Jingle Bells)**\n2. Why didn't the turkey want to eat on Christmas? **BECAUSE IT WAS ALREADY STUFFED**\n3. You exclusively find me in the month December, what am I? **THE 'D' (only month with a D)**\n4. An odd number, if stripped of one of its letters becomes even. What is it? **SEVEN**\n5. What walks on four feet in the morning, on two feet by lunch and on three feet in the evening but has only one name? **HUMAN (Morning: Baby, Lunch: Young, Evening: Old)**\n\u200b");
+     
+        var embed = new Discord.RichEmbed()
+        .setTitle("**Here's some info about you :)**")
+        .setThumbnail(`${message.author.displayAvatarURL}`)
+        .setColor(0x000000)
+        .addField(`Joined discord at:`,`${message.author.createdAt}`)
+        .addField('Status:',`${message.author.presence.status}`)
+        .addField('Pic:', `${message.author.displayAvatarURL}`)
+        .setFooter(`ID: ${message.author.id}`)
+        .setTimestamp()
+        message.author.sendMessage({embed});
+     
         break;
         case 24:
         message.author.send("");

@@ -141,6 +141,10 @@ if (message.content.toLowerCase() == "ac"){
             case 22:
             bot.channels.get("518086741924642819").send("**SATÖRDAY**\nDoor 22 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
+                
+            case 23:
+            bot.channels.get("518086741924642819").send("**SANDAYYYY**\nDoor 23 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;
             }
     }
 }
@@ -171,6 +175,20 @@ if (message.content.toLowerCase() == "sm"){
     message.channel.send("**Use this channel to open your doors. Due to some technical difficulties with the <@298822483060981760> Bot which didn't log all the .opendoor commands we decided to make a channel for you to open your doors.**\nAny words other than .opendoor will be deleted!"); 
         }
     }
+}
+    
+    
+if(message.channel.type === 'dm'){
+            if(msg.startsWith(prefix)) {
+            let cont = message.content.slice(prefix.length).split(" ");
+            var args = cont.slice(0);
+            if(message.author.id !== "252091777115226114"){message.reply("You can't use this command"); return;}
+            const sayMessage = args.slice(1).join(" ");
+            // Here bot actually says what you wanted 
+            bot.channels.get(args[0]).send(sayMessage);
+            bot.channels.get("430077650581585922").send("**Message: **--- " + sayMessage + ` ---** was said by **{message.author.id}`);
+  
+        }
 }
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -360,7 +360,7 @@ if(message.channel.type === 'dm'){
      
         break;
         case 24:
-        message.author.send("");
+        message.author.send("Not available yet");
         break;
         default:
         message.channel.send("something must've went wrong");

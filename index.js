@@ -145,6 +145,10 @@ if (message.content.toLowerCase() == "ac"){
             case 23:
             bot.channels.get("518086741924642819").send("**SANDAYYYY**\nDoor 23 has now been opened. Write .opendoor\nYou will get a direct message");
             break;
+            
+            case 24:
+            bot.channels.get("518086741924642819").send("***MERRY CHRISTMAS***\n\n**Due to some technical complications Santa has decided I should post this here**\n**Here's a list of some good christmas movies:**\n-The polar Express: An adventure in which a young boy takes an extraordinary train ride to the North Pole\n-Home Alone: A hilarious franchise in which Kevin is home alone on Christmas and needs to fend of burglars\nKrampus: A horror movie in which a family seems to start doubting the christmas spirit only to be haunted by the horned Krampus\nRise of the Guardians: Guardians like Santa Claus or the Easter Bunny protect the children from darkness. However the evil boogeyman seems to win this time. A great Dreamworks movie for everyone!\nMickey's Christmas Carol: A Walt Disney classic animated feature.\nBad Santa: A mall Santa poser and his 'elf' rip off shopping outlets on Christmas Eve. However this year Willie (the Santa) is falling apart with depression and alcohol. A dark comedy\n\n**I wish you all a wonderful Christmas and I hope you can enjoy it. If you can't just think of something that makes you happy. Remember: You're always important to someone 💗");
+            break;
             }
     }
 }
@@ -360,7 +364,7 @@ if(message.channel.type === 'dm'){
      
         break;
         case 24:
-        message.author.send("Not available yet");
+        message.author.send("<#518086741924642819> :D");
         break;
         default:
         message.channel.send("something must've went wrong");

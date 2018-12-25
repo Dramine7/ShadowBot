@@ -24,7 +24,7 @@
 //25 Edit 08.07.2018 - Dramine7
 //26 Edit 15.11.2018 - Dramine7
 //27 Edit 22.11.2018 - Dramine7
-//28 Edit 01.12.2018 - Dramine7
+//28-52 Edit 01.12.2018-24.12.2018 - Dramine7
 //
 
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse

@@ -60,7 +60,7 @@ bot.on('message', async message => {
  
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
     
-    if (msg.startsWith(prefix + commands[0])){
+if (msg.startsWith(prefix + commands[0])){
         message.delete();
         const p = await message.channel.send('\u200b');
         p.edit(`🏓 PONG \n Latency between sending and receiving the message is ${p.createdTimestamp - message.createdTimestamp} ms \n Latency between Bot and Discord API is ${Math.round(bot.ping)} ms`);

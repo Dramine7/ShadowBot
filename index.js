@@ -34,7 +34,7 @@ const prefix = '.';
 
 bot.on("ready", () => { //sets bot activity
     var currenttime = Date();
-    bot.channels.get("419204128527482880").send(`<@252091777115226114> Bot is ready as of ` + currenttime);
+    bot.channels.get("419204128527482880").send(`Bot is ready as of ` + currenttime);
     var status = ["with Cortana", "with Life", "Software", "with Humans", "in the Shadows"]
     bot.user.setActivity(status[Math.floor(Math.random() * status.length)]);
 });
@@ -169,9 +169,9 @@ bot.on('message', async message => {
   
  //advent calendar
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- if(message.channel.id == "521346049890189312" && message.content !== ".opendoor"){
+ /*if(message.channel.id == "521346049890189312" && message.content !== ".opendoor"){
      message.channel.bulkDelete(1);
- };
+ };*/
     
 if(message.channel.id == "521346049890189312"){
 if (message.content.toLowerCase() == "sm"){

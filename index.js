@@ -872,7 +872,7 @@ bot.on('raw', async (data) => {
              }
     
         }
-    }
+    }*/
 });
 /*bot.on('debug', (info) => {
     console.log(info);

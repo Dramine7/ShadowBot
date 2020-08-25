@@ -24,27 +24,35 @@
 //25 Edit 08.07.2018 - Dramine7
 //26 Edit 15.11.2018 - Dramine7
 //27 Edit 22.11.2018 - Dramine7
+//28 Edit 01.12.2018 - Dramine7
 //x1 Edit 25.08.2020 - Dramine7
 //let emojiDB = {};
-let emojiDB = require('./database/emojireact.json');
+//let emojiDB = require('./database/emojireact.json');
+
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
-const fs = require('fs'); //native module for file reading, writing etc.
+//const fs = require('fs'); //native module for file reading, writing etc.
+
 const prefix = '.';
+
 bot.on("message", function(message){ //Kinda Useless but types message of any user in cmd log
     console.log(message.content);
 });
+
 bot.on("ready", function(){ //if the mofo bot is ready it tells me like my little slave
     console.log("Ready");
 });
+
 bot.on("ready", () => { //sets bot activity
     var status = ["with Cortana", "with Life", "Software", "with Humans", "in the Shadows"]
     bot.user.setActivity(status[Math.floor(Math.random() * status.length)]);
 });
+
 bot.on("guildMemberAdd", member => {
     member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to <#422882168029577226> first to see all Rules and Features then feel free to proceed to <#414816627021053954> to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
   });
+
 //wut-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -53,17 +61,21 @@ bot.on("guildMemberAdd", member => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 //Really Simple Events and Word Replacements---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on("message", message => {
     let msg = message.content.toLowerCase(); //allows every word in array be in any written way because it converts it to lower case
     //Reaction Replies
-    
+
+
     const fuckup = ["fuck", "dammit", "damnit", "damn", "shit"];
     for(var fu = 0; fu < fuckup.length; fu++) { 
     if(fuckup.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == fuckup[fu]) {
         message.react("💩")
     }
 } 
+
     
     const success = ["finally", "woop", "i did it", "nice"];
     for(var su = 0; su < success.length; su++) { 
@@ -98,12 +110,14 @@ bot.on("message", message => {
             //message.channel.sendMessage('He wants to fight us? Pathetic') //sends message to channel rather than tag
         } 
     }
+
         const hi = ["hey", "hello", "good morning", "hi", "good evening", "good afternoon"];
         for(var h = 0; h < swearWords.length; h++) { 
         if( hi.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == hi[h] + " <@414814903946182686>") {
             message.reply("Hello Human..."); 
         }
     }
+
         const cya = ["bye", "goodybe", "cya", "bai", "see you later", "see you", "good night", "gnight"];
         for(var bye = 0; bye < cya.length; bye++) { 
         if( cya.some(word => msg.startsWith(word)) + " <@414814903946182686>" && message.content.toLowerCase() == cya[bye] + " <@414814903946182686>") {
@@ -125,11 +139,13 @@ bot.on("message", message => {
             message.channel.sendMessage("Fapmaster 7, also known as professional jerker aka <@!222093918043373578> 😏") //@<ID> mentions the user (tags). 
         }
     //-----------------------------------------------------------
+
     //Code God-----------------------------------------------------------
         if(message.content.toLowerCase() == "/codegod"){
             message.delete();
             message.channel.sendMessage("<@146323250706644993> is a god in coding!") 
         }
+
     //-----------------------------------------------------------
     
     //Glorious Behemoth-----------------------------------------------------------
@@ -144,26 +160,32 @@ bot.on("message", message => {
         message.delete();
         message.channel.sendMessage('The one and only real MVP OF DARKLIGHT... <@!268740645529583617> HECK YEAH 🤘')
     }
+
     if(message.content.toLowerCase() == "/zozo"){
         message.delete();
         message.channel.sendMessage('She is really creepy and might actually kill you if you do not watch out... <@!304318872813699082> :/ ')
     }
+
     if(message.content.toLowerCase() == "/raishin"){
         message.delete();
         message.channel.sendMessage('A big fuggin Faguette. He is so straight he be bent and gay. Thou shalt not compete with his gayness... <@!272445874754289665> 8=====D')
     }
+
     if(message.content.toLowerCase() == "/amber"){
         message.delete();
         message.channel.sendMessage('<@!375678688798441472> and Zozo are a relentless team. Though shy, it deludes you of her true power :O')
     }
+
     if(message.content.toLowerCase() == "/lulu"){
         message.delete();
         message.channel.sendMessage('<@!279959229736026115> is a true Lewd Goddess. Once she hits the NSFW chat... we aint safe D:')
     }
+
     if(message.content.toLowerCase() == "/sith"){
         message.delete();
         message.channel.sendMessage('Quality Memes? Daily activity for the Meme Lord <@!301364050300764161>')
     }
+
     //-----------------------------------------------------------
    
     if(message.content.toLowerCase() == "/eastereggs"){
@@ -194,6 +216,7 @@ bot.on("message", message => {
             "https://cdn.discordapp.com/attachments/418449226440245250/429907093936406528/evCop.gif",
             "https://cdn.discordapp.com/attachments/418449226440245250/429907093936406529/8f6.gif",
             "https://cdn.discordapp.com/attachments/418449226440245250/429907155999784960/1511128429_tenor.gif"];
+
         
         if(msg.startsWith("/" + embedPics[4] + "/")){
             message.delete();
@@ -203,6 +226,8 @@ bot.on("message", message => {
             message.reply(`**just praised the sun ☀**`);
             message.channel.sendMessage({embed});
        }
+
+
         const embedsmolPics = [ //array for shorter pic interchangeables
         {
             name: 'lol',
@@ -313,6 +338,7 @@ bot.on("message", message => {
             message.reply("Subnautica's Map: ");
             message.channel.sendMessage({embed});
         }
+
         if(msg.startsWith("/" + embedPics[3] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
@@ -320,6 +346,7 @@ bot.on("message", message => {
             message.reply("Fenrir, a monstrous wolf in the Norse Mythology...");
             message.channel.sendMessage({embed});
         }
+
         if(msg.startsWith("/" + embedPics[1] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
@@ -327,6 +354,7 @@ bot.on("message", message => {
             message.reply("The Behemoth, an enormously sized creature of mythical power...");
             message.channel.sendMessage({embed});
         }
+
         if(msg.startsWith("/" + embedPics[2] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
@@ -339,6 +367,7 @@ bot.on("message", message => {
     //-----------------------------------------------------------
    
 });
+
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -347,6 +376,33 @@ bot.on("message", message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//advent calendar
+//Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
+bot.on("message", message => {
+if (message.author.bot) return; //so bot doesnt react to his own things
+if(message.channel.id == "518086741924642819"){
+    message.delete();
+if (message.content.toLowerCase() == "adventcalendar"){
+    if(message.author.id == "252091777115226114"){
+
+        switch(new Date().getDate()){
+            case 1:
+            bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message\n\nIf You do not know what an Advent Calendar is look it up here: https://en.wikipedia.org/wiki/Advent_calendar");
+            break;
+      
+            case 2:
+            bot.channels.get("518086741924642819").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\nYou will get a direct message");
+            break;
+            }
+    }
+}
+}
+
+});
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //Normal Commands
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on('message', async message => {
@@ -360,7 +416,7 @@ bot.on('message', async message => {
     //prefix.length:        the length of this is the prefix' length
     //split:                splits a string into array of substrings and returns new array = ("") uses empty strings as a separator so the strin gis split between each character   
   
-    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO'] //possible Commands =chronological order on how they were added (yeah about)
+    let commands = ['HELP', 'CLEANSE', 'ID', 'LUCKY', 'ROLL', 'CREATOR', 'WEATHER', 'SOURCECODE', 'ACTION', 'INVITE', 'PING', 'EMOJIS', 'INFO', /*'ROLEASSIGN','OPENDOOR'*/'BOTTIME'] //possible Commands =chronological order on how they were added (yeah about)
     //-----------------------------------------------------------------
     /*
     if((!commands.includes(args[0].toUpperCase())) && message.content.startsWith(prefix)){
@@ -400,6 +456,7 @@ bot.on('message', async message => {
         .addField("`.ping`",`*Get Your and the Bot's Latency*`)
         .addField("`.emojis`", `*Get a list of all the Emojis available in within this Discord Server*`)
         .addField("`.info`", `*add "server" to find information about the Server. Tag a person to find information about them*`)
+       /* .addField("`.roleassign`", `*Posts a message which allows the bot to assign/remove Roles on Em*`)*/
         .addBlankField()
         .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - invisible - stalked - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
         .addBlankField()
@@ -408,25 +465,32 @@ bot.on('message', async message => {
   }
   
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // Purge, Cleanse... call it what you want idgaf
+
     if (msg.startsWith(prefix + commands[1])) { 
+
         message.delete();
       
         if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Singularity (Allies)", "Leviathan", "Them very gay"].includes(r.name)) ) {  //checks if users name includes the roles listed
                 message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role for the **Oblivious Realm Server** or the **Them very gay** Role for the **Rainbow Six | Siege Server**  to cleanse all our souls' past"); // you gotta have the role biatch.
                 return; 
             }
+
         if (isNaN(args1[0]) || parseInt(args1[0]) < 2 || parseInt(args1[0]) > 50) { //if there is no number, the number is smaller than 2 or the number is bigger than 50 it gives the following message
           
                 message.channel.send('__**Would thy be honoured to please grant me an arabic numeral inbetween 2 and 50 to cleanse said amount of messages from thy sins**__ \n \n **Usage for Dummies:** ' + prefix + '*cleanse <amount>*'); 
    
                 return;
             }
+
         message.channel.bulkDelete(args1[0])
                 .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
+
         bot.channels.get('419204128527482880').send('**Successfully cleansed** ' + args1 + ` **messages, as requested by <@${message.author.id}>**`); //uses input from user to give out how many message have been cleansed
         
+
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Find out your damn ID
@@ -437,6 +501,7 @@ bot.on('message', async message => {
         message.reply(`Default display of an ID is <@ExampleID>. The ID of <@${iduser.id}> is:`)
             message.channel.sendMessage(`${iduser.id}`)
         }else{ //if not displays id of author
+
         message.reply(`Default display of an ID is: <@ExampleID>. Your ID is:`)
             message.channel.sendMessage(`${message.author.id}`)
         }    
@@ -462,19 +527,23 @@ bot.on('message', async message => {
                 return;
             
         }
+
         if (parseInt(args1[0]) < 2 || parseInt(args1[0]) > 9999){ //if number is below 2 and over 50 do dis, PARSING ANALYIZES OBJECT, THIS MEANS SOME OBJECTS NEED TO BE PARSED IN ORDER TO BE COMPILED = CONVERTED/UNDERSTOOD
                 //a string of args get parsed and returned as a integer = needed here
                 message.reply("Your number is not included in the parameters. Please input a number between 2 to 9999")
                 return;
         }
+
         if (!isNaN(args1[0])){ //if there is a number take that number and give random number between 1 and said number 
             
             let random = Math.floor(Math.random()*args1) + 1 ;
             message.channel.send(`Your random number between 1 and ` + args1 + ` is: ${random}`);
             return;
+
         }
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     //CREATOR INFO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     if (msg.startsWith(prefix + commands[5])){
         message.channel.sendMessage("My creator is the Behemoth <@!252091777115226114>")
@@ -483,24 +552,31 @@ bot.on('message', async message => {
     
     //WEATHER-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     if (msg.startsWith(prefix + commands[6])) { 
+
         weather.find({search: args1.join(" "), degreeType: 'C'}, function(err, result) {
             if (err) message.channel.send(err);
+
             if(!args1[0] || result.length === 0){ //makes sure that if there is no input or the input is non existant give this output
         
                 message.reply('**I think this location might not be on planet Earth. Probably in your Fantasy? Please give an existing location!**') 
                 return; 
             }
+
             var current = result[0].current;  //define variable for current
             var location = result[0].location; //etc...
+
             const embed = new Discord.RichEmbed()
                 .setTitle(`🤖 **Weather for ${current.observationpoint}**`) //sets title so it refers to called location
                 .setFooter(`Weather, Requested by ${message.author.username}`, `${message.author.avatarURL}`) //author username + avatar
                 .setColor(0x00ffff) 
+
                 //From here on should be self-explanatory
                 .addField('\u200b','**Location Info**') 
                 .addField('🗓 Date', `${current.date}, ${current.shortday}`, true) 
                 .addField('🕐 Timezone',`UTC ${location.timezone}`, true)
                 .addField('🌍 Latitude/Longitude',`Lat ${location.lat}° / Long ${location.long}°`, true)
+
+
                 .addField('\u200b','**Weather Conditions**') //\u always calls upon a special character, 200b is a blank one, making a space not as big as blankfield
                 .addField('☀ Sky Condition', `${current.skytext}`, true)
                 .addField('🌡 Temperature',`${current.temperature} °C`, true)
@@ -510,15 +586,19 @@ bot.on('message', async message => {
                 .addField('🚤 Windspeed', `${current.windspeed}`, true)
             
                 .addBlankField()
+
                 message.channel.send({embed});
         });
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     //yeah well... pretty much self explanatory-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       if (msg.startsWith(prefix + commands[7])){
         message.reply('**Go to this link to see my brain... You are gross and perverted now :)**' + '\n https://github.com/Dramine7/ShadowBot/index.js');
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //ACTION Command. Important stuff :)
     if (msg.startsWith(prefix + commands[8])){
@@ -629,6 +709,7 @@ bot.on('message', async message => {
         message.reply("**Here is the permanent Invite Link:** https://discord.gg/WXskmcN ")
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
     
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Pingeroni
@@ -647,6 +728,7 @@ bot.on('message', async message => {
         message.channel.send("**The available Emojis on this server, are:**\n" + emojiList);
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
   //sum cool stuff to request more info and stuffa  
  //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     if (msg.startsWith(prefix + commands [12])) {
@@ -671,6 +753,7 @@ bot.on('message', async message => {
     else if(args1 == user || member){
        
         const embed = new Discord.RichEmbed()
+
         .setThumbnail(`${user.displayAvatarURL}`)
         .setColor(0x8A2BE2)
         .addField(`Joined discord at:`,`${user.createdAt}`)
@@ -683,7 +766,9 @@ bot.on('message', async message => {
         .setFooter(`ID: ${user.id}`)
         .setTimestamp()
         message.channel.send({embed});
+
     }else{message.reply("Please specify the info you'd like to know. Available specifications are: server, user.")}
+
   }
   
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -694,18 +779,20 @@ bot.on('message', async message => {
  if (msg.startsWith(prefix + commands[13])) {
     //hello event
     message.delete();
+
     if(message.author.id !== '252091777115226114' && message.author.id !== '268740645529583617') {  //checks if users name includes the roles listed
         message.reply("You don't have the permissions to use this command"); // you gotta have the role biatch.
         return; 
     }
-    if(channel.id !== '483605369541623816' ) {  //checks if users name includes the roles listed
+    if(channel.id !== '420624249430999040' ) {  //checks if users name includes the roles listed
         message.reply("You cannot use this command within this channel"); // you gotta have the role biatch.
         return; 
     }
-    if(channel.id == '483605369541623816' ) {  //checks if users name includes the roles listed
+    if(channel.id == '420624249430999040' ) {  //checks if users name includes the roles listed
     
     if(message.author.id == '252091777115226114' || message.author.id == '268740645529583617') {
     let emojiDB = require('./database/emojireact.json');
+
     channel.send(`
 **On our server you can choose what you want to get notified about!**
 **It's simple: Upvote the emoji for the thing you're interested in receiving notifications about! If you have any questions or suggestions, let us know!**
@@ -732,6 +819,7 @@ bot.on('message', async message => {
         message.react("377950833830264832") //nsfw
         emojiDB[message.id] = {
             "id": message.id
+
     }
         fs.writeFile('./database/emojireact.json', JSON.stringify(emojiDB, null, 4), (err) => {
             if (err) { return console.log(err); }
@@ -747,18 +835,119 @@ bot.on('message', async message => {
  
 };
  
+
+
+
 //💩 
 //() => {} blockscopes
 //never semicolon after blockscope
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //💩
+ //advent calendar
+ //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ if (msg.startsWith(prefix + commands[14])) {
+    message.delete();
+    if(new Date().getMonth() == 11){
+    switch(new Date().getDate()){
+        case 1:
+        message.author.send("***DOOR 1***\n\n**Did you know there are actual places on earth called like this:**\nUm Dafuq (in Sudan)\nGaylord (in Michigan)\nAnus (in France)\nAsbestos (in Quebec)\nDildo (in Newfoundland)\nErect (in North Carolina)\nWankers Corner (in Orgeon)\n\nIf you wanna see all the crazy location names there are: https://en.wikipedia.org/wiki/Wikipedia:Unusual_place_names\n");
+        break;
+        case 2:
+        message.author.send("***DOOR 2***\n\n**Happy 1st Advent :)**\nFrom within our hearts we wish you the best regards for the last month of December 2018\nWe hope you can fully enjoy the 1. Advent\nWe would also like to say that if you **open the door every single day** you will have a chance for a **bigger suprise** every Advent!");
+        break;
+        case 3:
+        message.author.send("***DOOR 3***\n\nThere is a website which has saves old chat logs which can turn out to be pretty funny\nhttp://www.bash.org/?random\n");
+        break;
+        case 4:
+        message.author.send("");
+        break;
+        case 5:
+        message.author.send("");
+        break;
+        case 6:
+        message.author.send("");
+        break;
+        case 7:
+        message.author.send("");
+        break;
+        case 8:
+        message.author.send("");
+        break;
+        case 9:
+        message.author.send("");
+        break;
+        case 10:
+        message.author.send("");
+        break;
+        case 11:
+        message.author.send("");
+        break;
+        case 12:
+        message.author.send("");
+        break;
+        case 13:
+        message.author.send("");
+        break;
+        case 14:
+        message.author.send("");
+        break;
+        case 15:
+        message.author.send("");
+        break;
+        case 16:
+        message.author.send("");
+        break;
+        case 17:
+        message.author.send("");
+        break;
+        case 18:
+        message.author.send("");
+        break;
+        case 19:
+        message.author.send("");
+        break;
+        case 20:
+        message.author.send("");
+        break;
+        case 21:
+        message.author.send("");
+        break;
+        case 22:
+        message.author.send("");
+        break;
+        case 23:
+        message.author.send("");
+        break;
+        case 24:
+        message.author.send("");
+        break;
+        default:
+        message.channel.send("something must've went wrong");
+    }
+}else{
+    message.author.send("This command can only be used in December during Advent Time :/");
+}
+ };
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ */
+ if (msg.startsWith(prefix + commands[13])) {
+    var currenttime = Date();
+    message.channel.sendMessage("The Current Time for the Bot is: " + currenttime);
+  };
+    
 });
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+
 bot.on('raw', async (data) => {
     let EventName = data.t;
     let EventData = data.d;
     let messageReaction = EventData;
     //console.log(`Raw Event Detected\nEventName: ${EventName}\nEventData: ${EventData}\n\n`);
     //console.log(data);
+
     if (EventName === "MESSAGE_REACTION_ADD") {
         //console.log(EventData);
         let user = bot.users.get(EventData.user_id);
@@ -771,16 +960,113 @@ bot.on('raw', async (data) => {
             //console.log(messageReaction.message.guild.id);
 
             //Announcements
-            if (messageReaction.emoji.name === ":politecat:") { 
             if (messageReaction.emoji.name === "<:politecat:487159896211456001>") { 
                // console.log("messagereactionworks1...\n\n");
                 let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Announcements');
                 if (emojiRole) {
-@@ -945,7 +945,7 @@ bot.on('raw', async (data) => {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                        //message.author.sendMessage(`You got the role "samplerole1". In the future you will be pinged in relation to samplerole1 stuff. `);
+                    }
+                }
+                //console.log(`we are giving 💩 poop emoji role stuff and stuff etc.`);
+            } 
+
+            //WF Announcements
+            if (messageReaction.emoji.name === "<:communismsmiley:387009799985954816>") { 
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Announcements');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //WF Alerts
+            if (messageReaction.emoji.name === "<:feelshappyhugman:511592393502359552>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Alerts');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //WF Giveaways
+            if (messageReaction.emoji.name === "<:02dab:474825929680486401>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'WF Giveaways');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Game Giveaways
+            if (messageReaction.emoji.name === "<:coolerseal:486263137109147649>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Game Giveaways');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Free Games
+            if (messageReaction.emoji.name === "<:PLS:385154701848739840>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Free Games');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Contributer
+            if (messageReaction.emoji.name === "<:wide_eye_pepe:376539827610320897>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Contributor');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }
+            } 
+            
+            //Lewd Access
+            if (messageReaction.emoji.name === "<:fuckyfucky:377950833830264832>") {
+                let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Lewd Access');
+                if (emojiRole) {
+                    let target = messageReaction.message.guild.member(user.id);
+                    if (target) {
+                        target.addRole(emojiRole);
+                    }
+                }     
+            }
+        }
+    }
+
+
+
+
+    if (EventName === "MESSAGE_REACTION_REMOVE") {
+        //console.log(EventData);
+        let user = bot.users.get(EventData.user_id);
+        messageReaction.message = {};
+        messageReaction.message.guild = await bot.guilds.get(EventData.guild_id);
+        messageReaction.channel = await messageReaction.message.guild.channels.get(EventData.channel_id);
+        messageReaction.message = await messageReaction.channel.fetchMessage(EventData.message_id);
+        //console.log(messageReaction.message.id);
+        if (emojiDB[messageReaction.message.id]) {
             //console.log(messageReaction.message.guild.id);
 
              //Announcements
-             if (messageReaction.emoji.name === ":politecat:") { 
              if (messageReaction.emoji.name === "<:politecat:487159896211456001>") { 
                 // console.log("messagereactionworks1...\n\n");
                  let emojiRole = messageReaction.message.guild.roles.find(r => r.name === 'Announcements');
@@ -872,10 +1158,16 @@ bot.on('raw', async (data) => {
              }
     
         }
-    }*/
+    }
 });
+*/
 /*bot.on('debug', (info) => {
     console.log(info);
 });*/
+
+
+
+
+
 bot.login(process.env.BOT_TOKEN);
 //acts as a reference on which bot to use, also acts as a LOGIN, if anyone gets this they can login as bot: DONT SHARE 

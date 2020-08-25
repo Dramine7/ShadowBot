@@ -126,89 +126,16 @@ bot.on("message", message => {
     }
     //-----------------------------------------------------------
     //DEFAULT EASTER EGGS:
-    //MOUSTACHE MAN-----------------------------------------------------------
-        if(message.content.toLowerCase() == "/moustacheman"){
-            message.delete();
-            message.channel.sendMessage("The popular Moustache Man, also known as the splendid <@!271352165958680576> :)") //@<ID> mentions the user (tags). 
-        }
-    //-----------------------------------------------------------
-   
-    //Fap-----------------------------------------------------------
-        if(message.content.toLowerCase() == "/colin"){
-            message.delete();
-            message.channel.sendMessage("Fapmaster 7, also known as professional jerker aka <@!222093918043373578> 😏") //@<ID> mentions the user (tags). 
-        }
-    //-----------------------------------------------------------
-
-    //Code God-----------------------------------------------------------
-        if(message.content.toLowerCase() == "/codegod"){
-            message.delete();
-            message.channel.sendMessage("<@146323250706644993> is a god in coding!") 
-        }
 
     //-----------------------------------------------------------
-    
-    //Glorious Behemoth-----------------------------------------------------------
-        if(message.content.toLowerCase() == "/kay"){
-            message.delete();
-            message.channel.sendMessage('The Glorious Behemoth <@!252091777115226114>')
-        }
     //-----------------------------------------------------------
-    //-----------------------------------------------------------
-    //For my friends at Darklight / EASTER EGGS:
-    if(message.content.toLowerCase() == "/elias"){
-        message.delete();
-        message.channel.sendMessage('The one and only real MVP OF DARKLIGHT... <@!268740645529583617> HECK YEAH 🤘')
-    }
 
-    if(message.content.toLowerCase() == "/zozo"){
-        message.delete();
-        message.channel.sendMessage('She is really creepy and might actually kill you if you do not watch out... <@!304318872813699082> :/ ')
-    }
-
-    if(message.content.toLowerCase() == "/raishin"){
-        message.delete();
-        message.channel.sendMessage('A big fuggin Faguette. He is so straight he be bent and gay. Thou shalt not compete with his gayness... <@!272445874754289665> 8=====D')
-    }
-
-    if(message.content.toLowerCase() == "/amber"){
-        message.delete();
-        message.channel.sendMessage('<@!375678688798441472> and Zozo are a relentless team. Though shy, it deludes you of her true power :O')
-    }
-
-    if(message.content.toLowerCase() == "/lulu"){
-        message.delete();
-        message.channel.sendMessage('<@!279959229736026115> is a true Lewd Goddess. Once she hits the NSFW chat... we aint safe D:')
-    }
-
-    if(message.content.toLowerCase() == "/sith"){
-        message.delete();
-        message.channel.sendMessage('Quality Memes? Daily activity for the Meme Lord <@!301364050300764161>')
-    }
 
     //-----------------------------------------------------------
-   
-    if(message.content.toLowerCase() == "/eastereggs"){
-        message.delete();
-        var embed = new Discord.RichEmbed()
-        .setThumbnail("https://media1.tenor.com/images/62fa490103c427b4c118336aa223b27a/tenor.gif?itemid=8292814")
-        .setTitle("Les Easter Eggs")
-        .setDescription("**DISCLAIMER:** If you use any of the following Easter Eggs, that person gets pinged. Use with Caution!!!")
-        .setColor(0xFF69B4)
-        .addBlankField()
-        .addField("**Easter Egg Words General**","```/moustacheman - /colin - /codegod - /kay```")
-        .addField("**Easter Egg Words Darklight Collective**","```/elias - /zozo - /raishin - /amber - /lulu - /sith```")
-        .addBlankField()
-        .setTimestamp()
-        message.channel.sendMessage({embed});
-    }
-    //-----------------------------------------------------------
-    //-----------------------------------------------------------
-    //-----------------------------------------------------------
-    
+    /*
     //replaces message lol with linked image... or other terms that is-----------------------------------------------------------
         const embedPics = ["submap", "behemoth", "leviathan", "fenrir", "praise"]; //string of possible texts
-        
+        */
     //praising our sun is important!!!!!!!!!
         const praise = ["https://cdn.discordapp.com/attachments/418449226440245250/429755633961795586/xZ2sEbd.gif", 
             "https://cdn.discordapp.com/attachments/418449226440245250/429755634947194881/tenor_7.gif", 
@@ -330,7 +257,7 @@ bot.on("message", message => {
                 return;
             }
         }
-        //have a different reply than said
+       /* //have a different reply than said
         if(msg.startsWith("/" + embedPics[0] + "/")){
             message.channel.bulkDelete(1);
             var embed = new Discord.RichEmbed()
@@ -362,7 +289,7 @@ bot.on("message", message => {
             message.reply("The Leviathan, a monstrous sea monster first mentioned in the Hebrew Bible...");
             message.channel.sendMessage({embed});
         }
-    
+    */
     
     //-----------------------------------------------------------
    
@@ -377,29 +304,7 @@ bot.on("message", message => {
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//advent calendar
-//Say you very specifically want a function to execute at 5:30am on December 21, 2012. Remember - in JavaScript - 0 - January, 11 - December.
-bot.on("message", message => {
-if (message.author.bot) return; //so bot doesnt react to his own things
-if(message.channel.id == "518086741924642819"){
-    message.delete();
-if (message.content.toLowerCase() == "adventcalendar"){
-    if(message.author.id == "252091777115226114"){
 
-        switch(new Date().getDate()){
-            case 1:
-            bot.channels.get("518086741924642819").send("**Welcome to the Cyber Advent Calendar 2018!**\nThere will be a small surprise waiting for you behind a door each day.\nThe Door will be unlocked every single day at 00:00 CET\nDoor 1 has now been opened. Write .opendoor\nYou will get a direct message\n\nIf You do not know what an Advent Calendar is look it up here: https://en.wikipedia.org/wiki/Advent_calendar");
-            break;
-      
-            case 2:
-            bot.channels.get("518086741924642819").send("**FIRST ADVENT**\nDoor 2 has now been opened. Write .opendoor\nYou will get a direct message");
-            break;
-            }
-    }
-}
-}
-
-});
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -32,6 +32,8 @@
 const Discord = require('discord.js'); //const is like var but can only be associated once to avoid reuse
 const weather = require('weather-js');
 const bot = new Discord.Client(); //offers more possibilities
+
+
 //const fs = require('fs'); //native module for file reading, writing etc.
 
 const prefix = '.';
@@ -50,7 +52,7 @@ bot.on("ready", () => { //sets bot activity
 });
 
 bot.on("guildMemberAdd", member => {
-    member.guild.channels.get('420614571846533142').send(`**Welcome peasant ${member}, go to <#422882168029577226> first to see all Rules and Features then feel free to proceed to <#414816627021053954> to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
+    bot.channels.cache.get('420614571846533142').send(`**Welcome peasant ${member}, go to <#422882168029577226> first to see all Rules and Features then feel free to proceed to <#414816627021053954> to join the guild's conversations and feel free to write: .help in order to see all the commands I am capable of doing. Happy Hunting!**`);
   });
 
 //wut-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -65,6 +67,7 @@ bot.on("guildMemberAdd", member => {
 
 //Really Simple Events and Word Replacements---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 bot.on("message", message => {
+    let channel = message.channel;
     let msg = message.content.toLowerCase(); //allows every word in array be in any written way because it converts it to lower case
     //Reaction Replies
 
@@ -145,13 +148,13 @@ bot.on("message", message => {
             "https://cdn.discordapp.com/attachments/418449226440245250/429907155999784960/1511128429_tenor.gif"];
 
         
-        if(msg.startsWith("/" + embedPics[4] + "/")){
+        if(msg.startsWith("/praise/")){
             message.delete();
             var randompic = praise[Math.floor(Math.random()*praise.length)];
-            var embed = new Discord.RichEmbed()
+            var embed = new Discord.MessageEmbed()
             .setImage(randompic)
             message.reply(`**just praised the sun ☀**`);
-            message.channel.sendMessage({embed});
+            channel.send(embed);
        }
 
 
@@ -210,7 +213,7 @@ bot.on("message", message => {
         },
         {
             name: 'overload',
-            url: '  https://media.giphy.com/media/IQ47VvDzlzx9S/giphy.gif'
+            url: 'https://media.giphy.com/media/IQ47VvDzlzx9S/giphy.gif'
         },
         {
             name: 'nohomo', 
@@ -218,7 +221,7 @@ bot.on("message", message => {
         },
         {
             name: 'hackerman', 
-            url: 'http://i0.kym-cdn.com/entries/icons/original/000/021/807/4d7.png'
+            url: 'https://cdn190.picsart.com/230925670045202.gif?to=crop&r=256'
         },
         {
             name: 'fuckyfucky', 
@@ -246,21 +249,21 @@ bot.on("message", message => {
         }
           
         ]
-          var embed = new Discord.RichEmbed();
+          var embed = new Discord.MessageEmbed();
             for(var e = 0; e < embedsmolPics.length; e++) { //fixes size to array length and loops it for the array
             if(msg.startsWith("/" + embedsmolPics[e].name + "/") && msg.length == embedsmolPics[e].name.length + 2) { //if a message starts with any of the listed names in array
                 //addition to top line, only works with // to not make it annoying, also if text is longer than this it will not work -> if text wants to be written 
                 message.channel.bulkDelete(1);
                 embed.setImage(embedsmolPics[e].url); //set the immage to the mentioned url under the mentioned name
-                message.reply(`**said ${embedsmolPics[e].name}: **`); //always replies with
-                message.channel.sendMessage({embed});
+                message.reply(`**exclaims ${embedsmolPics[e].name}: **`); //always replies with
+                channel.send(embed);
                 return;
             }
         }
        /* //have a different reply than said
         if(msg.startsWith("/" + embedPics[0] + "/")){
             message.channel.bulkDelete(1);
-            var embed = new Discord.RichEmbed()
+            var embed = new Discord.MessageEmbed()
             .setImage("https://i.redd.it/upw0gq0e7xc01.jpg")
             message.reply("Subnautica's Map: ");
             message.channel.sendMessage({embed});
@@ -268,7 +271,7 @@ bot.on("message", message => {
 
         if(msg.startsWith("/" + embedPics[3] + "/")){
             message.channel.bulkDelete(1);
-            var embed = new Discord.RichEmbed()
+            var embed = new Discord.MessageEmbed()
             .setImage("https://f4.bcbits.com/img/a3364840726_10.jpg")
             message.reply("Fenrir, a monstrous wolf in the Norse Mythology...");
             message.channel.sendMessage({embed});
@@ -276,7 +279,7 @@ bot.on("message", message => {
 
         if(msg.startsWith("/" + embedPics[1] + "/")){
             message.channel.bulkDelete(1);
-            var embed = new Discord.RichEmbed()
+            var embed = new Discord.MessageEmbed()
             .setImage("https://img00.deviantart.net/a011/i/2014/022/2/0/behemoth_by_der_reiko-d73ajev.jpg")
             message.reply("The Behemoth, an enormously sized creature of mythical power...");
             message.channel.sendMessage({embed});
@@ -284,7 +287,7 @@ bot.on("message", message => {
 
         if(msg.startsWith("/" + embedPics[2] + "/")){
             message.channel.bulkDelete(1);
-            var embed = new Discord.RichEmbed()
+            var embed = new Discord.MessageEmbed()
             .setImage("http://www.reuun.com/data/out/76/403102015-leviathan-wallpapers.png")
             message.reply("The Leviathan, a monstrous sea monster first mentioned in the Hebrew Bible...");
             message.channel.sendMessage({embed});
@@ -330,7 +333,7 @@ bot.on('message', async message => {
     }
     */
     //Various Variables MOOOOOOAR VARIABLES-----------------------------------------------------------
-    let sender = message.author; // This variable takes the message, and finds who the author is.
+    //let sender = message.author; // This variable takes the message, and finds who the author is.
     let cont = message.content.slice(prefix.length).split(" "); // This variable slices off the prefix, then puts the rest in an array based off the space
     let args1 = cont.slice(1); // This slices off the command in cont, only leaving the arguments.
     let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
@@ -342,12 +345,12 @@ bot.on('message', async message => {
     //Help Embed for commands
     if (msg.startsWith(prefix + commands[0])){
     
-        var embed = new Discord.RichEmbed()
+        var embed = new Discord.MessageEmbed()
         .setThumbnail("https://i.imgur.com/SbFkbKa.png")
         .setTitle("`🎮 Shadowbot comes to serve peasants 🎮`")
-        .setColor(0x00ffff)
-        .addBlankField()
-        .addField("`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Specified Roles. (without the <>)*`)
+        .setColor("#00ffff")
+        //.addBlankField()
+        .addField("\u200b\n`.cleanse <number>`",`*Deletes the amount of messages the user wants to (between 2 and 50). Requires Specified Roles. (without the <>)*`)
         .addField("`.id`",`*Get your ID*`)
         .addField("`.id <name>`",`*Tag someone to get their ID (without the <>)*`)
         .addField("`.lucky`",`*Write this and get a random lucky phrase thrown back at you.*`)
@@ -356,17 +359,18 @@ bot.on('message', async message => {
         .addField("`.creator`",`*Who is my creator? Find out.*`)
         .addField("`.weather <location>`",`*Get the weather of a specific location. (without the <>)*`)
         .addField("`.sourcecode`",`*Link to the Sourcecode of <@414814903946182686>*`)
-        .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat - fuck```\u200b*How to execute an action: .action exampleaction @exampleuser*\n*Restrictions:* `fuck` *can only be performed in <#422872480152027136>*")
-        .addField("`.invite`",`*Get the permanent Invite Link for this server*`)
-        .addField("`.ping`",`*Get Your and the Bot's Latency*`)
+        .addField("`.action`"," *Action command to fulfill actions. Currently available actions:*\u200b ```slap - hug - kiss - pat```\u200b*How to execute an action: .action exampleaction @exampleuser")
+        .addField("`.invite`",`*Get the permanent Invite Link for the Oblivious Realm Server (Bot Testing Environment)*`)
+        .addField("`.ping`",`*Get your and the Bot's Latency*`)
         .addField("`.emojis`", `*Get a list of all the Emojis available in within this Discord Server*`)
         .addField("`.info`", `*add "server" to find information about the Server. Tag a person to find information about them*`)
        /* .addField("`.roleassign`", `*Posts a message which allows the bot to assign/remove Roles on Em*`)*/
-        .addBlankField()
-        .addField("`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - invisible - stalked - submap - behemoth - leviathan - fenrir```\u200b*Place requested word inbetween 2 slashes: /testword/*")
-        .addBlankField()
+        //.addBlankField()
+        .addField("\u200b\n`Word Replacements`", "*For now, the following words can by replaced with Pictures/Gifs:*\u200b```praise - lol - butwhy - why - gay - sadlife - party - rage - holy - boi - boner - moan - fuckyfucky - gross - overload - nohomo - hackerman - seppuku - yeahboi - what - invisible - stalked```\u200b*Place requested word inbetween 2 slashes: /testword/*\u200B")
+        //.addBlankField()
         .setTimestamp()
-         message.author.sendMessage({embed});
+        // message.author.sendMessage({embed});
+        channel.send(embed);
   }
   
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -375,11 +379,14 @@ bot.on('message', async message => {
     // Purge, Cleanse... call it what you want idgaf
 
     if (msg.startsWith(prefix + commands[1])) { 
-
         message.delete();
-      
-        if(!message.member.roles.some(r=>["Behemoth", "VIP", "Fenrir", "Singularity (Allies)", "Leviathan", "Them very gay"].includes(r.name)) ) {  //checks if users name includes the roles listed
-                message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role for the **Oblivious Realm Server** or the **Them very gay** Role for the **Rainbow Six | Siege Server**  to cleanse all our souls' past"); // you gotta have the role biatch.
+
+        if(message.member.roles.cache.some(role => role.name === 'Behemoth', 'VIP', 'Fenrir', 'Singularity (Allies)', 'Leviathan', 'Them very gay', 'Administration')) {  //checks if users name includes the roles listed
+                message.channel.bulkDelete(args1[0])
+                .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
+
+            }else{
+                message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role for the **Oblivious Realm Server**, the **Them very gay** Role for the **Rainbow Six | Siege Server** or the **Administration** Role for the **ETH D-INFK 2020 Server** to cleanse all our souls' past"); // you gotta have the role biatch.
                 return; 
             }
 
@@ -390,10 +397,9 @@ bot.on('message', async message => {
                 return;
             }
 
-        message.channel.bulkDelete(args1[0])
-                .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
+        
 
-        bot.channels.get('419204128527482880').send('**Successfully cleansed** ' + args1 + ` **messages, as requested by <@${message.author.id}>**`); //uses input from user to give out how many message have been cleansed
+        bot.channels.cache.get('419204128527482880').send('**Successfully cleansed** ' + args1 + ` **messages, as requested by <@${message.author.id}>**`); //uses input from user to give out how many message have been cleansed
         
 
     }
@@ -404,11 +410,11 @@ bot.on('message', async message => {
         
         if(iduser){ //if yes gets id of mentioned user
         message.reply(`Default display of an ID is <@ExampleID>. The ID of <@${iduser.id}> is:`)
-            message.channel.sendMessage(`${iduser.id}`)
+            channel.send(`${iduser.id}`)
         }else{ //if not displays id of author
 
         message.reply(`Default display of an ID is: <@ExampleID>. Your ID is:`)
-            message.channel.sendMessage(`${message.author.id}`)
+            channel.send(`${message.author.id}`)
         }    
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -451,7 +457,7 @@ bot.on('message', async message => {
 
     //CREATOR INFO-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     if (msg.startsWith(prefix + commands[5])){
-        message.channel.sendMessage("My creator is the Behemoth <@!252091777115226114>")
+        channel.send("My creator is the pussy ass bitch <@!252091777115226114>")
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
@@ -470,10 +476,10 @@ bot.on('message', async message => {
             var current = result[0].current;  //define variable for current
             var location = result[0].location; //etc...
 
-            const embed = new Discord.RichEmbed()
+            var embed = new Discord.MessageEmbed()
                 .setTitle(`🤖 **Weather for ${current.observationpoint}**`) //sets title so it refers to called location
-                .setFooter(`Weather, Requested by ${message.author.username}`, `${message.author.avatarURL}`) //author username + avatar
-                .setColor(0x00ffff) 
+                .setFooter(`Weather, Requested by ${message.author.username}`, `${message.author.avatarURL()}`) //author username + avatar
+                .setColor("#00ffff") 
 
                 //From here on should be self-explanatory
                 .addField('\u200b','**Location Info**') 
@@ -490,9 +496,9 @@ bot.on('message', async message => {
                 .addField('🌬 Winds',`${current.winddisplay}`, true)
                 .addField('🚤 Windspeed', `${current.windspeed}`, true)
             
-                .addBlankField()
+               // .addBlankField()
 
-                message.channel.send({embed});
+                channel.send(embed);
         });
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -509,13 +515,12 @@ bot.on('message', async message => {
     if (msg.startsWith(prefix + commands[8])){
        
         let iduser = message.mentions.users.first(); //checks if a user is mentioned = var
-        const fuckyfucky = bot.emojis.get("430033873393680385");
+        //const fuckyfucky = bot.emojis.get("430033873393680385");
     
             const action = [
                 {
                     name: "slap",
-                    url1: 'https://media.giphy.com/media/reXcrlJ3OhvDq/giphy.gif',
-                    url2: 'https://remezcla.com/wp-content/uploads/2017/04/deigo-luna_star-wars_film1.gif?x63031'
+                    url1: 'https://remezcla.com/wp-content/uploads/2017/04/deigo-luna_star-wars_film1.gif?x63031'
                 },
                 {
                     name: "hug",
@@ -524,21 +529,21 @@ bot.on('message', async message => {
                 },
                 {
                     name: "kiss",
-                    url1: 'https://m.popkey.co/f53862/aWAjx.gif'
+                    url1: 'https://media1.tenor.com/images/86027a9034d14660aca90e87b96bf6d5/tenor.gif?itemid=14477762'
                 },
                 {
                     name: "pat",
                     url1: 'http://gifimage.net/wp-content/uploads/2017/07/head-pat-gif-1.gif',
                     url2: 'https://media0.giphy.com/media/mn1cym1jiJOUg/giphy.gif'
-                },
+                }/*,
                 {
                     name: "fuck",
                     url1: 'https://cdn.discordapp.com/attachments/422872480152027136/432841923934420992/16819157.gif',
                     url2: 'https://i.imgur.com/gRZQHu2.gif'
-                }
+                }*/
             ]
         
-        var embed = new Discord.RichEmbed()    
+        var embed = new Discord.MessageEmbed()    
     
         for (let s = 0; s < action.length; s++) { //for loop for length of array
         
@@ -556,48 +561,48 @@ bot.on('message', async message => {
             if (iduser.id == message.author.id){ //if the user id that is mentioned equals the authors id do dis
                     message.channel.bulkDelete(1);
                       if (s == 0) { message.channel.send("***Why would you wantingly slap yourself? Don't do that... Pls...***");   }
-                      else if (s == 1) { message.channel.send(`***You can't just hug yourself. You are not that lonely :) I will hug you instead: <@${bot.user.id}> hugged <@${message.author.id}>***`); embed.setImage(action[1].url2); message.channel.sendMessage({embed});  }
+                      else if (s == 1) { message.channel.send(`***You can't just hug yourself. You are not that lonely :) I will hug you instead: <@${bot.user.id}> hugged <@${message.author.id}>***`); embed.setImage(action[1].url2); channel.send({embed});  }
                       else if (s == 2) { message.channel.send(`***How would you even kiss yourself? Are you arrogant enough to want to kiss yourself?***`); }
-                      else if (s == 3) { message.channel.send(`***Yes... This is definitely how this works...***`); embed.setImage(action[3].url2); message.channel.sendMessage({embed}); }
-                      else if (s == 4 && message.channel.id == '422872480152027136' || '403927636314685441') { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
+                      else if (s == 3) { message.channel.send(`***Yes... This is definitely how this works...***`); embed.setImage(action[3].url2); channel.send({embed}); }
+                      /*else if (s == 4 && message.channel.id == '422872480152027136' || '403927636314685441') { message.channel.send(`***What... You wanna fuck yourself? WTF?***`); }
                 
                     else {
                     if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
                     message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
                     }
-                    return;  } 
+                    return;  } */
             
             }else {
                     message.channel.bulkDelete(1);
                     embed.setImage(action[s].url1)
                     
-                      if (s == 0) {message.channel.send(`***<@${message.author.id}> just slapped <@${iduser.id}>. Harder than imagined!***`); }
-                      else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); }
-                      else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); }
-                      else if (s == 3) {message.channel.send(`***<@${message.author.id}> just patted <@${iduser.id}>. So Soft :O ***`); }
-                      else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
+                      if (s == 0) {message.channel.send(`***<@${message.author.id}> just slapped <@${iduser.id}>. Harder than imagined!***`); embed.setImage(action[0].url1); channel.send({embed}); }
+                      else if (s == 1) {message.channel.send(`***<@${message.author.id}> just hugged <@${iduser.id}> outta nowhere. What a world...***`); embed.setImage(action[1].url1); channel.send({embed}); }
+                      else if (s == 2) {message.channel.send(`***<@${message.author.id}> just kissed <@${iduser.id}>. Incredible!***`); embed.setImage(action[2].url1); channel.send({embed});}
+                      else if (s == 3) {message.channel.send(`***<@${message.author.id}> just patted <@${iduser.id}>. So Soft :O ***`); embed.setImage(action[3].url1); channel.send({embed});}
+                      /*else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***<@${message.author.id}> started fucking <@${iduser.id}>. Soothing and Indulgent ${fuckyfucky}  ***`); }
                       
                     else { 
                     if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
                     message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
                     }
                     return;  }
-                    message.channel.sendMessage({embed});
+                    channel.send(embed);*/
                    
                  }return;
                 
         }else {
             message.channel.bulkDelete(1); 
-            if (s == 0) {message.reply(`***So, because you damn MOFO didn't mention anyone, I am the one slapping you now for that: <@${bot.user.id}> slapped <@${message.author.id}> !***`); embed.setImage(action[0].url2); message.channel.sendMessage({embed});}
+            if (s == 0) {message.reply(`***So, because you damn MOFO didn't mention anyone, I am the one slapping you now for that: <@${bot.user.id}> slapped <@${message.author.id}> !***`); embed.setImage(action[0].url2); channel.send({embed});}
             else if (s == 1) {message.channel.send(`***What? Who do you want to hug? Pls decide!***`); }
             else if (s == 2) {message.channel.send(`***Huh? Who do you want to kiss? Everyone or what?***`); }
             else if (s == 3) {message.channel.send(`***Okay now please... Whomst does thy toucheth want to patteth?***`); }
-            else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***You didn't mention anyone to fuck so now I will fuck you MWAHAHAHA: <@${bot.user.id}> inserts his Metal Dong into <@${message.author.id}>***`); embed.setImage(action[4].url2); message.channel.sendMessage({embed});}
+            /*else if (s == 4 && message.channel.id == '422872480152027136') {message.channel.send(`***You didn't mention anyone to fuck so now I will fuck you MWAHAHAHA: <@${bot.user.id}> inserts his Metal Dong into <@${message.author.id}>***`); embed.setImage(action[4].url2); message.channel.sendMessage({embed});}
             
             else { if(s == 4 && message.channel.id !== '422872480152027136') { //this indicates, that this action can only be sent in a certain channel
                 message.reply(`The "fuck" action can only be performed in <#422872480152027136>`)
             }
-            return;  }  
+            return;  }  */
           } 
      
         return;
@@ -629,8 +634,29 @@ bot.on('message', async message => {
     //Emoji-List
     if (msg.startsWith(prefix + commands[11])){
         message.delete();
-        const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
-        message.channel.send("**The available Emojis on this server, are:**\n" + emojiList);
+        let Emojis="";
+        let EmojisAnimated="";
+        let EmojiCount= 0;
+        let Animated= 0;
+        let OverallEmojis=0;
+        function Emoji(id){
+            return bot.emojis.cache.get(id).toString()
+        }
+        message.guild.emojis.cache.forEach(emoji=>{
+            OverallEmojis++;
+            if(emoji.animated){
+                Animated++
+                EmojisAnimated+=Emoji(emoji.id)
+            }else{
+                EmojiCount++;
+                Emojis+=Emoji(emoji.id)
+            }
+        })
+        var embed = new Discord.MessageEmbed()
+        .setTitle(`Emojis in ${message.guild.name}.`)
+        .setDescription(`**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n**Over all emojis [${OverallEmojis}]**`)
+        .setColor(`random`)
+        channel.send(embed);
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -640,10 +666,10 @@ bot.on('message', async message => {
     let user = message.mentions.users.first();
     let member = message.mentions.members.first();
     if(args1 == 'server'){
-        const embed = new Discord.RichEmbed()
+        const embed = new Discord.MessageEmbed()
   
-        .setThumbnail(`${message.guild.iconURL}`)
-        .setColor(0x8A2BE2)
+        .setThumbnail(`${message.guild.iconURL()}`)
+        .setColor("#8A2BE2")
         .addField('Server name:', `${message.guild.name}`)
         .addField('Server owner:', `${message.guild.owner}`)
         .addField('Creation Date', `${message.guild.createdAt}`)
@@ -651,26 +677,26 @@ bot.on('message', async message => {
         .addField('Server ID', `${message.guild.id}`)
         .addField('Member count:', `${message.guild.memberCount}`)
         .addField('Is server online?: ', `${message.guild.available}`)
-        .addField('Server Icon', `${message.guild.iconURL}`)
+        .addField('Server Icon', `${message.guild.iconURL()}`)
         .setTimestamp()
-        message.channel.send({embed});
+        channel.send(embed);
     }
     else if(args1 == user || member){
        
-        const embed = new Discord.RichEmbed()
+        const embed = new Discord.MessageEmbed()
 
-        .setThumbnail(`${user.displayAvatarURL}`)
-        .setColor(0x8A2BE2)
+        .setThumbnail(`${user.displayAvatarURL()}`)
+        .setColor("#8A2BE2")
         .addField(`Joined discord at:`,`${user.createdAt}`)
         .addField(`Joined server at:`, `${member.joinedAt}`)
         .addField('Nickname: ', `${member.displayName}`)
-        .addField('Role:', `${member.highestRole}`)
-        .addField('Mute status:', `${member.serverMute}`)
+        .addField('Role:', `${member.roles.highest}`)
+        //.addField('Mute status:', `${member.serverMute}`)
         .addField('Status:',`${user.presence.status}`)
-        .addField('Pic:', `${user.displayAvatarURL}`)
+        .addField('Pic:', `${user.displayAvatarURL()}`)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp()
-        message.channel.send({embed});
+        channel.send(embed);
 
     }else{message.reply("Please specify the info you'd like to know. Available specifications are: server, user.")}
 
@@ -839,7 +865,7 @@ bot.on('message', async message => {
  */
  if (msg.startsWith(prefix + commands[13])) {
     var currenttime = Date();
-    message.channel.sendMessage("The Current Time for the Bot is: " + currenttime);
+    channel.send("The Current Time for the Bot is: " + currenttime);
   };
     
 });
@@ -1069,9 +1095,6 @@ bot.on('raw', async (data) => {
 /*bot.on('debug', (info) => {
     console.log(info);
 });*/
-
-
-
 
 
 

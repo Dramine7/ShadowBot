@@ -1,0 +1,13 @@
+{
+  "name": "shadowbot",
+  "version": "1.0.0",
+  "description": "Shadow Bot Dude",
+  "main": "index.js",
+  "author": "Dramine7",
+  "dependencies": {
+    "discord.io": "^2.5.3",
+    "discord.js": "^12.3.1",
+    "weather-js": "^2.0.0",
+    "winston": "^3.3.3"
+  }
+}

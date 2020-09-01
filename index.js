@@ -381,7 +381,7 @@ bot.on('message', async message => {
     if (msg.startsWith(prefix + commands[1])) { 
         message.delete();
 
-        if(message.member.roles.cache.some(role => role.name === 'Behemoth' || 'VIP' || 'Fenrir' || 'Singularity (Allies)' || 'Leviathan' || 'Them very gay' || 'Administration')) {  //checks if users name includes the roles listed
+        if(message.member.roles.cache.find(role => role.name === 'Behemoth' || 'VIP' || 'Fenrir' || 'Singularity (Allies)' || 'Leviathan' || 'Them very gay' || 'Administration')) {  //checks if users name includes the roles listed
                 message.channel.bulkDelete(args1[0])
                 .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
 

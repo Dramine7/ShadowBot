@@ -381,12 +381,13 @@ bot.on('message', async message => {
     if (msg.startsWith(prefix + commands[1])) { 
         message.delete();
 
-        if(message.member.roles.cache.find(role => role.name === 'Behemoth', 'VIP' , 'Fenrir','Singularity (Allies)', 'Leviathan' , 'Them very gay' , 'Administration')) {  //checks if users name includes the roles listed
+        
+        if(message.member.roles.cache.some(role => role.name === 'Cleanser')) {  //checks if users name includes the roles listed
                 message.channel.bulkDelete(args1[0])
                 .catch(error => message.channel.send(`Error: ${error}`)); //catch zeee error
 
             }else{
-                message.reply("You need the **Behemoth**, **VIP**, **Fenrir** or **Singularity (Allies)** Role for the **Oblivious Realm Server**, the **Them very gay** Role for the **Rainbow Six | Siege Server** or the **Administration** Role for the **ETH D-INFK 2020 Server** to cleanse all our souls' past"); // you gotta have the role biatch.
+                message.reply("You need the role of **Cleanser** to cleanse all our souls' past"); // you gotta have the role biatch.
                 return; 
             }
 

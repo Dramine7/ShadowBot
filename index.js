@@ -40,6 +40,7 @@ const prefix = '.';
 
 bot.on("message", function(message){ //Kinda Useless but types message of any user in cmd log
     console.log(message.content);
+    bot.user.setActivity(".help for commands");
 });
 
 bot.on("ready", function(){ //if the mofo bot is ready it tells me like my little slave

@@ -87,9 +87,9 @@ bot.on("message", message => {
         message.react("👌")
     }  
 }   
-    if(message.content.toLowerCase() == "756139410969591850")
+    if(message.content == "👏")
     {
-    message.react("756139410969591850")
+    message.react("👏")
     }
      //overkill
     if(message.content.toLowerCase() == "yeet") {

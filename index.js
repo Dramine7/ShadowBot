@@ -634,7 +634,7 @@ bot.on('message', async message => {
         const p = await message.channel.send('\u200b');
         p.edit(`🏓 PONG \n Latency between sending and receiving the message is ${p.createdTimestamp - message.createdTimestamp} ms \n Latency between Bot and Discord API is ${Math.round(bot.ping)} ms`);
         */
-       let botMsg = await message.channel.send("〽️ Pinging")
+       let botMsg = await message.channel.send("🏓 PONGERONI GUACAMOLE")
 
         botMsg.edit({ embed: {
             title: "📶 Ping",
@@ -643,7 +643,7 @@ bot.on('message', async message => {
             "**API**: `" + Math.round(bot.ping) + "ms`",
             "**Uptime**: `" + msToTime(bot.uptime) + "`"
             ].join("\n"),
-            color: "#00fff",
+            color: "#FFFF00",
             footer: { text: "Requested by " + message.author.tag, icon_url: message.author.displayAvatarURL },
             timestamp: new Date()
         }}).catch(() => botMsg.edit("🆘 An unknown error occurred. Do I have permission? (Embed Links)"));

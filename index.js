@@ -628,11 +628,44 @@ bot.on('message', async message => {
     
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //Pingeroni
-    if (msg.startsWith(prefix + commands[10])){
+      if (msg.startsWith(prefix + commands[10])){
+        /*
         message.delete();
         const p = await message.channel.send('\u200b');
         p.edit(`🏓 PONG \n Latency between sending and receiving the message is ${p.createdTimestamp - message.createdTimestamp} ms \n Latency between Bot and Discord API is ${Math.round(bot.ping)} ms`);
-    }
+        */
+       let botMsg = await message.channel.send("〽️ Pinging")
+
+        botMsg.edit({ embed: {
+            title: "📶 Ping",
+            description: [
+            "**Server**: `" + (botMsg.createdAt - message.createdAt) + "ms`",
+            "**API**: `" + Math.round(bot.ping) + "ms`",
+            "**Uptime**: `" + msToTime(bot.uptime) + "`"
+            ].join("\n"),
+            color: "#00fff",
+            footer: { text: "Requested by " + message.author.tag, icon_url: message.author.displayAvatarURL },
+            timestamp: new Date()
+        }}).catch(() => botMsg.edit("🆘 An unknown error occurred. Do I have permission? (Embed Links)"));
+        }
+
+        function msToTime(ms){
+        days = Math.floor(ms / 86400000); // 24*60*60*1000
+        daysms = ms % 86400000; // 24*60*60*1000
+        hours = Math.floor(daysms / 3600000); // 60*60*1000
+        hoursms = ms % 3600000; // 60*60*1000
+        minutes = Math.floor(hoursms / 60000); // 60*1000
+        minutesms = ms % 60000; // 60*1000
+        sec = Math.floor(minutesms / 1000);
+
+        let str = "";
+        if (days) str = str + days + "d";
+        if (hours) str = str + hours + "h";
+        if (minutes) str = str + minutes + "m";
+        if (sec) str = str + sec + "s";
+
+        return str;
+}
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
